@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.15)  20 MAY 2015 12:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.15)  9 JUN 2015 09:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -857,92 +857,88 @@ Underfull \hbox (badness 1565) in paragraph at lines 447--453
 
 [9
 
-] <imgs/BT-ts-accuracy.pdf, id=169, 722.7pt x 180.675pt>
+] [10] <imgs/BT-ts-accuracy.pdf, id=172, 722.7pt x 180.675pt>
 File: imgs/BT-ts-accuracy.pdf Graphic file (type pdf)
 
 <use imgs/BT-ts-accuracy.pdf>
-Package pdftex.def Info: imgs/BT-ts-accuracy.pdf used on input line 512.
+Package pdftex.def Info: imgs/BT-ts-accuracy.pdf used on input line 590.
 (pdftex.def)             Requested size: 324.8978pt x 81.22304pt.
 
-<imgs/Sky-ts-accuracy.pdf, id=170, 722.7pt x 180.675pt>
+<imgs/Sky-ts-accuracy.pdf, id=173, 722.7pt x 180.675pt>
 File: imgs/Sky-ts-accuracy.pdf Graphic file (type pdf)
 
 <use imgs/Sky-ts-accuracy.pdf>
-Package pdftex.def Info: imgs/Sky-ts-accuracy.pdf used on input line 513.
+Package pdftex.def Info: imgs/Sky-ts-accuracy.pdf used on input line 591.
 (pdftex.def)             Requested size: 324.8978pt x 81.22304pt.
 
-<imgs/TalkTalk-ts-accuracy.pdf, id=171, 722.7pt x 180.675pt>
+<imgs/TalkTalk-ts-accuracy.pdf, id=174, 722.7pt x 180.675pt>
 File: imgs/TalkTalk-ts-accuracy.pdf Graphic file (type pdf)
 
 <use imgs/TalkTalk-ts-accuracy.pdf>
-Package pdftex.def Info: imgs/TalkTalk-ts-accuracy.pdf used on input line 514.
+Package pdftex.def Info: imgs/TalkTalk-ts-accuracy.pdf used on input line 592.
 (pdftex.def)             Requested size: 324.8978pt x 81.22304pt.
 
-<imgs/VirginMedia-ts-accuracy.pdf, id=172, 722.7pt x 180.675pt>
+<imgs/VirginMedia-ts-accuracy.pdf, id=175, 722.7pt x 180.675pt>
 File: imgs/VirginMedia-ts-accuracy.pdf Graphic file (type pdf)
 
 <use imgs/VirginMedia-ts-accuracy.pdf>
-Package pdftex.def Info: imgs/VirginMedia-ts-accuracy.pdf used on input line 51
-5.
+Package pdftex.def Info: imgs/VirginMedia-ts-accuracy.pdf used on input line 59
+3.
 (pdftex.def)             Requested size: 324.8978pt x 81.22304pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<imgs/EE-ts-accuracy.pdf, id=173, 722.7pt x 180.675pt>
+<imgs/EE-ts-accuracy.pdf, id=176, 722.7pt x 180.675pt>
 File: imgs/EE-ts-accuracy.pdf Graphic file (type pdf)
 
 <use imgs/EE-ts-accuracy.pdf>
-Package pdftex.def Info: imgs/EE-ts-accuracy.pdf used on input line 521.
+Package pdftex.def Info: imgs/EE-ts-accuracy.pdf used on input line 599.
 (pdftex.def)             Requested size: 324.8978pt x 81.22304pt.
 
-<imgs/O2-ts-accuracy.pdf, id=174, 722.7pt x 180.675pt>
+<imgs/O2-ts-accuracy.pdf, id=177, 722.7pt x 180.675pt>
 File: imgs/O2-ts-accuracy.pdf Graphic file (type pdf)
 
 <use imgs/O2-ts-accuracy.pdf>
-Package pdftex.def Info: imgs/O2-ts-accuracy.pdf used on input line 522.
+Package pdftex.def Info: imgs/O2-ts-accuracy.pdf used on input line 600.
 (pdftex.def)             Requested size: 324.8978pt x 81.22304pt.
 
-<imgs/Three-ts-accuracy.pdf, id=175, 722.7pt x 180.675pt>
+<imgs/Three-ts-accuracy.pdf, id=178, 722.7pt x 180.675pt>
 File: imgs/Three-ts-accuracy.pdf Graphic file (type pdf)
 
 <use imgs/Three-ts-accuracy.pdf>
-Package pdftex.def Info: imgs/Three-ts-accuracy.pdf used on input line 523.
+Package pdftex.def Info: imgs/Three-ts-accuracy.pdf used on input line 601.
 (pdftex.def)             Requested size: 324.8978pt x 81.22304pt.
 
-<imgs/Vodafone-ts-accuracy.pdf, id=176, 722.7pt x 180.675pt>
+<imgs/Vodafone-ts-accuracy.pdf, id=179, 722.7pt x 180.675pt>
 File: imgs/Vodafone-ts-accuracy.pdf Graphic file (type pdf)
 
 <use imgs/Vodafone-ts-accuracy.pdf>
-Package pdftex.def Info: imgs/Vodafone-ts-accuracy.pdf used on input line 524.
+Package pdftex.def Info: imgs/Vodafone-ts-accuracy.pdf used on input line 602.
 (pdftex.def)             Requested size: 324.8978pt x 81.22304pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[10] [11 <./imgs/BT-ts-accuracy.pdf> <./imgs/Sky-ts-accuracy.pdf> <./imgs/TalkT
-alk-ts-accuracy.pdf> <./imgs/VirginMedia-ts-accuracy.pdf>] [12 <./imgs/EE-ts-ac
-curacy.pdf> <./imgs/O2-ts-accuracy.pdf> <./imgs/Three-ts-accuracy.pdf> <./imgs/
-Vodafone-ts-accuracy.pdf>]
-<imgs/BT-unblock-dist.pdf, id=223, 361.35pt x 361.35pt>
+[11 <./imgs/BT-ts-accuracy.pdf> <./imgs/Sky-ts-accuracy.pdf> <./imgs/TalkTalk-t
+s-accuracy.pdf> <./imgs/VirginMedia-ts-accuracy.pdf>] [12 <./imgs/EE-ts-accurac
+y.pdf> <./imgs/O2-ts-accuracy.pdf> <./imgs/Three-ts-accuracy.pdf> <./imgs/Vodaf
+one-ts-accuracy.pdf>] <imgs/BT-unblock-dist.pdf, id=223, 361.35pt x 361.35pt>
 File: imgs/BT-unblock-dist.pdf Graphic file (type pdf)
 
 <use imgs/BT-unblock-dist.pdf>
-Package pdftex.def Info: imgs/BT-unblock-dist.pdf used on input line 541.
+Package pdftex.def Info: imgs/BT-unblock-dist.pdf used on input line 620.
 (pdftex.def)             Requested size: 81.18864pt x 81.18445pt.
 
 <imgs/Sky-unblock-dist.pdf, id=224, 361.35pt x 361.35pt>
 File: imgs/Sky-unblock-dist.pdf Graphic file (type pdf)
 
 <use imgs/Sky-unblock-dist.pdf>
-Package pdftex.def Info: imgs/Sky-unblock-dist.pdf used on input line 541.
+Package pdftex.def Info: imgs/Sky-unblock-dist.pdf used on input line 620.
 (pdftex.def)             Requested size: 81.18864pt x 81.18445pt.
 
 <imgs/TalkTalk-unblock-dist.pdf, id=225, 361.35pt x 361.35pt>
 File: imgs/TalkTalk-unblock-dist.pdf Graphic file (type pdf)
 
 <use imgs/TalkTalk-unblock-dist.pdf>
-Package pdftex.def Info: imgs/TalkTalk-unblock-dist.pdf used on input line 541.
+Package pdftex.def Info: imgs/TalkTalk-unblock-dist.pdf used on input line 620.
 
 (pdftex.def)             Requested size: 81.18864pt x 81.18445pt.
 
@@ -950,36 +946,36 @@ Package pdftex.def Info: imgs/TalkTalk-unblock-dist.pdf used on input line 541.
 File: imgs/VirginMedia-unblock-dist.pdf Graphic file (type pdf)
 
 <use imgs/VirginMedia-unblock-dist.pdf>
-Package pdftex.def Info: imgs/VirginMedia-unblock-dist.pdf used on input line 5
-41.
+Package pdftex.def Info: imgs/VirginMedia-unblock-dist.pdf used on input line 6
+20.
 (pdftex.def)             Requested size: 81.18864pt x 81.18445pt.
 
 <imgs/EE-unblock-dist.pdf, id=227, 361.35pt x 361.35pt>
 File: imgs/EE-unblock-dist.pdf Graphic file (type pdf)
 
 <use imgs/EE-unblock-dist.pdf>
-Package pdftex.def Info: imgs/EE-unblock-dist.pdf used on input line 543.
+Package pdftex.def Info: imgs/EE-unblock-dist.pdf used on input line 622.
 (pdftex.def)             Requested size: 81.18864pt x 81.18445pt.
 
 <imgs/O2-unblock-dist.pdf, id=228, 361.35pt x 361.35pt>
 File: imgs/O2-unblock-dist.pdf Graphic file (type pdf)
 
 <use imgs/O2-unblock-dist.pdf>
-Package pdftex.def Info: imgs/O2-unblock-dist.pdf used on input line 543.
+Package pdftex.def Info: imgs/O2-unblock-dist.pdf used on input line 622.
 (pdftex.def)             Requested size: 81.18864pt x 81.18445pt.
 
 <imgs/Three-unblock-dist.pdf, id=229, 361.35pt x 361.35pt>
 File: imgs/Three-unblock-dist.pdf Graphic file (type pdf)
 
 <use imgs/Three-unblock-dist.pdf>
-Package pdftex.def Info: imgs/Three-unblock-dist.pdf used on input line 543.
+Package pdftex.def Info: imgs/Three-unblock-dist.pdf used on input line 622.
 (pdftex.def)             Requested size: 81.18864pt x 81.18445pt.
 
 <imgs/Vodafone-unblock-dist.pdf, id=230, 361.35pt x 361.35pt>
 File: imgs/Vodafone-unblock-dist.pdf Graphic file (type pdf)
 
 <use imgs/Vodafone-unblock-dist.pdf>
-Package pdftex.def Info: imgs/Vodafone-unblock-dist.pdf used on input line 543.
+Package pdftex.def Info: imgs/Vodafone-unblock-dist.pdf used on input line 622.
 
 (pdftex.def)             Requested size: 81.18864pt x 81.18445pt.
 
@@ -1004,10 +1000,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3085 strings out of 493304
- 45578 string characters out of 6139871
- 106844 words of memory out of 5000000
- 6460 multiletter control sequences out of 15000+600000
+ 3084 strings out of 493304
+ 45550 string characters out of 6139871
+ 109844 words of memory out of 5000000
+ 6459 multiletter control sequences out of 15000+600000
  13308 words of font info for 46 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  37i,9n,42p,473b,294s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1023,7 +1019,7 @@ fonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 ti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pf
 b>
-Output written on mrowe-isp-filters-v1.pdf (13 pages, 1004125 bytes).
+Output written on mrowe-isp-filters-v1.pdf (13 pages, 1006029 bytes).
 PDF statistics:
  331 PDF objects out of 1000 (max. 8388607)
  217 compressed objects within 3 object streams

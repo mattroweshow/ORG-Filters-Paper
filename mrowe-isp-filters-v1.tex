@@ -481,35 +481,103 @@ Explain gauging filter accuracy using existing measures from classification lite
 
 \subsubsection*{General Accuracy}
 
+% Original results without assessing for polysemic categories
 \begin{table}[h!]
 \caption{Accuracy levels of ISP and Mobile Providers' Web Filters derived using the DMOZ categories that should have been blocked by each filter and the categories of URLs that were actually blocked.}
   \begin{tabular}{ l c c c c c c}
     \hline
      & Precision & Recall & FPR & MCC & F1 \\
     \hline
-    BT & 0.083 & 0.550 & 0.012 & 0.210 & 0.144 \\
-    Sky & 0.217 & 0.556 & 0.004 & 0.345 & 0.312 \\
-    TalkTalk & 0.144 & 0.121 & 0.009 & 0.121 & 0.131 \\
-	VirginMedia & 0.185 & 0.611 & 0.003 & 0.335 & 0.284 \\
+	BT & 0.032 & 0.613 & 0.012 & 0.138 & 0.061 \\
+    Sky & 0.088 & 0.370 & 0.003 & 0.179 & 0.142 \\
+    TalkTalk & 0.078  & 0.073 & 0.009 & 0.066 & 0.075 \\
+	VirginMedia & 0.050 & 0.508 & 0.003 & 0.159 & 0.091 \\
 	\hline    
-	EE & 0.445 & 0.750 & 0.002 & 0.576 & 0.559 \\
-	O2 & 0.324 & 0.794 & 0.002 & 0.507 & 0.461 \\
-	Three & 0.256 & 0.820 & 0.005 & 0.456 & 0.390 \\
-	Vodafone & 0.142 & 0.684 & 0.004 & 0.311 & 0.236 \\
+	EE & 0.189 & 0.635 & 0.002 & 0.346 & 0.291 \\
+	O2 & 0.136 & 0.697 & 0.002 & 0.307 & 0.227 \\
+	Three & 0.108 & 0.631 & 0.004 & 0.260 & 0.185 \\
+	Vodafone & 0.044 & 0.564 & 0.004 & 0.156 & 0.081 \\
     \hline
   \end{tabular}
 \end{table}
 
-% Updated results (21st May 2015). Shows large degradation in accuracy.
-BT: tp = 634.0 | tn = 1543183.0 | fp = 19168.0 | fn = 400.0 | prec = 0.032 | rec = 0.613 | FPR = 0.012 | mcc = 0.138 | F1 = 0.061
-Sky: tp = 526.0 | tn = 1566677.0 | fp = 5442.0 | fn = 895.0 | prec = 0.088 | rec = 0.370 | FPR = 0.003 | mcc = 0.179 | F1 = 0.142
-TalkTalk: tp = 1218.0 | tn = 1542758.0 | fp = 14409.0 | fn = 15514.0 | prec = 0.078  | rec = 0.073 | FPR = 0.009 | mcc = 0.066 | F1 = 0.075
-VirginMedia: tp = 266.0 | tn = 1568395.0 | fp = 5036.0 | fn = 258.0 | prec = 0.0502  | rec = 0.508 | FPR = 0.003 | mcc = 0.159 | F1 = 0.091
+% Updated results (21st May 2015). Shows large degradation in accuracy. After altering category checking procedure
+%BT: tp = 634.0 | tn = 1543183.0 | fp = 19168.0 | fn = 400.0 | prec = 0.032 | rec = 0.613 | FPR = 0.012 | mcc = 0.138 | F1 = 0.061
+%Sky: tp = 526.0 | tn = 1566677.0 | fp = 5442.0 | fn = 895.0 | prec = 0.088 | rec = 0.370 | FPR = 0.003 | mcc = 0.179 | F1 = 0.142
+%TalkTalk: tp = 1218.0 | tn = 1542758.0 | fp = 14409.0 | fn = 15514.0 | prec = 0.078  | rec = 0.073 | FPR = 0.009 | mcc = 0.066 | F1 = 0.075
+%VirginMedia: tp = 266.0 | tn = 1568395.0 | fp = 5036.0 | fn = 258.0 | prec = 0.0502  | rec = 0.508 | FPR = 0.003 | mcc = 0.159 | F1 = 0.091
+%EE: tp = 219.0 | tn = 472432.0 | fp = 939.0 | fn = 126.0 | prec = 0.189 | rec = 0.635 | FPR = 0.002 | mcc = 0.346 | F1 = 0.291
+%O2: tp = 230.0 | tn = 876122.0 | fp = 1462.0 | fn = 100.0 | prec = 0.136 | rec = 0.697 | FPR = 0.002 | mcc = 0.307 | F1 = 0.227
+%Three: tp = 236.0 | tn = 491864.0 | fp = 1941.0 | fn = 138.0 | prec = 0.108 | rec = 0.631 | FPR = 0.004 | mcc = 0.260 | F1 = 0.185
+%Vodafone: tp = 254.0 | tn = 1482343.0 | fp = 5560.0 | fn = 196.0 | prec = 0.044 | rec = 0.564 | FPR = 0.004 | mcc = 0.156 | F1 = 0.081
 
-EE: tp = 219.0 | tn = 472432.0 | fp = 939.0 | fn = 126.0 | prec = 0.189 | rec = 0.635 | FPR = 0.002 | mcc = 0.346 | F1 = 0.291
-O2: tp = 230.0 | tn = 876122.0 | fp = 1462.0 | fn = 100.0 | prec = 0.136 | rec = 0.697 | FPR = 0.002 | mcc = 0.307 | F1 = 0.227
-Three: tp = 236.0 | tn = 491864.0 | fp = 1941.0 | fn = 138.0 | prec = 0.108 | rec = 0.631 | FPR = 0.004 | mcc = 0.260 | F1 = 0.185
-Vodafone: tp = 254.0 | tn = 1482343.0 | fp = 5560.0 | fn = 196.0 | prec = 0.044 | rec = 0.564 | FPR = 0.004 | mcc = 0.156 | F1 = 0.081
+\begin{table}[h!]
+\caption{Accuracy levels after filtering out sites from the World category subtree.}
+  \begin{tabular}{ l c c c c c c}
+    \hline
+     & Precision & Recall & FPR & MCC & F1 \\
+    \hline
+	BT & 0.066 & 0.612 & 0.010 & 0.198 & 0.119 \\
+    Sky & 0.163 & 0.372 & 0.003 & 0.245 & 0.227 \\
+    TalkTalk & 0.145 & 0.072 & 0.008 & 0.091 & 0.097 \\
+	VirginMedia & 0.112 & 0.512 & 0.002 & 0.239 & 0.184 \\
+	\hline    
+	EE & 0.281 & 0.637 & 0.002 & 0.422 & 0.390 \\
+	O2 & 0.218 & 0.699 & 0.002 & 0.390 & 0.333 \\
+	Three & 0.184 & 0.633 & 0.004 & 0.340 & 0.285 \\
+	Vodafone & 0.083 & 0.568 & 0.003 & 0.216 & 0.144 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+
+% Updated results (29th May 2015). After altering the world category filter
+%BT: tp = 627.0 | tn = 867824.0 | fp = 8919.0 | fn = 398.0 | prec = 0.066 | rec = 0.612 | FPR = 0.010 | mcc = 0.198 | F1 = 0.119
+%Sky: tp = 520.0 | tn = 879512.0 | fp = 2663.0 | fn = 876.0 | prec = 0.163 | rec = 0.372 | FPR = 0.003 | mcc = 0.245 | F1 = 0.227
+%TalkTalk: tp = 1201.0 | tn = 860146.0 | fp = 7065.0 | fn = 15375.0 | prec = 0.145 | rec = 0.072 | FPR = 0.008 | mcc = 0.091 | F1 = 0.097
+%VirginMedia: tp = 266.0 | tn = 881118.0 | fp = 2105.0 | fn = 254.0 | prec = 0.112 | rec = 0.512 | FPR = 0.002 | mcc = 0.239 | F1 = 0.184
+%EE: tp = 219.0 | tn = 269566.0 | fp = 561.0 | fn = 125.0 | prec = 0.281 | rec = 0.637 | FPR = 0.002 | mcc = 0.422 | F1 = 0.390
+%O2: tp = 230.0 | tn = 494277.0 | fp = 823.0 | fn = 99.0 | prec = 0.218 | rec = 0.699 | FPR = 0.002 | mcc = 0.390 | F1 = 0.333
+%Three: tp = 236.0 | tn = 280598.0 | fp = 1046.0 | fn = 137.0 | prec = 0.184 | rec = 0.633 | FPR = 0.004 | mcc = 0.340 | F1 = 0.285
+%Vodafone: tp = 254.0 | tn = 832797.0 | fp = 2819.0 | fn = 193.0 | prec = 0.083 | rec = 0.568 | FPR = 0.003 | mcc = 0.216 | F1 = 0.144
+
+\begin{table}[h!]
+\caption{Accuracy levels after filtering out sites from the World category subtree and controlling for breweries and other alcohol related sites.}
+  \begin{tabular}{ l c c c c c c}
+    \hline
+     & Precision & Recall & FPR & MCC & F1 \\
+    \hline
+	BT & 0.335 & 0.726 & 0.007 & 0.490 & 0.459 \\
+    Sky & 0.163 & 0.372 & 0.003 & 0.245 & 0.227 \\
+    TalkTalk & 0.422 & 0.176 & 0.006 & 0.262 & 0.248 \\
+	VirginMedia & 0.112 & 0.512 & 0.002 & 0.239 & 0.184 \\
+	\hline    
+	EE & 0.281 & 0.637 & 0.002 & 0.422 & 0.390 \\
+	O2 & 0.218 & 0.699 & 0.002 & 0.390 & 0.333 \\
+	Three & 0.184 & 0.633 & 0.004 & 0.340 & 0.285 \\
+	Vodafone & 0.083 & 0.568 & 0.003 & 0.216 & 0.144 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+% Updated results (29th May 2015). After fixing the alcohol sites
+%BT: tp = 3202.0 | tn = 867015.0 | fp = 6344.0 | fn = 1207.0 | prec = 0.335 | rec = 0.726 | FPR = 0.007 | mcc = 0.490 | F1 = 0.459
+%Sky: tp = 520.0 | tn = 879512.0 | fp = 2663.0 | fn = 876.0 | prec = 0.163 | rec = 0.372 | FPR = 0.003 | mcc = 0.245 | F1 = 0.227
+%TalkTalk: tp = 3485.0 | tn = 859202.0 | fp = 4781.0 | fn = 16319.0 | prec = 0.422 | rec = 0.176 | FPR = 0.006 | mcc = 0.262 | F1 = 0.248
+%VirginMedia: tp = 266.0 | tn = 881118.0 | fp = 2105.0 | fn = 254.0 | prec = 0.112 | rec = 0.512 | FPR = 0.002 | mcc = 0.239 | F1 = 0.184
+%EE: tp = 219.0 | tn = 269566.0 | fp = 561.0 | fn = 125.0 | prec = 0.281 | rec = 0.637 | FPR = 0.002 | mcc = 0.422 | F1 = 0.390
+%O2: tp = 230.0 | tn = 494277.0 | fp = 823.0 | fn = 99.0 | prec = 0.218 | rec = 0.699 | FPR = 0.002 | mcc = 0.390 | F1 = 0.333
+%Three: tp = 236.0 | tn = 280598.0 | fp = 1046.0 | fn = 137.0 | prec = 0.184 | rec = 0.633 | FPR = 0.004 | mcc = 0.340 | F1 = 0.285
+%Vodafone: tp = 254.0 | tn = 832797.0 | fp = 2819.0 | fn = 193.0 | prec = 0.083 | rec = 0.568 | FPR = 0.003 | mcc = 0.216 | F1 = 0.144
+
+
+
+Qualitative Examples of Blocks:
+-BT Block: http://www.lgbtquitsmoking.com/ (site to help people stop smoking).
+
+BT seem to be blocking tattoo web sites too:
+
+We have uploaded the collection of sites which are false positives and false negatives to the github repo.\footnote{\url{https://github.com/openrightsgroup/cmp-analysis/tree/master/data/output}}
 
 
 \subsubsection*{Accuracy over Time}
@@ -535,6 +603,7 @@ How has accuracy evolved over time?
 \label{fig:mobile-accuracy-ts}
 \end{figure}
 \clearpage
+
 
 
 
@@ -575,7 +644,7 @@ Limitations of this approach:
 -Coverage of the DMOZ categories - as this is manually curated we only cover a \% of the URLs in total that have been aligned with categories
 
 -Use of DMOZ categories is not without errors:
---E.g. the URL http://www.vin-gastronomie.com/ is not classed as should be blocked in the gold standard as its category is ''World: Français: Régional: Europe: France: Régions: Haute-Normandie: Eure: Commerce et économie: Gastronomie et alimentation', however the page describes wine brands
+--E.g. the URL http://www.vin-gastronomie.com/ is not classed as should be blocked in the gold standard as its category is ''World: Francais: Regional: Europe: France: Regions: Haute-Normandie: Eure: Commerce et economie: Gastronomie et alimentation', however the page describes wine brands
 
 -Potential improvements:
 --Classifying content of the page to mine topics discussed therein - i.e. basic semantic analysis of the content
