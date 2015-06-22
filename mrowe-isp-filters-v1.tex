@@ -177,27 +177,42 @@ To do
 %% Background %%
 %%
 \section*{Introduction}
-Context/Problem
--Introduction of UK ISP Web Filters
--Questions over:
---the need for this (cite ofcom survey states)
---their accuracy, given that the ISPs use third-party systems or categorisations
---how they can be held to account
---who is responsible for their oversight (this is left vague)
+
+%Context/Problem
+%-Introduction of UK ISP Web Filters
+%-Questions over:
+%--the need for this (cite ofcom survey states)
+%--their accuracy, given that the ISPs use third-party systems or categorisations
+%--how they can be held to account
+%--who is responsible for their oversight (this is left vague)
+
+In 2013, the United Kingdom government instructed all UK-based Internet Service Providers (ISPs) to provide new customers with an `\textit{unavoidable}' choice: \textit{to turn on web filtering, or not}. 
+This was presented to such customers as a web-based form to which the customers provided their answer; and should the customer select \textit{yes} then for certain ISPs additional questions would be asked about the level of filtering required.
+Such web filtering was mandated in order to protect children from adult content (e.g. pornography, alcohol, and drugs), and to ensure that they can browse and use the Web in a safe manner.
+However after one year of the provision of such filters, an Ofcom report\footnote{\url{http://stakeholders.ofcom.org.uk/internet/internet-safety-2}} found that for new ISP customers, who were offered the choice of filtering uptake ranged across ISPs from only 5\% to 36\%.
+
+During the period since the filters inception, various news outlets have reported on examples of `\textit{overblocking}' by ISPs - where sites are blocked that should not have been - such as sexual health advice blogs, charity web sites, addiction-support sites, and politics-related web sites and opinion blogs.
+This has led to questions being raised as to the accuracy of the filters, what they are blocking that they should not be (\textit{overblocking}), and what sites they are not filtering out that they should be (\textit{underblocking}); in sum, calling into question the \textit{efficacy} of the filters and the degree of censorship that they are enabling.
+Despite such questions being raised, little is known of how effective the filters are, as the ISPs do not report on their accuracy.
+Motivated by this current lack of understanding, in this paper we investigate the following three research questions:
+
+\begin{enumerate}
+	\item \textbf{RQ1}: How can we understand how UK ISP Web Filters function, and how accurate they are?
+	\item \textbf{RQ2}: How reliable are the filters at blocking content, in terms of both overblocking and underblocking across different categories of sites? And are there certain categories of web sites that are error prone?
+	\item \textbf{RQ3}: How long does it take an ISP to fix an error?
+\end{enumerate}
+
+In order to investigate the above questions, we present a study of both UK ISPs and Mobile Service Providers' (MSPs) filters using data collected by the Open Rights Group\footnote{A non-profit UK-based organisation who campaign for and work to promote digital rights} as part of their Blocked.org.uk\footnote{\url{https://www.blocked.org.uk/}} project.
+The aim of the project was to \textit{probe} a range of Internet (ISPs) and Mobile Service Providers (MSPs) with a collection of URLs and collect examples of blocked web sites.
+We follow a \textit{data science} approach by first performing exploratory analysis at the \textit{macro} level of what domains are commonly blocked and what categories of sites are blocked by the filters, before then investigating the accuracy of the filters and to identify any categories of sites that are routinely \textit{overblocked} and \textit{underblocked} - thereby performing a relational study of filters and site categories.
+
+This work is the first to investigate the performance of UK ISP web filters and to provide evidence of both overblocking and underblocking.
+For that reason, the work has implications for the domain of digital rights and censorship, and also data science in the methodology that we follow in investigating web filters' performance through data.
 
 
-Motivation:
--If we can study and therefore understand how web filters function, then we can also gauge their accuracy and in turn perceive how effective they are. We can also understand what the by-products are of this censorship
 
-Research Questions:
--Can we understand how UK ISP Web Filters function, and how accurate they are?
--Are they reliable at blocking content, in terms of both overblocking and underblocking? And are there certain categories of web sites that are error prone?
--How long does it take an ISP to fix an error?
 
-This paper presents the first systematic study of UK ISPs' web filters, how they function, their accuracy, and their failings.
-We take a data science perspective and use data extracted from ISP filter probes
 
-We adopt a macro-to-macro analysis of the data to first examine 
 
 
 
