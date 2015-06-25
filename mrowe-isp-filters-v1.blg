@@ -1,68 +1,51 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99c (TeX Live 2009)
 The top-level auxiliary file: mrowe-isp-filters-v1.aux
 The style file: bmc-mathphys.bst
-Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
-Reallocated global_strs (elt_size=20001) to 20 items from 10.
-Reallocated glb_str_end (elt_size=4) to 20 items from 10.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ORG-Filters-Paper.bib
+Warning--entry type for "ooni2015" isn't style-file defined
+--line 20 of file ORG-Filters-Paper.bib
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 9 entries,
+Warning--to sort, need author or key in ooni2015
+You've used 13 entries,
             7128 wiz_defined-function locations,
-            1178 strings with 10974 characters,
-and the built_in function-call counts, 194989 in all, are:
-= -- 35811
-> -- 301
-< -- 179
-+ -- 22032
-- -- 95
-* -- 5232
-:= -- 33989
-add.period$ -- 12
-call.type$ -- 9
-change.case$ -- 114
-chr.to.int$ -- 372
-cite$ -- 9
-duplicate$ -- 858
-empty$ -- 2658
-format.name$ -- 292
-if$ -- 49889
+            1195 strings with 11395 characters,
+and the built_in function-call counts, 266660 in all, are:
+= -- 49631
+> -- 337
+< -- 193
++ -- 30881
+- -- 115
+* -- 6595
+:= -- 46302
+add.period$ -- 16
+call.type$ -- 13
+change.case$ -- 151
+chr.to.int$ -- 376
+cite$ -- 15
+duplicate$ -- 1103
+empty$ -- 3207
+format.name$ -- 340
+if$ -- 68538
 int.to.chr$ -- 1
-int.to.str$ -- 26
-missing$ -- 305
-newline$ -- 305
-num.names$ -- 45
-pop$ -- 387
+int.to.str$ -- 35
+missing$ -- 429
+newline$ -- 379
+num.names$ -- 60
+pop$ -- 544
 preamble$ -- 1
-purify$ -- 43
-quote$ -- 18
-skip$ -- 21612
+purify$ -- 59
+quote$ -- 26
+skip$ -- 30085
 stack$ -- 0
-substring$ -- 18839
-swap$ -- 286
-text.length$ -- 166
+substring$ -- 25317
+swap$ -- 309
+text.length$ -- 220
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 372
-warning$ -- 0
-while$ -- 339
+type$ -- 481
+warning$ -- 1
+while$ -- 418
 width$ -- 0
-write$ -- 392
+write$ -- 482
+(There were 2 warnings)

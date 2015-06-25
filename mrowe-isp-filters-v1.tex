@@ -207,6 +207,13 @@ In order to investigate the above questions, we present a study of both UK ISPs 
 The aim of the project was to \textit{probe} a range of Internet (ISPs) and Mobile Service Providers (MSPs) with a collection of URLs and collect examples of blocked and unblocked web sites.
 In performing this study, we follow a \textit{data science} approach by first performing exploratory analysis at the \textit{macro} level of what domains are commonly blocked and what categories of sites are blocked by the filters, before then investigating the accuracy of the filters and to identify any categories of sites that are routinely \textit{overblocked} and \textit{underblocked}, thus performing a relational study between filters and their accuracy, and site categories.
 
+This paper makes the following contributions:
+\begin{enumerate}
+	\item An empirical characterisation of UK ISPs' and MSPs' filtering accuracy over time.
+	\item Evidence of overblocked and underblocked sites by UK ISPs and MSPs.
+	\item A computational framework harnessing Apache Spark for parallelised processing of probe data.
+\end{enumerate}
+
 This work is the first to investigate the performance of UK ISP web filters and to provide evidence of both overblocking and underblocking.
 For that reason, the work has huge potential for implications on the domains of digital rights and censorship, and also data science in the methodology that we follow in investigating web filters' performance through data - so-called `\textit{data-driven digital accountability}'. 
 We begin this paper by first explaining related works study web filtering technology and web censorship, and the inherent impact of both; before then moving on to outlining which Internet and Mobile Service Providers.
@@ -223,67 +230,48 @@ In order to provide full transparency of how this paper's results and findings w
 
 \clearpage
 \section*{Related Work}
+To date, the investigation and exploration of web filtering has been largely concentrated in the literature around \textit{censorship}, despite the evocative-nature of the term.
+For instance, early work by Adkeniz \cite{akdeniz2001internet} argued against censorship as rhetoric was emerging around the need to censor the Internet - largely in order to protect under-18s from being exposed to potentially harmful content.
+Adkeniz's view was that free speech must be maintained here, and that filtering must only be performed with the correct safeguards in place - to ensure correct application.
+McIntyre and Scott \cite{mcintyre2008internet} expanded over this line of work by examining the role of web filtering and governance.
+The authors argued that while existing forms of censorship are mandated by politicians, web filtering follows a different route and involves different actors (e.g. third-party companies), thereby reducing the transparency surrounding the process and the accountability that accompanies this.
 
-Studies of web filtering can divided into the different levels of filtering that they investigate:
--State
--ISP
--Organisation
+The rise in state censorship of the Internet in countries such as China, Syria, Saudia Arabia, and Turkey, has led to a body of work attempting to understand what filtering mechanisms are at play, and how and whether such mechanisms are being circumvented.
+For instance, Verkamp \& Gupta \cite{verkamp2012inferring} looked at different mechanisms by which web censorship takes place throughout different countries (e.g. Turkey, Saudi Arabia).
+The authors mapped out the landscape of filtering mechanisms, finding: different triggers (e.g. hostname, IP address), and modes of censorship application (e.g. filter request, modify response); in doing so, the authors were able to devise a system to probe which URLs were blocked and by whom.
+Similar work by Dalek et al. \cite{dalek2013method} presented a method to detect which filtering technology is being used for censorship, again focussing on state-level censorship.
+Their approach demonstrated that a combination of HTTP headers' keywords and path information can be used to identify known filtering technologies being used (e.g. Netsweeper).
 
-\cite{akdeniz2001internet}
--Adkeniz argued against censorship back in 2001 when discourse emerged around censoring internet content in order to protect under-18s from being exposed to the web, his view was that free speech must be maintained here.
--Aim: to understand moral basis for filtering
+The expanse of web filtering across states has seen the creation of community-led internet-wide initiatives to monitor censorship.
+One such initiative is the OpenNet Initiative (ONI)\footnote{\url{https://opennet.net/}} run with the intention of gathering evidence of censorship and providing the technical infrastructure to monitor the use of Internet filtering.
+Work by Crete et al. \cite{crete2013not} used data provided by ONI to understand how censorship is performed and why this takes place.
+The authors described a by-product of censorship known as `\textit{collateral filtering}' where filtering leads to other content being blocked inadvertently - i.e. so-called overblocking.
+This notion of \textit{collateral filtering} is reinforced by Murdoch \& Roberts \cite{murdoch2013internet} when examining the role of censorship and its perceptions, as they state: ``\textit{...this over-blocking is an underhanded attempt to avoid criticism, but other times it proves to be a mistake resulting from overzealous interpretations of rules or collateral damage due to technical limitations in censorship techniques.}''
+Similar to ONI, the Tor project's Open Observatory of Network Interference (OONI) software \cite{ooni2015} has been used throughout community-led initiatives to monitor which URLs are blocked, where and when.
+While Aceto et al. \cite{aceto2015monitoring} provided a platform known as the User-based Internet Censorship Analysis (UBICA) platform to allow users to run tests over their ISP connection to ascertain what is being blocked.
+Given the myriad ways in which web filtering can function (DNS-tampering, keyword blocking), we refer the reader to the detailed and comprehensive review of approaches for detecting web filtering by Aceto and Pescape \cite{aceto2015internet}
 
-\cite{mcintyre2008internet}
--McIntyre and Scott examine the role of web filtering with governance
--The authors argue that while existing forms of censorship are mandated by politicians, web filtering follows a different route and involves different actors (e.g. third-party companies), thereby reducing the transparency surrounding the process and the accountability that accompanies this.
--Aim: to explore filtering as a mechanism of governance and the role of accountability
-
-
-\cite{verkamp2012inferring}
--Looks at different mechanisms by which web censorship takes place by different states (e.g. Turkey, Saudi Arabia)
--Finds different triggers (e.g. hostname, IP address) and modes of censorship application (e.g. filter request, modify response)
--Devised a system to probe which URLs were blocked and by whom
-
-\cite{esnaashari2014restrictions}
--Focussed on organisation level filtering in New Zealand - e.g. in libraries, cafes, etc.
--Found that different organisations blocked different types of content
--Moved away from studying state-level web filtering
-
-\cite{dalek2013method}
--Presents a method to detect which filtering technology is being used for censorship
--Looks at state level censorship
--Uses a combination of HTTP headers' keywords and path information to identify known filtering technologies being used (e.g. Netsweeper).
-
-\cite{aceto2015monitoring}
--Recent work examining what domains are blocked in which country by state-level filtering
--Provides a platform known as the User-based Internet Censorship Analysis (UBICA) platform, to allow users to run tests over their ISP connection to ascertain what is being blocked.
--The authors contrast various countries' level of censorship of different categories of sites (e.g. South Korea censoring adult content).
-
-\cite{murdoch2013internet}
--Looks at the role of censorship to date and how this is viewed
--Mentions that ``\textit{ Sometimes, this over-blocking is an underhanded attempt to avoid criticism, but other times it proves to be a mistake resulting from overzealous interpretations of rules or collateral damage due to technical limitations in censorship techniques. }''
-
-\cite{crete2013not}
--Describes the OpenNet Initiative (ONI) as a means to understand how censorship is performed and why this takes place
--The authors describe the by-product of censorship known as `\textit{collateral filtering}' where filtering leads to other content being blocked inadvertently 
--The authors state that ``\textit{We must understand what type of content censors are trying to block — a challenging
-determination that requires knowledge of the domestic political and social context.}'' - however, in this paper we can do just that
+The study of web filtering and its mechanisms transcends various layers include state, as in \cite{verkamp2012inferring, dalek2013method, crete2013not, aceto2015monitoring}, and organisations.
+For the latter Esnaashari et al. \cite{esnaashari2014restrictions} focussed on web filtering in New Zealand throughout organisations that provide web access- e.g. in libraries, cafes, etc..
+Unsurprisingly, the authors found that different organisations blocked different types of content and applied different levels of filtering.
 
 \subsection*{Computing filter accuracy}
+One of the core aims of our work is to understand how well UK ISPs and MSPs perform web filtering, thereby allowing the public to understand how reliable web filtering is.
+Prior work has sought to gauge the degree of filtering, however the limitation to state censorship restricts researchers from knowing what \textit{should} be blocked - and thus allowing accuracy of filters to be gauged.
+One of the first works in this direction was produced by researchers from Google's Zion VLab \cite{Anonymous:2012:CDI:2317307.2317311} who examined the extent to which collateral damage occurs through state-level censorship programmes.
+The authors found that evidence of DNS injectors along query transit paths, meaning that routing of hostname responses is injected as a form of filtering - happening within the transit-phase of a hostname being queried and then resolved.
+More recent work by Nabi \cite{nabi2014censorship} investigated the uptake of certain web sites in countries where they have been blocked.
+The author demonstrated that sites that had been publicly declared as blocked actually increased in their visits post-blocking, thereby suggesting evidence of a `\textit{Streisand effect}'.
 
-\cite{Anonymous:2012:CDI:2317307.2317311}
--Examines the extent to which collateral damage occurs through state-level censorship programmes
--Found evidence of DNS injectors along query transit paths, this means that routing of hostname responses is injected as a form of filtering - happening within the transit-phase of a hostname being queried and then resolved.
+Despite the wide body of work detection filtering approaches and their usage across various countries, we could only find one piece of work that empirically characterised web filter accuracy.
+The work in question, by Stark \cite{stark2007effectiveness}, used a sample of URLs categorised as either adult or clean, and passed these URLs through various home PC web filters (e.g. McAfee, CyberPatrol) looking for: (i) the underblocking percentage (i.e. the percentage of URLs that should have been blocked that weren't), and; (ii) the overblocking percentage (i.e. the percentage of URLs that were blocked that should not have been).
+Stark's results ranged from minimum of 6.2\% to 43.4\% underblocking percentages for various filters, and 0.4\% to 20.7\% for overblocking; thereby indicating that filters perform better at minimising incorrect blocks than detecting what it should be blocked.
+As of writing this paper, we were unable to find any literature that examined the performance of UK ISP and MSP web filters, nor their uptake - aside from the Ofcom Internet Safety report in 2014.\footnote{\url{http://stakeholders.ofcom.org.uk/internet/internet-safety-2}}
 
-
--Explain existing studies of web censorship
---Explain how the UK approach is different as it is via UK ISPs and therefore pushed out to the private sector
-
-Gaps:
--Current work has not quantified the accuracy of filters and the degree to which `\textit{collateral filtering}' is evident
---This is largely due to the lack of prescribed lists of gold standard blocks
---Hence, we can, for the first time, derive such lists from ISP descriptions of their filters' intended categories of blocked sites - thereby following the guidance of \cite{crete2013not}
-
+The above works demonstrate that researchers have largely concentrated on understanding how state and organisation-level censorship takes place, and the myriad ways in which filtering operates at a technical level.
+As such, existing work has yet to quantify web filters' accuracy and the degree to which `\textit{collateral filtering}' is evident (i.e. overblocking and underblocking); we believe that this is largely due to the lack of prescribed lists of gold standard blocks.
+In this paper we present for the first time evidence of such collateral filtering and provide empirical evidence of how accurate ISP and MSP web filters are.
+This is enabled, as we will detail below, by examining ISPs' and MSPs' descriptions of their filters and their intended categories of blocked sites, which we operationalise through modelling filters as \textit{pseudo-classifiers} and computing their accuracy against a gold-standard.
 
 
 \clearpage
@@ -559,6 +547,7 @@ Explain gauging filter accuracy using existing measures from classification lite
 -Explain how we calculate accuracy based on which requests were blocked and which were not blocked - we have to do this as a URL can go from blocked to unblocked and vice-versa
 --Question: how often is a given URL periodically tested for a block?
 
+Compare results to that of \cite{stark2007effectiveness}
 
 \subsubsection*{General Accuracy}
 

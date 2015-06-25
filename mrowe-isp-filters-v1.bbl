@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{13}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -159,6 +159,26 @@ pp. \bfpage{143}--\blpage{157}.
 \endbibitem
 
 %%% 9
+\bibitem{aceto2015internet}
+\begin{botherref}
+\oauthor{\bsnm{Aceto}, \binits{G.}},
+\oauthor{\bsnm{Pescap{\'e}}, \binits{A.}}:
+Internet censorship detection: A survey.
+Computer Networks
+(2015)
+\end{botherref}
+\endbibitem
+
+%%% 10
+\bibitem{ooni2015}
+\begin{botherref}
+The Tor Project. Ooni: Open Observatory of Network Interference.
+\url{https://ooni.torproject.org/}
+Accessed 25/6/2015
+\end{botherref}
+\endbibitem
+
+%%% 11
 \bibitem{Anonymous:2012:CDI:2317307.2317311}
 \begin{barticle}
 \bauthor{\bsnm{Anonymous}}:
@@ -169,6 +189,26 @@ pp. \bfpage{143}--\blpage{157}.
 (\byear{2012}).
 doi:\doiurl{10.1145/2317307.2317311}
 \end{barticle}
+\endbibitem
+
+%%% 12
+\bibitem{nabi2014censorship}
+\begin{botherref}
+\oauthor{\bsnm{Nabi}, \binits{Z.}}:
+Censorship is futile.
+arXiv preprint arXiv:1411.0225
+(2014)
+\end{botherref}
+\endbibitem
+
+%%% 13
+\bibitem{stark2007effectiveness}
+\begin{botherref}
+\oauthor{\bsnm{Stark}, \binits{P.B.}}:
+The effectiveness of internet content filters.
+University of California, Berkeley
+(2007)
+\end{botherref}
 \endbibitem
 
 \end{thebibliography}
@@ -302,6 +342,23 @@ doi:\doiurl{10.1145/2317307.2317311}
 </bibl>
 
 <bibl id="B9">
+  <title><p>Internet Censorship detection: A survey</p></title>
+  <aug>
+    <au><snm>Aceto</snm><fnm>G</fnm></au>
+    <au><snm>Pescap{\'e}</snm><fnm>A</fnm></au>
+  </aug>
+  <source>Computer Networks</source>
+  <publisher>Elsevier</publisher>
+  <pubdate>2015</pubdate>
+</bibl>
+
+<bibl id="B10">
+  <title><p>The Tor Project. Ooni: Open observatory of network
+  interference</p></title>
+  <url>https://ooni.torproject.org/</url>
+</bibl>
+
+<bibl id="B11">
   <title><p>The Collateral Damage of Internet Censorship by DNS
   Injection</p></title>
   <aug>
@@ -315,6 +372,24 @@ doi:\doiurl{10.1145/2317307.2317311}
   <fpage>21</fpage>
   <lpage>-27</lpage>
   <url>http://doi.acm.org/10.1145/2317307.2317311</url>
+</bibl>
+
+<bibl id="B12">
+  <title><p>Censorship is futile</p></title>
+  <aug>
+    <au><snm>Nabi</snm><fnm>Z</fnm></au>
+  </aug>
+  <source>arXiv preprint arXiv:1411.0225</source>
+  <pubdate>2014</pubdate>
+</bibl>
+
+<bibl id="B13">
+  <title><p>The Effectiveness of Internet Content Filters</p></title>
+  <aug>
+    <au><snm>Stark</snm><fnm>PB</fnm></au>
+  </aug>
+  <source>University of California, Berkeley</source>
+  <pubdate>2007</pubdate>
 </bibl>
 
 </refgrp>
