@@ -191,9 +191,10 @@ This was presented to such customers as a web-based form to which the customers 
 Such web filtering was mandated in order to protect children from adult content (e.g. pornography, alcohol, and drugs), and to ensure that they can browse and use the Web in a safe manner.
 However after one year of the provision of such filters, an Ofcom report\footnote{\url{http://stakeholders.ofcom.org.uk/internet/internet-safety-2}} found that for new ISP customers, who were offered the choice of filtering uptake ranged across ISPs from only 5\% to 36\%.
 
-During the period since the filters inception, various news outlets have reported on examples of `\textit{overblocking}' by ISPs - where sites are blocked that should not have been - such as sexual health advice blogs, charity web sites, addiction-support sites, and politics-related web sites and opinion blogs.
-This has led to questions being raised as to the accuracy of the filters, what they are blocking that they should not be (\textit{overblocking}), and what sites they are not filtering out that they should be (\textit{underblocking}); in sum, calling into question the \textit{efficacy} of the filters and the degree of censorship that they are enabling.
-Despite such questions being raised, little is known of how effective the filters are, as the ISPs do not report on their accuracy.
+During the period since the filters' inception, various news outlets have reported on examples of `\textit{overblocking}' by ISPs - where sites are blocked that should not have been - such as sexual health advice blogs, charity web sites, addiction-support sites, and politics-related web sites and opinion blogs.
+This has led to questions being raised as to the accuracy of the filters, what they are blocking that they should not be (\textit{overblocking}), and what sites they are not filtering out that they should be (\textit{underblocking}).
+As such, this growing discourse is  calling into question the \textit{efficacy} of the filters and the degree of censorship that they are enabling.
+Despite such questions being raised, at present little is known of how effective the filters are, as the ISPs do not report on their accuracy.
 Motivated by this current lack of understanding, in this paper we investigate the following three research questions:
 
 \begin{enumerate}
@@ -203,11 +204,15 @@ Motivated by this current lack of understanding, in this paper we investigate th
 \end{enumerate}
 
 In order to investigate the above questions, we present a study of both UK ISPs and Mobile Service Providers' (MSPs) filters using data collected by the Open Rights Group\footnote{A non-profit UK-based organisation who campaign for and work to promote digital rights} as part of their Blocked.org.uk\footnote{\url{https://www.blocked.org.uk/}} project.
-The aim of the project was to \textit{probe} a range of Internet (ISPs) and Mobile Service Providers (MSPs) with a collection of URLs and collect examples of blocked web sites.
-We follow a \textit{data science} approach by first performing exploratory analysis at the \textit{macro} level of what domains are commonly blocked and what categories of sites are blocked by the filters, before then investigating the accuracy of the filters and to identify any categories of sites that are routinely \textit{overblocked} and \textit{underblocked} - thereby performing a relational study of filters and site categories.
+The aim of the project was to \textit{probe} a range of Internet (ISPs) and Mobile Service Providers (MSPs) with a collection of URLs and collect examples of blocked and unblocked web sites.
+In performing this study, we follow a \textit{data science} approach by first performing exploratory analysis at the \textit{macro} level of what domains are commonly blocked and what categories of sites are blocked by the filters, before then investigating the accuracy of the filters and to identify any categories of sites that are routinely \textit{overblocked} and \textit{underblocked}, thus performing a relational study between filters and their accuracy, and site categories.
 
 This work is the first to investigate the performance of UK ISP web filters and to provide evidence of both overblocking and underblocking.
-For that reason, the work has implications for the domain of digital rights and censorship, and also data science in the methodology that we follow in investigating web filters' performance through data.
+For that reason, the work has huge potential for implications on the domains of digital rights and censorship, and also data science in the methodology that we follow in investigating web filters' performance through data - so-called `\textit{data-driven digital accountability}'. 
+We begin this paper by first explaining related works study web filtering technology and web censorship, and the inherent impact of both; before then moving on to outlining which Internet and Mobile Service Providers.
+We follow this up by describing how the \textit{probe} system works for monitoring web filters, before then presenting evidence of what domains and categories of sites are being blocked and by whom.
+In the proceeding sections we then explain how we gauge filter accuracy, present qualitative examples of incorrectly blocked sites, and investigate how quickly an ISP responds to fix an incorrect block.
+In order to provide full transparency of how this paper's results and findings were derived, both the software used to analyse the web filters and the results from our analyses are available on the Open Rights Group's Github repository.\footnote{\url{https://github.com/openrightsgroup/cmp-analysis}}
 
 
 
@@ -216,12 +221,73 @@ For that reason, the work has implications for the domain of digital rights and 
 
 
 
-
+\clearpage
 \section*{Related Work}
+
+Studies of web filtering can divided into the different levels of filtering that they investigate:
+-State
+-ISP
+-Organisation
+
+\cite{akdeniz2001internet}
+-Adkeniz argued against censorship back in 2001 when discourse emerged around censoring internet content in order to protect under-18s from being exposed to the web, his view was that free speech must be maintained here.
+-Aim: to understand moral basis for filtering
+
+\cite{mcintyre2008internet}
+-McIntyre and Scott examine the role of web filtering with governance
+-The authors argue that while existing forms of censorship are mandated by politicians, web filtering follows a different route and involves different actors (e.g. third-party companies), thereby reducing the transparency surrounding the process and the accountability that accompanies this.
+-Aim: to explore filtering as a mechanism of governance and the role of accountability
+
+
+\cite{verkamp2012inferring}
+-Looks at different mechanisms by which web censorship takes place by different states (e.g. Turkey, Saudi Arabia)
+-Finds different triggers (e.g. hostname, IP address) and modes of censorship application (e.g. filter request, modify response)
+-Devised a system to probe which URLs were blocked and by whom
+
+\cite{esnaashari2014restrictions}
+-Focussed on organisation level filtering in New Zealand - e.g. in libraries, cafes, etc.
+-Found that different organisations blocked different types of content
+-Moved away from studying state-level web filtering
+
+\cite{dalek2013method}
+-Presents a method to detect which filtering technology is being used for censorship
+-Looks at state level censorship
+-Uses a combination of HTTP headers' keywords and path information to identify known filtering technologies being used (e.g. Netsweeper).
+
+\cite{aceto2015monitoring}
+-Recent work examining what domains are blocked in which country by state-level filtering
+-Provides a platform known as the User-based Internet Censorship Analysis (UBICA) platform, to allow users to run tests over their ISP connection to ascertain what is being blocked.
+-The authors contrast various countries' level of censorship of different categories of sites (e.g. South Korea censoring adult content).
+
+\cite{murdoch2013internet}
+-Looks at the role of censorship to date and how this is viewed
+-Mentions that ``\textit{ Sometimes, this over-blocking is an underhanded attempt to avoid criticism, but other times it proves to be a mistake resulting from overzealous interpretations of rules or collateral damage due to technical limitations in censorship techniques. }''
+
+\cite{crete2013not}
+-Describes the OpenNet Initiative (ONI) as a means to understand how censorship is performed and why this takes place
+-The authors describe the by-product of censorship known as `\textit{collateral filtering}' where filtering leads to other content being blocked inadvertently 
+-The authors state that ``\textit{We must understand what type of content censors are trying to block — a challenging
+determination that requires knowledge of the domestic political and social context.}'' - however, in this paper we can do just that
+
+\subsection*{Computing filter accuracy}
+
+\cite{Anonymous:2012:CDI:2317307.2317311}
+-Examines the extent to which collateral damage occurs through state-level censorship programmes
+-Found evidence of DNS injectors along query transit paths, this means that routing of hostname responses is injected as a form of filtering - happening within the transit-phase of a hostname being queried and then resolved.
+
+
 -Explain existing studies of web censorship
 --Explain how the UK approach is different as it is via UK ISPs and therefore pushed out to the private sector
 
-\section*{Studied Internet Service Providers}
+Gaps:
+-Current work has not quantified the accuracy of filters and the degree to which `\textit{collateral filtering}' is evident
+--This is largely due to the lack of prescribed lists of gold standard blocks
+--Hence, we can, for the first time, derive such lists from ISP descriptions of their filters' intended categories of blocked sites - thereby following the guidance of \cite{crete2013not}
+
+
+
+\clearpage
+\section*{Studied Internet and Mobile Service Providers}
 -Explain which internet service providers are included
 --Different blocking settings used and analysed (e.g. BT moderate, BT strict, etc.)
 -Explain what |SPs use which companies services
@@ -585,6 +651,36 @@ Explain gauging filter accuracy using existing measures from classification lite
 %Three: tp = 236.0 | tn = 280598.0 | fp = 1046.0 | fn = 137.0 | prec = 0.184 | rec = 0.633 | FPR = 0.004 | mcc = 0.340 | F1 = 0.285
 %Vodafone: tp = 254.0 | tn = 832797.0 | fp = 2819.0 | fn = 193.0 | prec = 0.083 | rec = 0.568 | FPR = 0.003 | mcc = 0.216 | F1 = 0.144
 
+\begin{table}[h!]
+\caption{Accuracy levels after applying keyword filtering for additional alcohol-related categories (e.g. brewery, wineries).}
+  \begin{tabular}{ l c c c c c c}
+    \hline
+     & Precision & Recall & FPR & MCC & F1 \\
+    \hline
+	BT & 0.418 & 0.619 & 0.006 & 0.505 & 0.499 \\
+    Sky & 0.191 & 0.236 & 0.003 & 0.210 & 0.211 \\
+    TalkTalk & 0.483 & 0.183 & 0.005 & 0.287 & 0.266 \\
+	VirginMedia & 0.112 & 0.512 & 0.002 & 0.239 & 0.184 \\
+	\hline    
+	EE & 0.281 & 0.637 & 0.002 & 0.422 & 0.390 \\
+	O2 & 0.218 & 0.699 & 0.002 & 0.390 & 0.333 \\
+	Three & 0.184 & 0.633 & 0.004 & 0.340 & 0.285 \\
+	Vodafone & 0.083 & 0.568 & 0.003 & 0.216 & 0.144 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+
+
+%BT: tp = 3995.0 | tn = 865766.0 | fp = 5551.0 | fn = 2456.0 | prec = 0.418 | rec = 0.619 | FPR = 0.006 | mcc = 0.505 | F1 = 0.499
+%Sky: tp = 607.0 | tn = 878427.0 | fp = 2576.0 | fn = 1961.0 | prec = 0.191 | rec = 0.236 | FPR = 0.003 | mcc = 0.210 | F1 = 0.211
+%TalkTalk: tp = 3994.0 | tn = 857742.0 | fp = 4272.0 | fn = 17779.0 | prec = 0.483 | rec = 0.183 | FPR = 0.005 | mcc = 0.287 | F1 = 0.266
+%VirginMedia: tp = 266.0 | tn = 881118.0 | fp = 2105.0 | fn = 254.0 | prec = 0.112 | rec = 0.512 | FPR = 0.002 | mcc = 0.239 | F1 = 0.184
+
+%EE: tp = 219.0 | tn = 269566.0 | fp = 561.0 | fn = 125.0 | prec = 0.281 | rec = 0.637 | FPR = 0.002 | mcc = 0.422 | F1 = 0.390
+%O2: tp = 230.0 | tn = 494277.0 | fp = 823.0 | fn = 99.0 | prec = 0.218 | rec = 0.699 | FPR = 0.002 | mcc = 0.390 | F1 = 0.333
+%Three: tp = 236.0 | tn = 280598.0 | fp = 1046.0 | fn = 137.0 | prec = 0.184 | rec = 0.633 | FPR = 0.004 | mcc = 0.340 | F1 = 0.285
+%Vodafone: tp = 254.0 | tn = 832797.0 | fp = 2819.0 | fn = 193.0 | prec = 0.083 | rec = 0.568 | FPR = 0.003 | mcc = 0.216 | F1 = 0.144
 
 
 Qualitative Examples of Blocks:
@@ -686,7 +782,7 @@ Open Rights Group for providing the data and engineering the solution
 
 % if your bibliography is in bibtex format, use those commands:
 \bibliographystyle{bmc-mathphys} % Style BST file
-\bibliography{bmc_article}      % Bibliography file (usually '*.bib' )
+\bibliography{ORG-Filters-Paper}      % Bibliography file (usually '*.bib' )
 
 
 

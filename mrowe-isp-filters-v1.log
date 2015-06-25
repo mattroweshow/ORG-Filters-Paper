@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.15)  9 JUN 2015 09:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.1.15)  25 JUN 2015 13:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -431,13 +431,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5.5> on input line 102.
 
-LaTeX Warning: Reference `lancsthanks' on page 1 undefined on input line 102.
-
-
 LaTeX Warning: Reference `au1thanks' on page 1 undefined on input line 102.
-
-
-LaTeX Warning: Reference `orgthanks' on page 1 undefined on input line 108.
 
 \address@lancs=\toks21
 \address@org=\toks22
@@ -446,11 +440,8 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 125.
 
-LaTeX Warning: Reference `orgthanks' on page 1 undefined on input line 125.
-
-
 LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <8> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 235.
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 209.
 
 
 
@@ -460,135 +451,139 @@ Overfull \hbox (1.0pt too wide) has occurred while \output is active
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-] [2]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 265.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 265.
+] [2] [3
 
-<imgs/ts-global-requests.pdf, id=20, 722.7pt x 180.675pt>
+] [4] [5
+
+]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 345.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 345.
+
+<imgs/ts-global-requests.pdf, id=29, 722.7pt x 180.675pt>
 File: imgs/ts-global-requests.pdf Graphic file (type pdf)
 
 <use imgs/ts-global-requests.pdf>
-Package pdftex.def Info: imgs/ts-global-requests.pdf used on input line 266.
+Package pdftex.def Info: imgs/ts-global-requests.pdf used on input line 346.
 (pdftex.def)             Requested size: 324.8978pt x 81.22304pt.
 
-<imgs/BT-ts-requests.pdf, id=21, 722.7pt x 180.675pt>
+<imgs/BT-ts-requests.pdf, id=30, 722.7pt x 180.675pt>
 File: imgs/BT-ts-requests.pdf Graphic file (type pdf)
 
 <use imgs/BT-ts-requests.pdf>
-Package pdftex.def Info: imgs/BT-ts-requests.pdf used on input line 273.
+Package pdftex.def Info: imgs/BT-ts-requests.pdf used on input line 353.
 (pdftex.def)             Requested size: 176.89198pt x 44.22302pt.
 
-<imgs/BT-Moderate-ts-requests.pdf, id=22, 722.7pt x 180.675pt>
+<imgs/BT-Moderate-ts-requests.pdf, id=31, 722.7pt x 180.675pt>
 File: imgs/BT-Moderate-ts-requests.pdf Graphic file (type pdf)
 
 <use imgs/BT-Moderate-ts-requests.pdf>
-Package pdftex.def Info: imgs/BT-Moderate-ts-requests.pdf used on input line 27
+Package pdftex.def Info: imgs/BT-Moderate-ts-requests.pdf used on input line 35
 3.
 (pdftex.def)             Requested size: 176.89198pt x 44.22302pt.
 
-<imgs/Plusnet-ts-requests.pdf, id=23, 722.7pt x 180.675pt>
+<imgs/Plusnet-ts-requests.pdf, id=32, 722.7pt x 180.675pt>
 File: imgs/Plusnet-ts-requests.pdf Graphic file (type pdf)
 
 <use imgs/Plusnet-ts-requests.pdf>
-Package pdftex.def Info: imgs/Plusnet-ts-requests.pdf used on input line 274.
+Package pdftex.def Info: imgs/Plusnet-ts-requests.pdf used on input line 354.
 (pdftex.def)             Requested size: 176.89198pt x 44.22302pt.
 
-<imgs/Sky-ts-requests.pdf, id=24, 722.7pt x 180.675pt>
+<imgs/Sky-ts-requests.pdf, id=33, 722.7pt x 180.675pt>
 File: imgs/Sky-ts-requests.pdf Graphic file (type pdf)
 
 <use imgs/Sky-ts-requests.pdf>
-Package pdftex.def Info: imgs/Sky-ts-requests.pdf used on input line 274.
+Package pdftex.def Info: imgs/Sky-ts-requests.pdf used on input line 354.
 (pdftex.def)             Requested size: 176.89198pt x 44.22302pt.
 
-<imgs/TalkTalk-ts-requests.pdf, id=25, 722.7pt x 180.675pt>
+<imgs/TalkTalk-ts-requests.pdf, id=34, 722.7pt x 180.675pt>
 File: imgs/TalkTalk-ts-requests.pdf Graphic file (type pdf)
 
 <use imgs/TalkTalk-ts-requests.pdf>
-Package pdftex.def Info: imgs/TalkTalk-ts-requests.pdf used on input line 275.
+Package pdftex.def Info: imgs/TalkTalk-ts-requests.pdf used on input line 355.
 (pdftex.def)             Requested size: 176.89198pt x 44.22302pt.
 
-<imgs/VirginMedia-ts-requests.pdf, id=26, 722.7pt x 180.675pt>
+<imgs/VirginMedia-ts-requests.pdf, id=35, 722.7pt x 180.675pt>
 File: imgs/VirginMedia-ts-requests.pdf Graphic file (type pdf)
 
 <use imgs/VirginMedia-ts-requests.pdf>
-Package pdftex.def Info: imgs/VirginMedia-ts-requests.pdf used on input line 27
+Package pdftex.def Info: imgs/VirginMedia-ts-requests.pdf used on input line 35
 5.
 (pdftex.def)             Requested size: 176.89198pt x 44.22302pt.
 
-Overfull \hbox (5.28397pt too wide) in paragraph at lines 273--277
+Overfull \hbox (5.28397pt too wide) in paragraph at lines 353--357
  [][][] 
  []
 
 
-Overfull \hbox (5.28397pt too wide) in paragraph at lines 273--277
+Overfull \hbox (5.28397pt too wide) in paragraph at lines 353--357
  [][] 
  []
 
 
-Overfull \hbox (5.28397pt too wide) in paragraph at lines 273--277
+Overfull \hbox (5.28397pt too wide) in paragraph at lines 353--357
  [][] 
  []
 
-<imgs/EE-ts-requests.pdf, id=27, 722.7pt x 180.675pt>
+<imgs/EE-ts-requests.pdf, id=36, 722.7pt x 180.675pt>
 File: imgs/EE-ts-requests.pdf Graphic file (type pdf)
 
 <use imgs/EE-ts-requests.pdf>
-Package pdftex.def Info: imgs/EE-ts-requests.pdf used on input line 281.
+Package pdftex.def Info: imgs/EE-ts-requests.pdf used on input line 361.
 (pdftex.def)             Requested size: 176.89198pt x 44.22302pt.
 
-<imgs/O2-ts-requests.pdf, id=28, 722.7pt x 180.675pt>
+<imgs/O2-ts-requests.pdf, id=37, 722.7pt x 180.675pt>
 File: imgs/O2-ts-requests.pdf Graphic file (type pdf)
 
 <use imgs/O2-ts-requests.pdf>
-Package pdftex.def Info: imgs/O2-ts-requests.pdf used on input line 281.
+Package pdftex.def Info: imgs/O2-ts-requests.pdf used on input line 361.
 (pdftex.def)             Requested size: 176.89198pt x 44.22302pt.
 
-<imgs/T-Mobile-ts-requests.pdf, id=29, 722.7pt x 180.675pt>
+<imgs/T-Mobile-ts-requests.pdf, id=38, 722.7pt x 180.675pt>
 File: imgs/T-Mobile-ts-requests.pdf Graphic file (type pdf)
 
 <use imgs/T-Mobile-ts-requests.pdf>
-Package pdftex.def Info: imgs/T-Mobile-ts-requests.pdf used on input line 282.
+Package pdftex.def Info: imgs/T-Mobile-ts-requests.pdf used on input line 362.
 (pdftex.def)             Requested size: 176.89198pt x 44.22302pt.
 
-<imgs/Three-ts-requests.pdf, id=30, 722.7pt x 180.675pt>
+<imgs/Three-ts-requests.pdf, id=39, 722.7pt x 180.675pt>
 File: imgs/Three-ts-requests.pdf Graphic file (type pdf)
 
 <use imgs/Three-ts-requests.pdf>
-Package pdftex.def Info: imgs/Three-ts-requests.pdf used on input line 282.
+Package pdftex.def Info: imgs/Three-ts-requests.pdf used on input line 362.
 (pdftex.def)             Requested size: 176.89198pt x 44.22302pt.
 
-<imgs/VirginMobile-ts-requests.pdf, id=31, 722.7pt x 180.675pt>
+<imgs/VirginMobile-ts-requests.pdf, id=40, 722.7pt x 180.675pt>
 File: imgs/VirginMobile-ts-requests.pdf Graphic file (type pdf)
 
 <use imgs/VirginMobile-ts-requests.pdf>
-Package pdftex.def Info: imgs/VirginMobile-ts-requests.pdf used on input line 2
-83.
+Package pdftex.def Info: imgs/VirginMobile-ts-requests.pdf used on input line 3
+63.
 (pdftex.def)             Requested size: 176.89198pt x 44.22302pt.
 
-<imgs/Vodafone-ts-requests.pdf, id=32, 722.7pt x 180.675pt>
+<imgs/Vodafone-ts-requests.pdf, id=41, 722.7pt x 180.675pt>
 File: imgs/Vodafone-ts-requests.pdf Graphic file (type pdf)
 
 <use imgs/Vodafone-ts-requests.pdf>
-Package pdftex.def Info: imgs/Vodafone-ts-requests.pdf used on input line 283.
+Package pdftex.def Info: imgs/Vodafone-ts-requests.pdf used on input line 363.
 (pdftex.def)             Requested size: 176.89198pt x 44.22302pt.
 
-Overfull \hbox (5.28397pt too wide) in paragraph at lines 281--285
+Overfull \hbox (5.28397pt too wide) in paragraph at lines 361--365
  [][][] 
  []
 
 
-Overfull \hbox (5.28397pt too wide) in paragraph at lines 281--285
+Overfull \hbox (5.28397pt too wide) in paragraph at lines 361--365
  [][] 
  []
 
 
-Overfull \hbox (5.28397pt too wide) in paragraph at lines 281--285
+Overfull \hbox (5.28397pt too wide) in paragraph at lines 361--365
  [][] 
  []
 
-[3
+[6
 
  <./imgs/ts-global-requests.pdf> <./imgs/BT-ts-requests.pdf> <./imgs/BT-Moderat
 e-ts-requests.pdf> <./imgs/Plusnet-ts-requests.pdf> <./imgs/Sky-ts-requests.pdf
@@ -596,93 +591,93 @@ e-ts-requests.pdf> <./imgs/Plusnet-ts-requests.pdf> <./imgs/Sky-ts-requests.pdf
 s/EE-ts-requests.pdf> <./imgs/O2-ts-requests.pdf> <./imgs/T-Mobile-ts-requests.
 pdf> <./imgs/Three-ts-requests.pdf> <./imgs/VirginMobile-ts-requests.pdf> <./im
 gs/Vodafone-ts-requests.pdf>]
-<imgs/BT-blocked-pages-to-date.png, id=114, 481.8pt x 481.8pt>
+<imgs/BT-blocked-pages-to-date.png, id=123, 481.8pt x 481.8pt>
 File: imgs/BT-blocked-pages-to-date.png Graphic file (type png)
 
 <use imgs/BT-blocked-pages-to-date.png>
 Package pdftex.def Info: imgs/BT-blocked-pages-to-date.png used on input line 3
-06.
+86.
 (pdftex.def)             Requested size: 176.89198pt x 176.88844pt.
 
-<imgs/Plusnet-blocked-pages-to-date.png, id=116, 481.8pt x 481.8pt>
+<imgs/Plusnet-blocked-pages-to-date.png, id=125, 481.8pt x 481.8pt>
 File: imgs/Plusnet-blocked-pages-to-date.png Graphic file (type png)
 
 <use imgs/Plusnet-blocked-pages-to-date.png>
 Package pdftex.def Info: imgs/Plusnet-blocked-pages-to-date.png used on input l
-ine 306.
+ine 386.
 (pdftex.def)             Requested size: 176.89198pt x 176.88844pt.
 
-<imgs/Sky-blocked-pages-to-date.png, id=117, 481.8pt x 481.8pt>
+<imgs/Sky-blocked-pages-to-date.png, id=126, 481.8pt x 481.8pt>
 File: imgs/Sky-blocked-pages-to-date.png Graphic file (type png)
 
 <use imgs/Sky-blocked-pages-to-date.png>
 Package pdftex.def Info: imgs/Sky-blocked-pages-to-date.png used on input line 
-307.
+387.
 (pdftex.def)             Requested size: 176.89198pt x 176.88844pt.
 
-<imgs/TalkTalk-blocked-pages-to-date.png, id=118, 481.8pt x 481.8pt>
+<imgs/TalkTalk-blocked-pages-to-date.png, id=127, 481.8pt x 481.8pt>
 File: imgs/TalkTalk-blocked-pages-to-date.png Graphic file (type png)
 
 <use imgs/TalkTalk-blocked-pages-to-date.png>
 Package pdftex.def Info: imgs/TalkTalk-blocked-pages-to-date.png used on input 
-line 307.
+line 387.
 (pdftex.def)             Requested size: 176.89198pt x 176.88844pt.
 
-<imgs/VirginMedia-blocked-pages-to-date.png, id=119, 481.8pt x 481.8pt>
+<imgs/VirginMedia-blocked-pages-to-date.png, id=128, 481.8pt x 481.8pt>
 File: imgs/VirginMedia-blocked-pages-to-date.png Graphic file (type png)
 
 <use imgs/VirginMedia-blocked-pages-to-date.png>
 Package pdftex.def Info: imgs/VirginMedia-blocked-pages-to-date.png used on inp
-ut line 308.
+ut line 388.
 (pdftex.def)             Requested size: 176.89198pt x 176.88844pt.
 
-Overfull \hbox (5.28397pt too wide) in paragraph at lines 306--310
+Overfull \hbox (5.28397pt too wide) in paragraph at lines 386--390
  [][][] 
  []
 
 
-Overfull \hbox (5.28397pt too wide) in paragraph at lines 306--310
+Overfull \hbox (5.28397pt too wide) in paragraph at lines 386--390
  [][] 
  []
 
-<imgs/EE-blocked-pages-to-date.png, id=120, 481.8pt x 481.8pt>
+<imgs/EE-blocked-pages-to-date.png, id=129, 481.8pt x 481.8pt>
 File: imgs/EE-blocked-pages-to-date.png Graphic file (type png)
 
 <use imgs/EE-blocked-pages-to-date.png>
 Package pdftex.def Info: imgs/EE-blocked-pages-to-date.png used on input line 3
-15.
+95.
 (pdftex.def)             Requested size: 176.89198pt x 176.88844pt.
 
-<imgs/O2-blocked-pages-to-date.png, id=121, 481.8pt x 481.8pt>
+<imgs/O2-blocked-pages-to-date.png, id=130, 481.8pt x 481.8pt>
 File: imgs/O2-blocked-pages-to-date.png Graphic file (type png)
 
 <use imgs/O2-blocked-pages-to-date.png>
 Package pdftex.def Info: imgs/O2-blocked-pages-to-date.png used on input line 3
-15.
+95.
 (pdftex.def)             Requested size: 176.89198pt x 176.88844pt.
 
-<imgs/Three-blocked-pages-to-date.png, id=122, 481.8pt x 481.8pt>
+<imgs/Three-blocked-pages-to-date.png, id=131, 481.8pt x 481.8pt>
 File: imgs/Three-blocked-pages-to-date.png Graphic file (type png)
 
 <use imgs/Three-blocked-pages-to-date.png>
 Package pdftex.def Info: imgs/Three-blocked-pages-to-date.png used on input lin
-e 316.
+e 396.
 (pdftex.def)             Requested size: 176.89198pt x 176.88844pt.
 
-<imgs/Vodafone-blocked-pages-to-date.png, id=123, 481.8pt x 481.8pt>
+<imgs/Vodafone-blocked-pages-to-date.png, id=132, 481.8pt x 481.8pt>
 File: imgs/Vodafone-blocked-pages-to-date.png Graphic file (type png)
 
 <use imgs/Vodafone-blocked-pages-to-date.png>
 Package pdftex.def Info: imgs/Vodafone-blocked-pages-to-date.png used on input 
-line 316.
+line 396.
 (pdftex.def)             Requested size: 176.89198pt x 176.88844pt.
 
-Overfull \hbox (5.28397pt too wide) in paragraph at lines 315--318
+Overfull \hbox (5.28397pt too wide) in paragraph at lines 395--398
  [][][] 
  []
 
 
-Overfull \hbox (5.28397pt too wide) in paragraph at lines 315--318
+Overfull \hbox (5.28397pt too wide) in paragraph at lines 395--398
  [][] 
  []
 
@@ -690,304 +685,306 @@ Overfull \hbox (5.28397pt too wide) in paragraph at lines 315--318
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (98.1953pt too wide) in paragraph at lines 324--332
+Overfull \hbox (98.1953pt too wide) in paragraph at lines 404--412
 \OT1/cmr/m/n/10 2014-11-30 21:13:51 | Net-work-Name: Talk-Talk | Sta-tus: block
 ed -URL: http://tantracore.wordpress.com
  []
 
-[4
+[7
 
  <./imgs/BT-blocked-pages-to-date.png> <./imgs/Plusnet-blocked-pages-to-date.pn
 g> <./imgs/Sky-blocked-pages-to-date.png> <./imgs/TalkTalk-blocked-pages-to-dat
 e.png> <./imgs/VirginMedia-blocked-pages-to-date.png>]
-Overfull \hbox (47.25096pt too wide) in paragraph at lines 333--343
+Overfull \hbox (47.25096pt too wide) in paragraph at lines 413--423
 \OT1/cmr/m/n/10 http://azurelunatic.tumblr.com/post/18654147576/ive-been-forced
 -to-explain-homosexuality-
  []
 
-[5 <./imgs/EE-blocked-pages-to-date.png> <./imgs/O2-blocked-pages-to-date.png> 
+[8 <./imgs/EE-blocked-pages-to-date.png> <./imgs/O2-blocked-pages-to-date.png> 
 <./imgs/Three-blocked-pages-to-date.png> <./imgs/Vodafone-blocked-pages-to-date
 .png>]
-Overfull \hbox (78.27869pt too wide) in paragraph at lines 345--350
+Overfull \hbox (78.27869pt too wide) in paragraph at lines 425--430
 []\OT1/cmr/m/n/10 Reddit Ex-am-ples: -Largely block-ing http://www.reddit.com/r
 /nsfw, http://www.reddit.com/r/nsfl,
  []
 
-<imgs/BT-d-4-blocked-categories-to-date.png, id=139, 481.8pt x 481.8pt>
+<imgs/BT-d-4-blocked-categories-to-date.png, id=149, 481.8pt x 481.8pt>
 File: imgs/BT-d-4-blocked-categories-to-date.png Graphic file (type png)
 
 <use imgs/BT-d-4-blocked-categories-to-date.png>
 Package pdftex.def Info: imgs/BT-d-4-blocked-categories-to-date.png used on inp
-ut line 380.
+ut line 460.
 (pdftex.def)             Requested size: 176.89198pt x 176.88844pt.
 
-<imgs/Sky-d-4-blocked-categories-to-date.png, id=140, 481.8pt x 481.8pt>
+<imgs/Sky-d-4-blocked-categories-to-date.png, id=150, 481.8pt x 481.8pt>
 File: imgs/Sky-d-4-blocked-categories-to-date.png Graphic file (type png)
 
 <use imgs/Sky-d-4-blocked-categories-to-date.png>
 Package pdftex.def Info: imgs/Sky-d-4-blocked-categories-to-date.png used on in
-put line 380.
+put line 460.
 (pdftex.def)             Requested size: 176.89198pt x 176.88844pt.
 
-<imgs/TalkTalk-d-4-blocked-categories-to-date.png, id=141, 481.8pt x 481.8pt>
+<imgs/TalkTalk-d-4-blocked-categories-to-date.png, id=151, 481.8pt x 481.8pt>
 File: imgs/TalkTalk-d-4-blocked-categories-to-date.png Graphic file (type png)
 
 <use imgs/TalkTalk-d-4-blocked-categories-to-date.png>
 Package pdftex.def Info: imgs/TalkTalk-d-4-blocked-categories-to-date.png used 
-on input line 381.
+on input line 461.
 (pdftex.def)             Requested size: 176.89198pt x 176.88844pt.
 
-<imgs//VirginMedia-d-4-blocked-categories-to-date.png, id=142, 481.8pt x 481.8p
+<imgs//VirginMedia-d-4-blocked-categories-to-date.png, id=152, 481.8pt x 481.8p
 t>
 File: imgs//VirginMedia-d-4-blocked-categories-to-date.png Graphic file (type p
 ng)
  <use imgs//VirginMedia-d-4-blocked-categories-to-date.png>
 Package pdftex.def Info: imgs//VirginMedia-d-4-blocked-categories-to-date.png u
-sed on input line 381.
+sed on input line 461.
 (pdftex.def)             Requested size: 176.89198pt x 176.88844pt.
 
-Overfull \hbox (5.28397pt too wide) in paragraph at lines 380--383
+Overfull \hbox (5.28397pt too wide) in paragraph at lines 460--463
  [][][] 
  []
 
 
-Overfull \hbox (5.28397pt too wide) in paragraph at lines 380--383
+Overfull \hbox (5.28397pt too wide) in paragraph at lines 460--463
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<imgs/EE-d-4-blocked-categories-to-date.png, id=143, 481.8pt x 481.8pt>
+<imgs/EE-d-4-blocked-categories-to-date.png, id=153, 481.8pt x 481.8pt>
 File: imgs/EE-d-4-blocked-categories-to-date.png Graphic file (type png)
 
 <use imgs/EE-d-4-blocked-categories-to-date.png>
 Package pdftex.def Info: imgs/EE-d-4-blocked-categories-to-date.png used on inp
-ut line 389.
+ut line 469.
 (pdftex.def)             Requested size: 176.89198pt x 176.88844pt.
 
-<imgs/O2-d-4-blocked-categories-to-date.png, id=144, 481.8pt x 481.8pt>
+<imgs/O2-d-4-blocked-categories-to-date.png, id=154, 481.8pt x 481.8pt>
 File: imgs/O2-d-4-blocked-categories-to-date.png Graphic file (type png)
 
 <use imgs/O2-d-4-blocked-categories-to-date.png>
 Package pdftex.def Info: imgs/O2-d-4-blocked-categories-to-date.png used on inp
-ut line 389.
+ut line 469.
 (pdftex.def)             Requested size: 176.89198pt x 176.88844pt.
 
-<imgs/Three-d-4-blocked-categories-to-date.png, id=145, 481.8pt x 481.8pt>
+<imgs/Three-d-4-blocked-categories-to-date.png, id=155, 481.8pt x 481.8pt>
 File: imgs/Three-d-4-blocked-categories-to-date.png Graphic file (type png)
 
 <use imgs/Three-d-4-blocked-categories-to-date.png>
 Package pdftex.def Info: imgs/Three-d-4-blocked-categories-to-date.png used on 
-input line 390.
+input line 470.
 (pdftex.def)             Requested size: 176.89198pt x 176.88844pt.
 
-<imgs/Vodafone-d-4-blocked-categories-to-date.png, id=146, 481.8pt x 481.8pt>
+<imgs/Vodafone-d-4-blocked-categories-to-date.png, id=156, 481.8pt x 481.8pt>
 File: imgs/Vodafone-d-4-blocked-categories-to-date.png Graphic file (type png)
 
 <use imgs/Vodafone-d-4-blocked-categories-to-date.png>
 Package pdftex.def Info: imgs/Vodafone-d-4-blocked-categories-to-date.png used 
-on input line 390.
+on input line 470.
 (pdftex.def)             Requested size: 176.89198pt x 176.88844pt.
 
-Overfull \hbox (5.28397pt too wide) in paragraph at lines 389--392
+Overfull \hbox (5.28397pt too wide) in paragraph at lines 469--472
  [][][] 
  []
 
 
-Overfull \hbox (5.28397pt too wide) in paragraph at lines 389--392
+Overfull \hbox (5.28397pt too wide) in paragraph at lines 469--472
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6] [7 <./imgs/BT-d-4-blocked-categories-to-date.png> <./imgs/Sky-d-4-blocked-c
-ategories-to-date.png> <./imgs/TalkTalk-d-4-blocked-categories-to-date.png> <./
-imgs//VirginMedia-d-4-blocked-categories-to-date.png>] [8 <./imgs/EE-d-4-blocke
-d-categories-to-date.png> <./imgs/O2-d-4-blocked-categories-to-date.png> <./img
-s/Three-d-4-blocked-categories-to-date.png> <./imgs/Vodafone-d-4-blocked-catego
-ries-to-date.png>]
-Overfull \hbox (99.23985pt too wide) in paragraph at lines 415--423
+[9] [10 <./imgs/BT-d-4-blocked-categories-to-date.png> <./imgs/Sky-d-4-blocked-
+categories-to-date.png> <./imgs/TalkTalk-d-4-blocked-categories-to-date.png> <.
+/imgs//VirginMedia-d-4-blocked-categories-to-date.png>] [11 <./imgs/EE-d-4-bloc
+ked-categories-to-date.png> <./imgs/O2-d-4-blocked-categories-to-date.png> <./i
+mgs/Three-d-4-blocked-categories-to-date.png> <./imgs/Vodafone-d-4-blocked-cate
+gories-to-date.png>]
+Overfull \hbox (99.23985pt too wide) in paragraph at lines 495--503
 \OT1/cmr/m/n/10 Recre-ation/Tobacco) --dating (So-ci-ety/Relationships/Dating, 
 So-ci-ety/Relationships/Cyber[]Relationships) 
  []
 
 
-Overfull \hbox (82.41197pt too wide) in paragraph at lines 424--433
+Overfull \hbox (82.41197pt too wide) in paragraph at lines 504--513
 []\OT1/cmr/m/n/10 -Sky: should block... --malware sites (Com-put-ers/Security/M
 alicious[]Software/Spyware[]and[]Adware)
  []
 
 
-Overfull \hbox (223.51237pt too wide) in paragraph at lines 424--433
+Overfull \hbox (223.51237pt too wide) in paragraph at lines 504--513
 \OT1/cmr/m/n/10 dating (So-ci-ety/Relationships/Dating) --social net-work-ing (
 Com-put-ers/Internet/On[]the[]Web/Online[]Communities/Social[]Networking,
  []
 
 
-Overfull \hbox (33.83139pt too wide) in paragraph at lines 424--433
+Overfull \hbox (33.83139pt too wide) in paragraph at lines 504--513
 \OT1/cmr/m/n/10 Kids[]and[]Teens/People[]and[]Society/Online Com-mu-ni-ties) --
 online gam-ing (Games/Online) 
  []
 
 
-Overfull \hbox (1.59796pt too wide) in paragraph at lines 434--446
+Overfull \hbox (1.59796pt too wide) in paragraph at lines 514--526
 \OT1/cmr/m/n/10 --File Shar-ing Sites (Com-put-ers/Software/Internet/Clients/Fi
 le Shar-ing) --Gambling
  []
 
 
-Overfull \hbox (164.63445pt too wide) in paragraph at lines 434--446
+Overfull \hbox (164.63445pt too wide) in paragraph at lines 514--526
 \OT1/cmr/m/n/10 (Com-put-ers/Internet/On[]the[]Web/Online[]Communities/Social[]
 Networking, Kids[]and[]Teens/People[]and[]Society/Online
  []
 
 
-Underfull \hbox (badness 1286) in paragraph at lines 447--453
+Underfull \hbox (badness 1286) in paragraph at lines 527--533
 []\OT1/cmr/m/n/10 VirginMedia: should block... --Crime, Vi-o-lence, and Hate: (
 Adult) --Drugs
  []
 
 
-Underfull \hbox (badness 1565) in paragraph at lines 447--453
+Underfull \hbox (badness 1565) in paragraph at lines 527--533
 \OT1/cmr/m/n/10 (Recre-ation/Drugs/Cannabis + Recre-ation/Drugs/Psychedelics) -
 -File Shar-ing
  []
 
-[9
+[12
 
-] [10] <imgs/BT-ts-accuracy.pdf, id=172, 722.7pt x 180.675pt>
+]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[13] <imgs/BT-ts-accuracy.pdf, id=182, 722.7pt x 180.675pt>
 File: imgs/BT-ts-accuracy.pdf Graphic file (type pdf)
 
 <use imgs/BT-ts-accuracy.pdf>
-Package pdftex.def Info: imgs/BT-ts-accuracy.pdf used on input line 590.
+Package pdftex.def Info: imgs/BT-ts-accuracy.pdf used on input line 700.
 (pdftex.def)             Requested size: 324.8978pt x 81.22304pt.
 
-<imgs/Sky-ts-accuracy.pdf, id=173, 722.7pt x 180.675pt>
+<imgs/Sky-ts-accuracy.pdf, id=183, 722.7pt x 180.675pt>
 File: imgs/Sky-ts-accuracy.pdf Graphic file (type pdf)
 
 <use imgs/Sky-ts-accuracy.pdf>
-Package pdftex.def Info: imgs/Sky-ts-accuracy.pdf used on input line 591.
+Package pdftex.def Info: imgs/Sky-ts-accuracy.pdf used on input line 701.
 (pdftex.def)             Requested size: 324.8978pt x 81.22304pt.
 
-<imgs/TalkTalk-ts-accuracy.pdf, id=174, 722.7pt x 180.675pt>
+<imgs/TalkTalk-ts-accuracy.pdf, id=184, 722.7pt x 180.675pt>
 File: imgs/TalkTalk-ts-accuracy.pdf Graphic file (type pdf)
 
 <use imgs/TalkTalk-ts-accuracy.pdf>
-Package pdftex.def Info: imgs/TalkTalk-ts-accuracy.pdf used on input line 592.
+Package pdftex.def Info: imgs/TalkTalk-ts-accuracy.pdf used on input line 702.
 (pdftex.def)             Requested size: 324.8978pt x 81.22304pt.
 
-<imgs/VirginMedia-ts-accuracy.pdf, id=175, 722.7pt x 180.675pt>
+<imgs/VirginMedia-ts-accuracy.pdf, id=185, 722.7pt x 180.675pt>
 File: imgs/VirginMedia-ts-accuracy.pdf Graphic file (type pdf)
 
 <use imgs/VirginMedia-ts-accuracy.pdf>
-Package pdftex.def Info: imgs/VirginMedia-ts-accuracy.pdf used on input line 59
+Package pdftex.def Info: imgs/VirginMedia-ts-accuracy.pdf used on input line 70
 3.
 (pdftex.def)             Requested size: 324.8978pt x 81.22304pt.
 
-<imgs/EE-ts-accuracy.pdf, id=176, 722.7pt x 180.675pt>
+<imgs/EE-ts-accuracy.pdf, id=186, 722.7pt x 180.675pt>
 File: imgs/EE-ts-accuracy.pdf Graphic file (type pdf)
 
 <use imgs/EE-ts-accuracy.pdf>
-Package pdftex.def Info: imgs/EE-ts-accuracy.pdf used on input line 599.
+Package pdftex.def Info: imgs/EE-ts-accuracy.pdf used on input line 709.
 (pdftex.def)             Requested size: 324.8978pt x 81.22304pt.
 
-<imgs/O2-ts-accuracy.pdf, id=177, 722.7pt x 180.675pt>
+<imgs/O2-ts-accuracy.pdf, id=187, 722.7pt x 180.675pt>
 File: imgs/O2-ts-accuracy.pdf Graphic file (type pdf)
 
 <use imgs/O2-ts-accuracy.pdf>
-Package pdftex.def Info: imgs/O2-ts-accuracy.pdf used on input line 600.
+Package pdftex.def Info: imgs/O2-ts-accuracy.pdf used on input line 710.
 (pdftex.def)             Requested size: 324.8978pt x 81.22304pt.
 
-<imgs/Three-ts-accuracy.pdf, id=178, 722.7pt x 180.675pt>
+<imgs/Three-ts-accuracy.pdf, id=188, 722.7pt x 180.675pt>
 File: imgs/Three-ts-accuracy.pdf Graphic file (type pdf)
 
 <use imgs/Three-ts-accuracy.pdf>
-Package pdftex.def Info: imgs/Three-ts-accuracy.pdf used on input line 601.
+Package pdftex.def Info: imgs/Three-ts-accuracy.pdf used on input line 711.
 (pdftex.def)             Requested size: 324.8978pt x 81.22304pt.
 
-<imgs/Vodafone-ts-accuracy.pdf, id=179, 722.7pt x 180.675pt>
+<imgs/Vodafone-ts-accuracy.pdf, id=189, 722.7pt x 180.675pt>
 File: imgs/Vodafone-ts-accuracy.pdf Graphic file (type pdf)
 
 <use imgs/Vodafone-ts-accuracy.pdf>
-Package pdftex.def Info: imgs/Vodafone-ts-accuracy.pdf used on input line 602.
+Package pdftex.def Info: imgs/Vodafone-ts-accuracy.pdf used on input line 712.
 (pdftex.def)             Requested size: 324.8978pt x 81.22304pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[11 <./imgs/BT-ts-accuracy.pdf> <./imgs/Sky-ts-accuracy.pdf> <./imgs/TalkTalk-t
-s-accuracy.pdf> <./imgs/VirginMedia-ts-accuracy.pdf>] [12 <./imgs/EE-ts-accurac
+[14 <./imgs/BT-ts-accuracy.pdf> <./imgs/Sky-ts-accuracy.pdf> <./imgs/TalkTalk-t
+s-accuracy.pdf> <./imgs/VirginMedia-ts-accuracy.pdf>] [15 <./imgs/EE-ts-accurac
 y.pdf> <./imgs/O2-ts-accuracy.pdf> <./imgs/Three-ts-accuracy.pdf> <./imgs/Vodaf
-one-ts-accuracy.pdf>] <imgs/BT-unblock-dist.pdf, id=223, 361.35pt x 361.35pt>
+one-ts-accuracy.pdf>] <imgs/BT-unblock-dist.pdf, id=245, 361.35pt x 361.35pt>
 File: imgs/BT-unblock-dist.pdf Graphic file (type pdf)
 
 <use imgs/BT-unblock-dist.pdf>
-Package pdftex.def Info: imgs/BT-unblock-dist.pdf used on input line 620.
+Package pdftex.def Info: imgs/BT-unblock-dist.pdf used on input line 730.
 (pdftex.def)             Requested size: 81.18864pt x 81.18445pt.
 
-<imgs/Sky-unblock-dist.pdf, id=224, 361.35pt x 361.35pt>
+<imgs/Sky-unblock-dist.pdf, id=246, 361.35pt x 361.35pt>
 File: imgs/Sky-unblock-dist.pdf Graphic file (type pdf)
 
 <use imgs/Sky-unblock-dist.pdf>
-Package pdftex.def Info: imgs/Sky-unblock-dist.pdf used on input line 620.
+Package pdftex.def Info: imgs/Sky-unblock-dist.pdf used on input line 730.
 (pdftex.def)             Requested size: 81.18864pt x 81.18445pt.
 
-<imgs/TalkTalk-unblock-dist.pdf, id=225, 361.35pt x 361.35pt>
+<imgs/TalkTalk-unblock-dist.pdf, id=247, 361.35pt x 361.35pt>
 File: imgs/TalkTalk-unblock-dist.pdf Graphic file (type pdf)
 
 <use imgs/TalkTalk-unblock-dist.pdf>
-Package pdftex.def Info: imgs/TalkTalk-unblock-dist.pdf used on input line 620.
+Package pdftex.def Info: imgs/TalkTalk-unblock-dist.pdf used on input line 730.
 
 (pdftex.def)             Requested size: 81.18864pt x 81.18445pt.
 
-<imgs/VirginMedia-unblock-dist.pdf, id=226, 361.35pt x 361.35pt>
+<imgs/VirginMedia-unblock-dist.pdf, id=248, 361.35pt x 361.35pt>
 File: imgs/VirginMedia-unblock-dist.pdf Graphic file (type pdf)
 
 <use imgs/VirginMedia-unblock-dist.pdf>
-Package pdftex.def Info: imgs/VirginMedia-unblock-dist.pdf used on input line 6
-20.
+Package pdftex.def Info: imgs/VirginMedia-unblock-dist.pdf used on input line 7
+30.
 (pdftex.def)             Requested size: 81.18864pt x 81.18445pt.
 
-<imgs/EE-unblock-dist.pdf, id=227, 361.35pt x 361.35pt>
+<imgs/EE-unblock-dist.pdf, id=249, 361.35pt x 361.35pt>
 File: imgs/EE-unblock-dist.pdf Graphic file (type pdf)
 
 <use imgs/EE-unblock-dist.pdf>
-Package pdftex.def Info: imgs/EE-unblock-dist.pdf used on input line 622.
+Package pdftex.def Info: imgs/EE-unblock-dist.pdf used on input line 732.
 (pdftex.def)             Requested size: 81.18864pt x 81.18445pt.
 
-<imgs/O2-unblock-dist.pdf, id=228, 361.35pt x 361.35pt>
+<imgs/O2-unblock-dist.pdf, id=250, 361.35pt x 361.35pt>
 File: imgs/O2-unblock-dist.pdf Graphic file (type pdf)
 
 <use imgs/O2-unblock-dist.pdf>
-Package pdftex.def Info: imgs/O2-unblock-dist.pdf used on input line 622.
+Package pdftex.def Info: imgs/O2-unblock-dist.pdf used on input line 732.
 (pdftex.def)             Requested size: 81.18864pt x 81.18445pt.
 
-<imgs/Three-unblock-dist.pdf, id=229, 361.35pt x 361.35pt>
+<imgs/Three-unblock-dist.pdf, id=251, 361.35pt x 361.35pt>
 File: imgs/Three-unblock-dist.pdf Graphic file (type pdf)
 
 <use imgs/Three-unblock-dist.pdf>
-Package pdftex.def Info: imgs/Three-unblock-dist.pdf used on input line 622.
+Package pdftex.def Info: imgs/Three-unblock-dist.pdf used on input line 732.
 (pdftex.def)             Requested size: 81.18864pt x 81.18445pt.
 
-<imgs/Vodafone-unblock-dist.pdf, id=230, 361.35pt x 361.35pt>
+<imgs/Vodafone-unblock-dist.pdf, id=252, 361.35pt x 361.35pt>
 File: imgs/Vodafone-unblock-dist.pdf Graphic file (type pdf)
 
 <use imgs/Vodafone-unblock-dist.pdf>
-Package pdftex.def Info: imgs/Vodafone-unblock-dist.pdf used on input line 622.
+Package pdftex.def Info: imgs/Vodafone-unblock-dist.pdf used on input line 732.
 
 (pdftex.def)             Requested size: 81.18864pt x 81.18445pt.
-
-No file mrowe-isp-filters-v1.bbl.
-
-AED: lastpage setting LastPage
-[13
+ (./mrowe-isp-filters-v1.bbl [16
 
  <./imgs/BT-unblock-dist.pdf> <./imgs/Sky-unblock-dist.pdf> <./imgs/TalkTalk-un
 block-dist.pdf> <./imgs/VirginMedia-unblock-dist.pdf> <./imgs/EE-unblock-dist.p
 df> <./imgs/O2-unblock-dist.pdf> <./imgs/Three-unblock-dist.pdf> <./imgs/Vodafo
-ne-unblock-dist.pdf>] (./mrowe-isp-filters-v1.aux)
+ne-unblock-dist.pdf>]) 
+AED: lastpage setting LastPage
+[17] (./mrowe-isp-filters-v1.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
@@ -1000,29 +997,29 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3084 strings out of 493304
- 45550 string characters out of 6139871
- 109844 words of memory out of 5000000
- 6459 multiletter control sequences out of 15000+600000
- 13308 words of font info for 46 fonts, out of 8000000 for 9000
+ 3148 strings out of 493304
+ 46353 string characters out of 6139871
+ 112890 words of memory out of 5000000
+ 6520 multiletter control sequences out of 15000+600000
+ 13616 words of font info for 47 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 37i,9n,42p,473b,294s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pf
-b>
-Output written on mrowe-isp-filters-v1.pdf (13 pages, 1006029 bytes).
+ 37i,10n,37p,527b,292s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.p
+fb>
+Output written on mrowe-isp-filters-v1.pdf (17 pages, 1019886 bytes).
 PDF statistics:
- 331 PDF objects out of 1000 (max. 8388607)
- 217 compressed objects within 3 object streams
+ 355 PDF objects out of 1000 (max. 8388607)
+ 229 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  231 words of extra memory for PDF output out of 10000 (max. 10000000)
 

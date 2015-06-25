@@ -1,0 +1,102 @@
+% This file was created with JabRef 2.10b2.
+% Encoding: UTF-8
+
+
+@InCollection{aceto2015monitoring,
+  Title                    = {Monitoring Internet Censorship with UBICA},
+  Author                   = {Aceto, Giuseppe and Botta, Alessio and Pescap{\`e}, Antonio and Feamster, Nick and Awan, M Faheem and Ahmad, Tahir and Qaisar, Saad},
+  Booktitle                = {Traffic Monitoring and Analysis},
+  Publisher                = {Springer},
+  Year                     = {2015},
+  Pages                    = {143--157},
+
+  Owner                    = {rowem},
+  Timestamp                = {2015.06.25}
+}
+
+@Article{akdeniz2001internet,
+  Title                    = {Internet content regulation: UK government and the control of internet content},
+  Author                   = {Akdeniz, Yaman},
+  Journal                  = {Computer Law \& Security Review},
+  Year                     = {2001},
+  Number                   = {5},
+  Pages                    = {303--317},
+  Volume                   = {17},
+
+  Owner                    = {rowem},
+  Publisher                = {Elsevier},
+  Timestamp                = {2015.06.25}
+}
+
+@Article{crete2013not,
+  Title                    = {Not by technical means alone: the multidisciplinary challenge of studying information controls},
+  Author                   = {Crete-Nishihata, Masashi and Deibert, Ronald and Senft, Adam},
+  Journal                  = {Internet Computing, IEEE},
+  Year                     = {2013},
+  Number                   = {3},
+  Pages                    = {34--41},
+  Volume                   = {17},
+
+  Owner                    = {rowem},
+  Publisher                = {IEEE},
+  Timestamp                = {2015.06.25}
+}
+
+@InProceedings{dalek2013method,
+  Title                    = {A method for identifying and confirming the use of URL filtering products for censorship},
+  Author                   = {Dalek, Jakub and Haselton, Bennett and Noman, Helmi and Senft, Adam and Crete-Nishihata, Masashi and Gill, Phillipa and Deibert, Ronald J},
+  Booktitle                = {Proceedings of the 2013 conference on Internet measurement conference},
+  Year                     = {2013},
+  Organization             = {ACM},
+  Pages                    = {23--30},
+
+  Owner                    = {rowem},
+  Timestamp                = {2015.06.25}
+}
+
+@InProceedings{esnaashari2014restrictions,
+  Title                    = {Restrictions Affecting New Zealanders' Access to the Internet: A Local Study},
+  Author                   = {Esnaashari, Shadi and Welch, Ian and Chawner, Brenda},
+  Booktitle                = {Advanced Information Networking and Applications (AINA), 2014 IEEE 28th International Conference on},
+  Year                     = {2014},
+  Organization             = {IEEE},
+  Pages                    = {771--774},
+
+  Owner                    = {rowem},
+  Timestamp                = {2015.06.25}
+}
+
+@Article{mcintyre2008internet,
+  Title                    = {Internet filtering: rhetoric, legitimacy, accountability and responsibility},
+  Author                   = {McIntyre, Thomas J and Scott, Colin},
+  Year                     = {2008},
+
+  Owner                    = {rowem},
+  Publisher                = {Oxford, Hart Publishing},
+  Timestamp                = {2015.06.25}
+}
+
+@Article{murdoch2013internet,
+  Title                    = {Internet Censorship and Control [Guest editors' introduction]},
+  Author                   = {Murdoch, Steven J and Roberts, Hal},
+  Journal                  = {Internet Computing, IEEE},
+  Year                     = {2013},
+  Number                   = {3},
+  Pages                    = {6--9},
+  Volume                   = {17},
+
+  Owner                    = {rowem},
+  Publisher                = {IEEE},
+  Timestamp                = {2015.06.25}
+}
+
+@Article{verkamp2012inferring,
+  Title                    = {Inferring mechanics of web censorship around the world},
+  Author                   = {Verkamp, John-Paul and Gupta, Minaxi},
+  Journal                  = {Free and Open Communications on the Internet, Bellevue, WA, USA},
+  Year                     = {2012},
+
+  Owner                    = {rowem},
+  Timestamp                = {2015.06.25}
+}
+
