@@ -93,7 +93,7 @@
 \begin{fmbox}
 \dochead{Research}
 
-\title{An Investigation of the Performance of UK ISP Web Filters}
+\title{An Investigation of the Performance of UK Internet Providers' Web Filters}
 
 \author[
    addressref={lancs},                   % id's of addresses, e.g. {aff1,aff2}
@@ -102,8 +102,7 @@
    email={m.rowe@lancaster.ac.uk}   % email address
 ]{\inits{MR}\fnm{Matthew} \snm{Rowe}}
 \author[
-   addressref={org},                   % id's of addresses, e.g. {aff1,aff2}
-   corref={org},                       % id of corresponding address, if any
+   addressref={org},                   % id's of addresses, e.g. {aff1,aff2}                       % id of corresponding address, if any
    %noteref={n1},                        % id's of article notes, if any
    email={richard@openrightsgroup.org}   % email address
 ]{\inits{RK}\fnm{Richard} \snm{King}}
@@ -128,14 +127,19 @@
 \begin{abstractbox}
 
 \begin{abstract} % abstract
-To do
+Since 2013 UK-based broadband and mobile internet users have been faced with a \textit{yes} or \textit{no} decision in : \textit{would they like to turn web filtering on, or not?}
+A minority of users (between 6 and 36\%) chose to say to turn on filtering, often to protect users of their connection from potentially harmful and damaging content.
+Since their inception, filters provided by UK Internet Service Providers (ISPs) and Mobile Service Providers (MSPs) have been reported \textit{anecdotally} as having both \textit{overblocked} web sites (i.e. erroneously blocked a page when it should not have been) and \textit{underblocked} web sites (i.e. not blocked a web page when it should have been); however until now no work has investigated the performance of UK ISPs' and MSPs' web filters and how this can be empirically characterised.
+In this paper we fill this gap by presenting the first systematic study of UK web filters used by consumers.
+By using data provided by the Open Rights Group, and performing a data science study, we were able to compute the performance of the UK ISPs' and MSPs' filters across a range of web sites, providing evidence of systematic underblocking and overblocking.
+Our findings are particularly stark: we observed that between 30\% (for O2) and 82\% (for TalkTalk) of tested URLs were underblocked, while between 2\% (for EE) to 6\% (for BT) of URLs were overblocked.
 \end{abstract}
 
 
 \begin{keyword}
-\kwd{sample}
-\kwd{article}
-\kwd{author}
+\kwd{Data Science}
+\kwd{Web Filtering}
+\kwd{Censorship}
 \end{keyword}
 
 % MSC classifications codes, if any
@@ -200,7 +204,7 @@ Motivated by this current lack of understanding, in this paper we investigate th
 
 \begin{enumerate}
 	\item \textbf{RQ1}: How can we understand how UK ISP Web Filters function, and how accurate they are?
-	\item \textbf{RQ2}: How reliable are the filters at blocking content, in terms of both overblocking and underblocking across different categories of sites? And are there certain categories of web sites that are error prone?
+	\item \textbf{RQ2}: Are there certain categories and domains of web sites that are prone to overblocking?
 	\item \textbf{RQ3}: How long does it take an ISP to fix an error?
 \end{enumerate}
 
@@ -221,9 +225,6 @@ We begin this paper by first explaining related works study web filtering techno
 We follow this up by describing how the \textit{probe} system works for monitoring web filters, before then presenting evidence of what domains and categories of sites are being blocked and by whom.
 In the proceeding sections we then explain how we gauge filter accuracy, present qualitative examples of incorrectly blocked sites, and investigate how quickly an ISP responds to fix an incorrect block.
 In order to provide full transparency of how this paper's results and findings were derived, both the software used to analyse the web filters and the results from our analyses are available on the Open Rights Group's Github repository.\footnote{\url{https://github.com/openrightsgroup/cmp-analysis}}
-
-
-
 
 
 \section*{Related Work}
@@ -471,7 +472,6 @@ We found similar distributions of blocked categories for the MSPs as we did for 
 
 
 %%%%%% Section
-\clearpage
 \section*{Gauging Filter Accuracy}
 Thus far our inspection of ISPs' and MSPs' filters has been through exploring the domains and categories of blocked sites, and has revealed \textit{qualitative} examples of \textit{overblocking}.
 We now turn to answering our first research question: \textit{How can we understand how UK ISP Web Filters function, and how accurate they are?}
@@ -739,7 +739,13 @@ As we will explain below, this framework also allows for time-series computation
 %Three: tp = 236.0 | tn = 280598.0 | fp = 1046.0 | fn = 137.0 | prec = 0.184 | rec = 0.633 | FPR = 0.004 | mcc = 0.340 | F1 = 0.285
 %Vodafone: tp = 254.0 | tn = 832797.0 | fp = 2819.0 | fn = 193.0 | prec = 0.083 | rec = 0.568 | FPR = 0.003 | mcc = 0.216 | F1 = 0.144
 
-From the computational framework, we were able to compute the accuracy of each filter as shown in Table \ref{tab:accuracy}.
+From the computational framework, we were able to compute the accuracy of each filter as shown in Table \ref{tab:accuracy}, where we find large differences in the accuracy levels of the filters.
+For instance, several filters achieve recall exceeding $0.5$ indicating that they are able to detect around half of pages that \textit{should} have been blocked, while precision remains relatively low across all filters.
+This latter metric indicates that a large proportion of pages are blocked when they should not be; hence, \textit{overblocking} is taking place across all filters.
+There are numerous examples of overblocked sites, however to provide a single qualitative example to explain the issues that filters have we can inspect the treatment of the web site to help lesbian, gay, bisexual and transgender people stop smoking \url{http://www.lgbtquitsmoking.com}.
+This site is blocked by BT's filter as it describes tobacco and smoking, however the purpose of the site is not to promote smoking but instead to improve the health of people who smoke by quitting.
+Despite the extent of overblocking and underblocking, we found that the Matthews Correlation Coefficients were all in excess of $0$ thereby indicating that all filters perform better than random guessing.
+We have uploaded the collection of sites which are false positives and false negatives to the Github repository for all of the above filters.\footnote{\url{https://github.com/openrightsgroup/cmp-analysis/tree/master/data/output}}
 
 \begin{table}[h!]
 \caption{Accuracy levels of the various ISPs' and MSPs' filters across the five measures.}
@@ -761,10 +767,10 @@ From the computational framework, we were able to compute the accuracy of each f
   \label{tab:accuracy}
 \end{table}
 
+Earlier in the related work section we explained how the prior work of Stark \cite{stark2007effectiveness} found underblocking percentages ranging from 6.2\% to 43.4\%  for various filters, and from 0.4\% to 20.7\% for overblocking.
+The former measure is comparable to the False Negative Rate (FNR), which is computed as $1 - recall$, which we find to range between 30\% (for O2) and 82\% (for TalkTalk); while the latter measure is comparable to our FPR measure (as we gauge the proportion of pages that should not have been blocked that were), where we find an \textit{overblocking} percentage ranging from 2\% (for EE) to 6\% (for BT).
+These results paint a stark picture of the accuracy of the web filters: we find here that underblocking happens to a large degree so that content which should be filtered out is instead missed, while overblocking is generating \textit{collateral filtering} of up to 6\% of web content.
 
-
-
-Compare results to that of \cite{stark2007effectiveness}
 
 %BT: tp = 3995.0 | tn = 865766.0 | fp = 5551.0 | fn = 2456.0 | prec = 0.418 | rec = 0.619 | FPR = 0.006 | mcc = 0.505 | F1 = 0.499
 %Sky: tp = 607.0 | tn = 878427.0 | fp = 2576.0 | fn = 1961.0 | prec = 0.191 | rec = 0.236 | FPR = 0.003 | mcc = 0.210 | F1 = 0.211
@@ -790,35 +796,29 @@ Compare results to that of \cite{stark2007effectiveness}
 %Vodafone: tp = 285.0 | tn = 831654.0 | fp = 2788.0 | fn = 1336.0 | prec = 0.093 | rec = 0.176 | FPR = 0.003 | mcc = 0.125 | F1 = 0.121
 
 
-
-Qualitative Examples of Blocks:
--BT Block: http://www.lgbtquitsmoking.com/ (site to help people stop smoking).
-
-BT seem to be blocking tattoo web sites too:
-
-We have uploaded the collection of sites which are false positives and false negatives to the github repo.\footnote{\url{https://github.com/openrightsgroup/cmp-analysis/tree/master/data/output}}
-
-
 \subsubsection*{Accuracy over Time}
-How has accuracy evolved over time?
---Discrete time analysis of the accuracy levels - use weekly bins (Bayesian model?) Can we forecast accuracy?
+Our \textit{general} inspection of how well the web filters perform was carried out over the entire dataset.
+One question that came to mind when conducting this analysis was whether the filters \textit{improved} in accuracy over time.
+To investigate this we repeated the above per-ISP and per-MSP computation of accuracy measures, however this was instead computed on a \textit{weekly} basis.
+This was performed by computing \textit{time-specific} contingency tables and then computing the above measures from the tables.
+We again used Apache Spark for this and wrote a map-reduce job that produced (key, value) pairs where the keys were the ISPs and MSPs' names and the values were also (key, value) pairs - where the keys were this time week numbers and the values the week-specific contingency table.
 
+Figure \ref{fig:broadband-accuracy-ts} and figure \ref{fig:mobile-accuracy-ts} show the accuracy of the ISPs' filters and MSPs' filters over time, respectively - these values have been smoothed using a moving-average model of order 5.
+We find that, in general, model accuracy degrades over time, in particular the ISPs.
+The reason for this degradation is likely due to web site owners in the UK submitting URLs to be tested to the probe-system's queue, as the blocked.org.uk site gained more attention around 6 months after its launch.
+Initially, sites from the Alexa-ranking system were used for testing however as more bespoke, less mainstream, sites were added the filters were unable to categorise them effectively.
 
 \begin{figure}[h!]
 \caption{\csentence{Accuracy of Broadband ISPs' filters over time}. ARIMA(0,0,5) plot of the accuracy measures: precision, recall, f-measure (F1), false positive rate (FPR), and the Matthews' Correlation Coefficient. Weeks are from the start of the ISP-specific filter logging period.}
-\includegraphics[width=0.9\textwidth]{imgs/BT-ts-accuracy}
-\includegraphics[width=0.9\textwidth]{imgs/Sky-ts-accuracy}
-\includegraphics[width=0.9\textwidth]{imgs/TalkTalk-ts-accuracy}
-\includegraphics[width=0.9\textwidth]{imgs/VirginMedia-ts-accuracy}
+\includegraphics[width=0.49\textwidth]{imgs/BT-ts-accuracy}\includegraphics[width=0.49\textwidth]{imgs/Sky-ts-accuracy}
+\includegraphics[width=0.49\textwidth]{imgs/TalkTalk-ts-accuracy}\includegraphics[width=0.49\textwidth]{imgs/VirginMedia-ts-accuracy}
 \label{fig:broadband-accuracy-ts}
 \end{figure}
 
 \begin{figure}[h!]
 \caption{\csentence{Accuracy of Mobile ISPs' filters over time}. ARIMA(0,0,5) plot of the accuracy measures: precision, recall, f-measure (F1), false positive rate (FPR), and the Matthews' Correlation Coefficient. Weeks are from the start of the ISP-specific filter logging period.}
-\includegraphics[width=0.9\textwidth]{imgs/EE-ts-accuracy}
-\includegraphics[width=0.9\textwidth]{imgs/O2-ts-accuracy}
-\includegraphics[width=0.9\textwidth]{imgs/Three-ts-accuracy}
-\includegraphics[width=0.9\textwidth]{imgs/Vodafone-ts-accuracy}
+\includegraphics[width=0.49\textwidth]{imgs/EE-ts-accuracy}\includegraphics[width=0.49\textwidth]{imgs/O2-ts-accuracy}
+\includegraphics[width=0.49\textwidth]{imgs/Three-ts-accuracy}\includegraphics[width=0.49\textwidth]{imgs/Vodafone-ts-accuracy}
 \label{fig:mobile-accuracy-ts}
 \end{figure}
 \clearpage
@@ -830,16 +830,20 @@ How has accuracy evolved over time?
 
 %%%%%% Section
 \section*{Time to Correction}
--Report on how long it takes each ISP to fix their blocked content
--Show the delta distribution of each provider
---Fit a distribution to the delta-function: Poisson?
+Once a site has been blocked, and providing that the site owners is aware of such a block, several ISPs provide functionality to report such an error, with the view that the site would then be \textit{unblocked}.
+To investigate our third research question \textit{How long does it take an ISP to fix an error?} we examined the $\Delta$-distribution of URLs transitioning from a \textit{block} to an \textit{ok} state.
+The distribution was computed by recording the frequency distribution of the number of days each ISP's block-to-ok transitions.
+Of course, one of the limitations of the probe system is that it cannot check each URL for a block every day, instead each URL is tested across the probes every 45 days (or once every 1080 hours).
+
+Figure \ref{fig:isps-unblock-dist} presents the $\Delta$-distributions for the 8 filters.
+We can see how these distributions all have varying multimodal shapes, largely due to the scheduling of the probe system.
+That said, all of the distributions' densities are concentrated above 1080 hours, the average number of hours of a given URL to be tested again.
+This suggests a delay in fixing the blocking errors, in particular for Vodafone which has a peak at 3600 hours (145 days).
 
 \begin{figure}[h!]
 \caption{\csentence{Time to unblock ($\Delta$) distribution of each Broadband and Mobile ISP in hours}.}
 \includegraphics[width=0.2249\textwidth]{imgs/BT-unblock-dist}\includegraphics[width=0.2249\textwidth]{imgs/Sky-unblock-dist}\includegraphics[width=0.2249\textwidth]{imgs/TalkTalk-unblock-dist}\includegraphics[width=0.2249\textwidth]{imgs/VirginMedia-unblock-dist}
-
 \includegraphics[width=0.2249\textwidth]{imgs/EE-unblock-dist}\includegraphics[width=0.2249\textwidth]{imgs/O2-unblock-dist}\includegraphics[width=0.2249\textwidth]{imgs/Three-unblock-dist}\includegraphics[width=0.2249\textwidth]{imgs/Vodafone-unblock-dist}
-
 \label{fig:isps-unblock-dist}
 \end{figure}
 
@@ -847,36 +851,69 @@ How has accuracy evolved over time?
 
 %%%%%% Section
 \section*{Study Limitations}
-
+In this paper we have presented a study of UK Internet Server Providers' and Mobile Service Providers' filters and how well they perform.
+We followed a data science approach here by using data provided by the Open Rights Group from their \url{blocked.org.uk} project to first explore general domains and categories of sites and to find to qualitative examples of overblocking, before then investigating how well the filters perform through the creation of pesudo classifiers for each filter.
+In this section we reflect on potential limitations of our study and what effects these may have had.
 
 \subsection*{Measurement of Blocks}
--Defend the approach of analysing which requests were fulfilled - this can contain duplicate URLs (some of which were blocked, and some of which were not)
---This can lead to repeated URLs in the lists of false/true positives and negatives
---We counteract this by using sets to restrict each URL to one occurrence per set
+The requests export from the probe system contains equivalent URLs listed under different states at different times: i.e. a URL can be defined as \textit{blocked} at one point in time and then \textit{ok} later, once it has been unblocked.
+This issue is hard to counteract one must either decide to not count the URL at all, or count it in both sets when computing the contingency table.
+We opted for the latter, therefore place one URL in a respective set of the contingency table (e.g. false positives, false negatives, true positives, true negatives), and as we use sets a URL is only counted once within the respective set.
 
--Explain possible limitations with the actual probe system itself.
-
+Another potential limitation of our study and data used is the probe system itself. 
+As the accuracy over time and time-to-unblock plots have shown, the restriction on the queueing system to only request a URL every 45 days means that analysing the changes in filters over time is somewhat limited.
+Despite this, we can still observe large-time spans between a URL first being blocked and then transitioning to an \textit{ok} state.
 
 \subsection*{Limitations of Pseudo-Classifiers}
-Limitations of this approach:
--Relies on the classification of sites within DMOZ as being correct
--Coverage of the DMOZ categories - as this is manually curated we only cover a \% of the URLs in total that have been aligned with categories
+%TODO fill in coverage percentage below
+The use of pseudo-classifiers relies on URLs having been mapped to DMOZ categories, however this is not true for all URLs.
+In fact, we have coverage of XX\% indicating that we do not consider Y\% of URLs in our analysis.
+This could potentially impact our accuracy measures towards favouring known sites for which DMOZ categories exist, one could argue that the measures are likely to be an \textit{upper bound} on accuracy and that the true accuracy is potentially lower than what we have observed.
 
--Use of DMOZ categories is not without errors:
---E.g. the URL http://www.vin-gastronomie.com/ is not classed as should be blocked in the gold standard as its category is ''World: Francais: Regional: Europe: France: Regions: Haute-Normandie: Eure: Commerce et economie: Gastronomie et alimentation', however the page describes wine brands
-
--Potential improvements:
---Classifying content of the page to mine topics discussed therein - i.e. basic semantic analysis of the content
---Filtering out categories of sites which may introduce noise into the results, and not counting them at all (e.g. those related to gastronomy).
+Another issue that we encountered when using the DMOZ categorisation scheme was the prevalence of \textit{ambiguous} categories. 
+For instance, we repeatedly found that non-UK sites for wineries  and breweries were categorised under the \texttt{World} category, despite them being about alcohol.
+We counteracted this by removing the \texttt{World} category completely from our analysis, however it is likely that other ambiguous categories exist and could impact our results.
 
 
-\section*{Findings and Implications}
+\section*{Conclusions}
+This paper has been concerned with studying the accuracy of UK ISP and MSP filters.
+To focus our investigated we studied three research, which we now reflect upon.
 
+\textbf{RQ1}: How can we understand how UK ISP Web Filters function, and how accurate they are?
 
-\section*{Conclusions and Future Work}
+We have presented a computational framework that constructs pseudo-classifiers for each ISPs' and MSPs' filters with the DMOZ categories of web sites that \textit{should} be blocked.
+By using data provided by the Open Rights Group as part of their \url{blocked.org.uk} project we were able to compare the outcomes of web filters with what should have been blocked through these pseudo-classifiiers.
+Through constructing \textit{contingency tables} we were able to show the large extent to which both overblocking and underblocking occurs across the filters.
 
+\textbf{RQ2}: Are there certain categories and domains of web sites that are prone to overblocking?
 
+Through inspecting the provided data we found qualitative examples of domains that are prone to overblocking (e.g. LiveJournal).
+Upon engineering the pseudo-classifiers, we found wide variations between the categories of sites that the different ISPs and MSPs block, therefore our future work will be focussing on the former part of the above question in order to further investigate category-specific accuracy levels.
 
+\textbf{RQ3}: How long does it take an ISP to fix an error?
+
+We presented an inspection of the $\Delta$-distributions of each ISPs' and MSPs' filters in which we computed the probability density function of the number of hours it takes for a site to transition from a \textit{block} state to an \textit{ok} state.
+The probe system re-tests each URL every 45 days (1080 hours), however we found the distributions' densities to be largely concentrated above this value, thereby indicating that URLs take several re-tests before they are found to have been fixed.
+
+\subsection*{Implications}
+In this paper we have presented the first work to examine how well UK ISPs' and MSPs' web filters perform when blocking content.
+The results show \textit{empirically} that the filters are error prone and that there is systematic evidence of both \textit{overblocking} and \textit{underblocking}: between 30\% (for O2) and 82\% (for TalkTalk) of tested URLs are underblocked, while between 2\% (for EE) to 6\% (for BT) of URLs are overblocked.
+These findings have implications not only on other researchers seeking to investigate how well filters perform, but also on the UK public in general.
+The UK media has repeatedly reported on erroneous blocking, however this growing body of evidence was largely anecdotal in nature; our work is the first to systematically critique the filters, and by following a data science methodology we are able to harness data provided by the Open Rights Group to perform this study.
+In order to ensure full transparency of our work, we have provided the Python and R source code used to run all of the above experiments and produce the above plots on Github;\footnote{https://github.com/openrightsgroup/cmp-analysis} we have also uploaded the evidence of overblocking and underblocking from our experiments to demonstrate what we have found.\footnote{https://github.com/openrightsgroup/cmp-analysis/tree/master/data/output}
+
+\subsection*{Future Work}
+Future work is planned in the following three areas:
+Firstly, we are currently working on a manual annotation system for members of the public to label URLs with the appropriate category labels.
+Our goal here to have at least three raters per URL and then use their decisions to decide on what the categories the URL should be under.
+The goal here is to have an alternative gold standard from which to derive the accuracy of the filters from - thereby providing an alternative to the existing DMOZ category system.
+
+The second area of future work will investigate text mining as a means to identify the topics of web pages.
+By using the manually annotated URLs from above, these will be used to examine how well we can identify the categories of pages automatically; thereby producing an automated categorisation system that can be used to scale up the labelling, if sufficiently accurate.
+
+The third and final area of future work is a planned follow-up study in one year's time.
+This study will repeat the approach presented within this paper and compare the findings, thereby informing how well the filters have performed since then.
+As all our code is open source and engineered to perform parallel computation, repetition of the study is not expected to be challenging.
 
 
 \begin{backmatter}
