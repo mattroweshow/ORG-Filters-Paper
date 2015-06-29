@@ -54,6 +54,7 @@
 \usepackage{url}
 \usepackage{graphics}
 \usepackage{graphicx}
+\usepackage{multirow}
 %\usepackage[applemac]{inputenc} %applemac support if unicode package fails
 %\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
 
@@ -337,9 +338,32 @@ For this we used data provided by the Open Rights Group as part of their Blocked
 \subsection*{Data Captured}
 For this paper we used data collected from the probe system up to the end of March 2015, thereby providing around 9 months' worth of data for analysis.
 Figure \ref{fig:total-requests} shows the distribution of requests per day that were collected in our dataset - a single request consists of a URL being tested by a given filter at a given time, hence representing a unique record.
-%TODO Explain how many requests we have, what is the number per ISP?
+In total we collected 6,289,550 requests for URLs across the studied ISPs and MSPs; Table \ref{tab:dataset_summary} shows the requests per-ISP and per-MSP that were collected.
 
-\begin{figure}[h!]
+
+\begin{table}[h!]
+\caption{Dataset of requests from Blocked.org.uk}
+  \begin{tabular}{ l l c}
+    \hline
+     & Time Interval & Requests \\
+    \hline
+	BT & [July 2014, April 2015] & 877,768 \\
+	PlusNet & [June 2014, April 2015]  & 876,218 \\
+    Sky & [June 2014, April 2015] & 883,571 \\
+    TalkTalk & [July 2014, April 2015] & 883,787 \\
+	VirginMedia & [June 2014, April 2015] & 883,743 \\
+	\hline    
+	EE & [May 2014, March 2015] & 270,471 \\
+	O2 & [May 2014, March 2015] & 495,429 \\
+	Three & [May 2014, March 2015] & 282,017 \\
+	T-Mobile & [April 2014, September 2014] & 483 \\
+	Vodafone & [March 2014, March 2015] & 836,063 \\
+    \hline
+  \end{tabular}
+  \label{tab:dataset_summary}
+\end{table}
+
+\begin{figure}[t]
 \caption{\csentence{Number of URL requests made over time since the beginning of the project.}}
 \includegraphics[width=0.9\textwidth]{imgs/ts-global-requests.pdf}
 \label{fig:total-requests}
@@ -369,15 +393,19 @@ This latter MSP's probe had issues collecting requests and testing for blocks, t
 \end{figure}
 
 
-\clearpage
+
 \section*{Blocked Content}
 This section begins our exploratory analysis of what has been blocked by the UK ISPs and MSPs.
 We start by assessing the top-level URLs domains of blocked requests, before then moving on to examine the categories of blocked URLs.
 
 \subsection*{Blocked Domains}
-We first investigate which domains have been blocked by Internet Service Providers.
-To do this, we extracted the blocked requests for each ISP and then recorded the frequency distributions of the blocked URLs domains.
+We began by investigating which domains had been blocked by Internet Service Providers.
+To do this, we extracted the blocked requests for each ISP and then recorded the frequency distributions of the blocked URLs domains (e.g. \url{www.lancs.ac.uk/staff/rowem} would have domain \url{lancs.ac.uk}).
 
+Figure \ref{fig:broadband-blocked-domains} shows the top-40 domains that are blocked by ISPs' filters. 
+As PlusNet does not use filtering, we can see that the only URLs that are blocked are those related to file-sharing sites such as The Pirate Bay and similar platforms - these were served with a UK court order to be blocked in 2013.
+For the remaining ISPs, the top-most domains that are blocked are pornography (e.g. \url{pornhub}, \url{xhamster}, etc.), and other adult-content sites (e.g. \url{4chan}).
+Interestingly, we found that certain domains are picked up that we would not associate with adult content, such as \url{reddit}, \url{tumblr}, and (worryingly) \url{torproject}.
 
 \begin{figure}[h!]
 \caption{\csentence{Distributions of blocked domains for broadband ISPs} This presents which domains each ISP has blocked and the frequency distribution of those domains.}
@@ -387,6 +415,7 @@ To do this, we extracted the blocked requests for each ISP and then recorded the
 \label{fig:broadband-blocked-domains}
 \end{figure}
 
+Inspection of the top-40 blocked domains of blocked sites by MSPs (in Figure \ref{fig:mobile-blocked-domains}) reveals similar findings to that of the ISPs: with pornography and adult-content sites being blocked, yet with other domains of sites that are not normally associated with adult-content also being blocked (e.g. \url{torproject}, \url{tripod}, \url{wordpress}).
 
 \begin{figure}[h!]
 \caption{\csentence{Distributions of blocked domains for mobile ISPs} This presents which domains each ISP has blocked and the frequency distribution of those domains.}
@@ -395,63 +424,34 @@ To do this, we extracted the blocked requests for each ISP and then recorded the
 \label{fig:mobile-blocked-domains}
 \end{figure}
 
+\subsubsection*{Overblocked Sites}
+Our macro-level analysis of blocked domains revealed that certain filters were blocked site domains that are not normally associated with adult-content.
+To examine further what these sites were, and to find out if they indeed contained adult content, we extracted blocked sites with domains from \url{wordpress}, \url{tumblr}, \url{reddit}, and \url{livejournal}; we now describe \textit{overblocked} sites from each (i.e. sites that should not have been blocked by the filters):
 
-To do:
--Add analysis of wordpress, tumblr, reddit, and livejournal sites
-
-Wordpress Examples:
--URL: http://beeractivist.wordpress.com | Submitted: 2014-11-30 21:13:51 | NetworkName: TalkTalk | Status: blocked
--URL: http://tantracore.wordpress.com | Submitted: 2014-11-30 22:13:28 | NetworkName: Sky | Status: blocked
--URL: http://garsai.wordpress.com | Submitted: 2014-11-30 23:02:46 | NetworkName: TalkTalk | Status: blocked
--URL: http://toysoldier.wordpress.com | Submitted: 2014-07-03 15:03:15 | NetworkName: O2 | Status: blocked
---This site is a support site for men who have been abused (also blocked by Sky)
--URL: http://www.heyartist.wordpress.com | Submitted: 2014-11-30 20:56:34 | NetworkName: Sky | Status: blocked
---Site promoting art as a support mechanism for enhancing wellbeing
-
-Tumblr Examples:
--URL: http://atlasofprejudice.tumblr.com | Submitted: 2014-05-14 01:12:57 | NetworkName: TalkTalk Strict | Status: blocked
---Showing examples of maps that demonstrate the prejudices that countries have
--URL: http://azurelunatic.tumblr.com/post/18654147576/ive-been-forced-to-explain-homosexuality-to-my | Submitted: 2014-05-27 21:27:00 | NetworkName: Vodafone | Status: blocked
---Example of blocking a site as it contains an explanation of why someone is gay (potential prejudice here). Also blocked by O2, TalkTalk, and BT
--URL: http://thusly.tumblr.com | Submitted: 2014-07-02 13:08:44 | NetworkName: EE | Status: blocked
---Also blocked by BT, Sky, O2, Vodafone
--URL: http://tldrwikipedia.tumblr.com | Submitted: 2014-05-14 01:13:11 | NetworkName: TalkTalk | Status: blocked
--URL: http://notalkingplz.tumblr.com | Submitted: 2014-07-02 14:22:20 | NetworkName: O2 | Status: blocked
---Also blocked on: Sky, Vodafone, EE
-
-
-Reddit Examples:
--Largely blocking http://www.reddit.com/r/nsfw, http://www.reddit.com/r/nsfl, and http://reddit.com/r/porn, all of which are sub-reddits containing adult content
--URL: http://www.reddit.cm | Submitted: 2014-07-02 10:40:30 | NetworkName: Sky | Status: blocked
--URL: http://reddit.com/r/creepypms | Submitted: 2014-07-05 20:10:31 | NetworkName: EE | Status: blocked
---Subreddit sharing creepy private messages that people have received. Not necessarily adult content, and definitely not pornography.
-
-
-Livejournal:
--All appear to the sites of Russian sites (e.g. http://limonov-eduard.livejournal.com/)
-
--URL: http://community.livejournal.com/asi/ | Submitted: 2014-11-30 21:11:19 | NetworkName: Sky | Status: blocked
---Anorexia and self-harm support community site. Contains posts from people explaining their afflictions and getting support from other people.
-
--URL: http://beer-retard.livejournal.com | Submitted: 2014-11-30 21:13:51 | NetworkName: TalkTalk | Status: blocked
---Blocked due to discussing/containing information about alcohol/beer?
-
--URL: http://urban-decay.livejournal.com | Submitted: 2014-11-30 21:14:59 | NetworkName: Sky | Status: blocked
---Also blocked by Three and O2
-
--URL: http://ercasse-ainince.livejournal.com/30230.html | Submitted: 2014-11-30 20:51:44 | NetworkName: Sky | Status: blocked
---Article about films that have been out for a long time
-
--Largely blocking pornography live journal pages too
-
-
+\begin{itemize}
+	\item \url{http://garsai.wordpress.com} - Radio documentary site. Blocked by TalkTalk. 
+	\item \url{http://toysoldier.wordpress.com} - This site is a support site for men who have been abused. Blocked by Sky and O2.
+	\item \url{http://www.heyartist.wordpress.com} - Site promoting art as a support mechanism for enhancing wellbeing. Blocked by Sky.
+	\item \url{http://azurelunatic.tumblr.com/post/18654147576/ive-been-forced-to-explain-homosexuality-to-my} - Page explaining why someone is gay. Blocked by Vodafone, O2, TalkTalk, and BT.
+	\item \url{http://thusly.tumblr.com} - Personal web blog containing artistic materials and shared music. Blocked by EE, BT, Sky, O2, and Vodafone.
+	\item \url{http://reddit.com/r/creepypms} - Subreddit sharing creepy private messages that people have received. Not necessarily adult content, and definitely not pornography. Blocked by EE.
+	\item \url{http://community.livejournal.com/asi/} - Anorexia and self-harm support community site. Contains posts from people explaining their afflictions and getting support from other people. Blocked by Sky.
+	\item \url{http://urban-decay.livejournal.com} - Photos of urban areas that have fallen into decline. Blocked by Sky, Three, and O2.
+	\item \url{http://ercasse-ainince.livejournal.com/30230.html} - Article about films that have been out for a long time. Blocked by Sky.
+\end{itemize}
 
 \subsection*{Blocked Site Categories}
--Report on the distribution of categories of sites that are blocked
---Explain the categorisation system used, and the various levels of categories
---What is the coverage of URLs in the DMOZ categorisation system? Report on the \% covered in the system
+Examining the domains of blocked sites allows for an insight into whether sites are being \textit{overblocked}, while our inspection of specific domains' URLs revealed that certain sites and pages were indeed being blocked when they should not have been - based on the ISPs' and MSPs' filter descriptions.
+However, manual inspection of the sites from the blocked records, in to understand what content they contain, is not feasible given their large scale (33,297).
+Therefore to overcome this issue, we harnessed DMOZ (Directory MOZilla)\footnote{\url{http://www.dmoz.org/}} which is based on the original Open Directory Project.
+DMOZ provides a community-created and maintained categorisation system of web sites: users submit URLs of sites and tag the category (from a previously defined hierarchy) that the sites belong to (one category per site).
+The submissions are then verified by the community, thereby ensuring that sites are labelled appropriately.
 
-Given the DMOZ categorisation system and the use of ODP categories, we can use the hierarchy of the category taxonomy to only focus up to a specific depth; thereby restricting the categories to only depth of $d$.
+The DMOZ categorisation system uses ODP categories which can extend to several levels within the category taxonomy's hierarchy, therefore we were able to examine the distribution of blocked categories of sites up to a given depth $d$.
+This process involved looking up, for each ISP and MSP, the blocked sites' categories and then recording the frequency distribution of the categories.
+Below we show the top-40 blocked categories up to a depth of 4 for ISPs (excluding PlusNet from our analysis as this ISP only blocks file sharing platforms) - in Figure \ref{fig:broadband-blocked-categories}.\footnote{N.b. We used a depth of 4 here in order to show how specific the categories can be, while not being too specific. We have also produced the blocked categories for depths of 3, 5 and 6, the plots of which can be found in the github repository - \url{https://github.com/openrightsgroup/cmp-analysis/tree/master/plotting-scripts/plots/per-isp-filter}}
+As expected, several adult categories are found within the top-40 covering different sub-trees within the DMOZ taxonomy; however categories of sites appear to the blocked that one would not associate with adult-content (as with the domains above), such as: \url{Recreation/Food/Drink}, \url{Art/Music/Styles}, \url{World/Deutsch/Computers}, etc.
+However, as we will show below, several sites are placed within these categories which are, indeed, adult in nature and should be blocked as per the filter settings - i.e. covering topics such as alcohol.
 
 \begin{figure}[h!]
 \caption{\csentence{Distributions of blocked level-4 categories for broadband ISPs.}}
@@ -460,184 +460,274 @@ Given the DMOZ categorisation system and the use of ODP categories, we can use t
 \label{fig:broadband-blocked-categories}
 \end{figure}
 
--Not showing Plusnet as it blocks file-sharing category sites
+We found similar distributions of blocked categories for the MSPs as we did for the ISPs - as shown in Figure \ref{fig:mobile-blocked-categories}.
 
 \begin{figure}[h!]
 \caption{\csentence{Distributions of blocked level-4 categories for mobile ISPs.}}
 \includegraphics[width=0.49\textwidth]{imgs/EE-d-4-blocked-categories-to-date.png}\includegraphics[width=0.49\textwidth]{imgs/O2-d-4-blocked-categories-to-date.png}
 \includegraphics[width=0.49\textwidth]{imgs/Three-d-4-blocked-categories-to-date.png}\includegraphics[width=0.49\textwidth]{imgs/Vodafone-d-4-blocked-categories-to-date.png}
-\label{fig:broadband-blocked-categories}
+\label{fig:mobile-blocked-categories}
 \end{figure}
 
 
 %%%%%% Section
 \clearpage
 \section*{Gauging Filter Accuracy}
--Report on reverse engineering the accuracy of the filters
---Need to consider how to collect certain porrnographic examples here and push them to the blocked.org.uk queue
---Report on the class balance between blocked vs not-blocked content
---Can only consider URLs within the system?
---Do the findings suggest a certain problem with the mechanisms used to classify urls?
+Thus far our inspection of ISPs' and MSPs' filters has been through exploring the domains and categories of blocked sites, and has revealed \textit{qualitative} examples of \textit{overblocking}.
+We now turn to answering our first research question: \textit{How can we understand how UK ISP Web Filters function, and how accurate they are?}
+To do this we proposed an approach that constructs \textit{Pseudo Classifiers} for each ISP and MSP filter.
+These psuedo classifiers are then used to identify what \textit{should} be blocked and what \textit{should not} be blocked, based on the filters' settings' descriptions; in doing so, we can then gauge the \textit{accuracy} of each filter.
+We begin this section by explaining how we construct the pseudo classifiers for each filter.
 
-\subsection*{Pseudo-Classifiers for ISP Filters}
--Induce a pseudo-classifier for each ISP filter setting:
---Specify which categories of content should be blocked by certain filter
---Add table to explain this
---Coded blocked topics into DMOZ categories to identify what the pseudo classifier should block. 
---Our approach is to always go as conservative as possible: i.e. if unsure about whether a category should be blocked, then block it.
---Remove file-sharing for now, as this is assessed on a case-by-case basis and with court orders
----I.e. blocking all of Computers: Software: Internet: File Sharing would lead to studies on file-sharing being blocked
---Hence: block everything under Adult
---Also block everything under Computers/Hacking
+\subsection*{Pseudo-Classifiers for ISP and MSP Filters}
+Construction of the pseudo-classifier for each ISP and MSP used the DMOZ categorisation system in conjunction with each filter's documentation to understand what should be blocked and by whom.
+In order to aid comprehension of what should be blocked Table \ref{tab:pseudo_classifiers} collates each filter's settings together with the categories of blocked sites.
+By default, pornography and obscene and tasteless content (e.g. gore, death, etc.) is blocked across all filters, ISPs all block hate and self-harm sites while MSPs do not, and ISPs vary in which categories of content they block - with TalkTalk being the most strict of all the filters.
 
--BT: should block...
---pornography (Adult/Image Galleries + Adult/Video Clips)
---obscene and tasteless (Adult/Death and Gore)
---hate and self-harm (no DMOZ category)
---drugs (Recreation/Drugs)
---alcohol (Recreation/Food/Drink/Drinking + Health/Specific Substances/Alcoholic Beverages)
---tobacco (Shopping/Tobacco + Recreation/Tobacco)
---dating (Society/Relationships/Dating, Society/Relationships/Cyber\_Relationships)
+\begin{table}[h!]
+\caption{Categories that are blocked by each ISP and MSPs' pseudo-classifier according to filter documentation.}
+  \begin{tabular}{ l | c c c c | c c c c }
+    \hline
+	& BT & Sky & TalkTalk & VirginMedia & EE & O2 & Three & Vodafone \\
+    \hline
+    Pornography & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\ 
+    Obscene and Tasteless & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\
+    Hate and Self-harm & $\times$ & $\times$ & $\times$ & $\times$ & \\   
+	Drugs & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\
+	Alcohol & $\times$ & & $\times$ & & $\times$ \\
+	Tobacco & $\times$ & & $\times$ & & $\times$ \\	
+	Dating & $\times$ & $\times$ & $\times$ & & & & & $\times$ \\
+	Social Networking & & $\times$ & $\times$ & & \\
+	Gambling & & $\times$ & $\times$ & & & & & $\times$ \\
+	File-sharing & & & $\times$ & $\times$ & \\
+	Violence & & & $\times$ & & \\
+	Gaming & & & $\times$ & & \\
+	Malware & & $\times$ & $\times$ & & \\
+    \hline
+  \end{tabular}
+  \label{tab:pseudo_classifiers}
+\end{table}
 
--Sky: should block...
---malware sites (Computers/Security/Malicious\_Software/Spyware\_and\_Adware)
---cyber-bullying (no cat on this, generally there are advice pages though)
---pornography (Adult)
---suicide and self-harm (no cat)
---drugs (Recreation/Drugs)
---dating (Society/Relationships/Dating)
---social networking (Computers/Internet/On\_the\_Web/Online\_Communities/Social\_Networking, Kids\_and\_Teens/People\_and\_Society/Online Communities)
---online gaming (Games/Online)
-
--TalkTalk: should block...
---dating (Society/Relationships/Dating)
---drugs (Recreation/Drugs)
---alcohol (Recreation/Food/Drink/Drinking + Health/Specific Substances/Alcoholic Beverages)
---tobacco (Shopping/Tobacco + Recreation/Tobacco)
---File Sharing Sites (Computers/Software/Internet/Clients/File Sharing)
---Gambling (Gamling)
---online gaming (Games)
---Pornography (Adult)
---social networking (Computers/Internet/On\_the\_Web/Online\_Communities/Social\_Networking, Kids\_and\_Teens/People\_and\_Society/Online Communities)
---Suicide and Self-Harm (no cat)
---Weapons and Violence (Adult)
-
-VirginMedia: should block...
---Crime, Violence, and Hate: (Adult)
---Drugs (Recreation/Drugs/Cannabis + Recreation/Drugs/Psychedelics)
---File Sharing Sites (Computers/Software/Internet/Clients/File Sharing)
---Pornography (Adult)
---Suicide and Self-harm (no category for this in DMOZ)
+In order to operationalise these categories, we identified equivalent DMOZ categories that sites had been mapped to.
+For the DMOZ categories we selected the most \textit{general} category possible, therefore should a site be placed in a sub-category then this would be detected.
+For instance, for the category \textit{Tobacco} we used the DMOZ categories \url{Shopping/Tobacco} and \url{Recreation/Tobacco}.
+Our approach was to be as conservative as possible here and to ensure that a filter would block any category that we were unsure about - e.g. blocking all sites listed under \url{Computers/Hacking}.
+Certain categories of sites were ambiguous and could contain content that should be blocked and content that should not be blocked.
+For instance, we found that several alcohol and tobacco related web sites were contained in the \url{World} category, therefore we excluded this category of site completely from our analysis.
+Likewise, we also excluded any sites categorised under \url{Computers/Software/Internet/File_Sharing} as this was also found to be ambiguous.
+For a full listing of the blocked categories and their DMOZ category mappings please refer to the appendices.
 
 
--EE, O2, and Three: should block...
-
---18 works are for adults and can contain strong issues such as: very strong violence, frequent strong language (e.g. 'f***') and / or very strong language (e.g. ‘c***’), strong portrayals of sexual activity, scenes of sexual violence, strong horror, strong blood and gore, real sex (in some circumstances), discriminatory language and behaviour
-
--Vodafone: should block...
---Our content control prevents access to 18-rated content on Vodafone live! (mobile internet) and blocks access to 18-rated websites, un-moderated chat rooms and listed child abuse sites.
-
-
-
-From the DMOZ web site: 
-Generally the Adult category includes sites whose dominant theme is either:
--To appeal to the prurient interest in sex without any serious literary, artistic, political, or scientific value
--The depiction or description of nudity, including sexual or excretory activities or organs in a lascivious way
--The depiction or description of sexually explicit conduct in a lascivious way (e.g. for entertainment purposes)
+%-Induce a pseudo-classifier for each ISP filter setting:
+%--Specify which categories of content should be blocked by certain filter
+%--Add table to explain this
+%--Coded blocked topics into DMOZ categories to identify what the pseudo classifier should block. 
+%--Our approach is to always go as conservative as possible: i.e. if unsure about whether a category should be blocked, then block it.
+%--Remove file-sharing for now, as this is assessed on a case-by-case basis and with court orders
+%---I.e. blocking all of Computers: Software: Internet: File Sharing would lead to studies on file-sharing being blocked
+%--Hence: block everything under Adult
+%--Also block everything under Computers/Hacking
+%
+%VirginMedia: should block...
+%--Crime, Violence, and Hate: (Adult)
+%--Drugs (Recreation/Drugs/Cannabis + Recreation/Drugs/Psychedelics)
+%--File Sharing Sites (Computers/Software/Internet/Clients/File Sharing)
+%--Pornography (Adult)
+%--Suicide and Self-harm (no category for this in DMOZ)
+%
+%-BT: should block...
+%--pornography (Adult/Image Galleries + Adult/Video Clips)
+%--obscene and tasteless (Adult/Death and Gore)
+%--hate and self-harm (no DMOZ category)
+%--drugs (Recreation/Drugs)
+%--alcohol (Recreation/Food/Drink/Drinking + Health/Specific Substances/Alcoholic Beverages)
+%--tobacco (Shopping/Tobacco + Recreation/Tobacco)
+%--dating (Society/Relationships/Dating, Society/Relationships/Cyber\_Relationships)
+%-Sky: should block...
+%--malware sites (Computers/Security/Malicious\_Software/Spyware\_and\_Adware)
+%--cyber-bullying (no cat on this, generally there are advice pages though)
+%--pornography (Adult)
+%--suicide and self-harm (no cat)
+%--drugs (Recreation/Drugs)
+%--dating (Society/Relationships/Dating)
+%--social networking (Computers/Internet/On\_the\_Web/Online\_Communities/Social\_Networking, Kids\_and\_Teens/People\_and\_Society/Online Communities)
+%--online gaming (Games/Online)
+%
+%-TalkTalk: should block...
+%--dating (Society/Relationships/Dating)
+%--drugs (Recreation/Drugs)
+%--alcohol (Recreation/Food/Drink/Drinking + Health/Specific Substances/Alcoholic Beverages)
+%--tobacco (Shopping/Tobacco + Recreation/Tobacco)
+%--File Sharing Sites (Computers/Software/Internet/Clients/File Sharing)
+%--Gambling (Gamling)
+%--online gaming (Games)
+%--Pornography (Adult)
+%--social networking (Computers/Internet/On\_the\_Web/Online\_Communities/Social\_Networking, Kids\_and\_Teens/People\_and\_Society/Online Communities)
+%--Suicide and Self-Harm (no cat)
+%--Weapons and Violence (Adult)
+%
+%
+%
+%
+%-EE, O2, and Three: should block...
+%
+%--18 works are for adults and can contain strong issues such as: very strong violence, frequent strong language (e.g. 'f***') and / or very strong language (e.g. ‘c***’), strong portrayals of sexual activity, scenes of sexual violence, strong horror, strong blood and gore, real sex (in some circumstances), discriminatory language and behaviour
+%
+%-Vodafone: should block...
+%--Our content control prevents access to 18-rated content on Vodafone live! (mobile internet) and blocks access to 18-rated websites, un-moderated chat rooms and listed child abuse sites.
+%
+%
+%
+%From the DMOZ web site: 
+%Generally the Adult category includes sites whose dominant theme is either:
+%-To appeal to the prurient interest in sex without any serious literary, artistic, political, or scientific value
+%-The depiction or description of nudity, including sexual or excretory activities or organs in a lascivious way
+%-The depiction or description of sexually explicit conduct in a lascivious way (e.g. for entertainment purposes)
 
 
 
 \subsection*{Judging Filter Accuracy}
+Once the pseudo-classifiers were constructed for each filter we could then judge how well each filter performs \textit{overall} before then assessing how accuracy changes over time.
+To judge the accuracy of the filters we borrow five measures of performance from machine learning and supervised classification tasks in particular.
+In such classification, the goal is to induce a model that can, as accurately as possible, differentiate between classes of objects (e.g. types of customers, predicting rain or not the following day, etc.).
+In the context of our analyses we have a similar task: \textit{should a given web site be blocked or not?}
+Therefore, we can resolve each filter to handle a set of web sites where we compare each filter's actual labels for the sites (blocked or not) against whether the sites should have been blocked or not.
+This can be summarised in the following contingency table:
 
-Explain gauging filter accuracy using existing measures from classification literature.
--Parallelisation of the accuracy measurement
--Explain the role of Spark in this to distribute the work load
--Explain the location of the code and how to run this
--Explain how we calculate accuracy based on which requests were blocked and which were not blocked - we have to do this as a URL can go from blocked to unblocked and vice-versa
---Question: how often is a given URL periodically tested for a block?
+\begin{table}[h!]
+\caption{Contingency table for deriving filters' accuracy measures.}
+  \begin{tabular}{ l l | c c | }
+ &  & \multicolumn{2}{| c |}{Gold Standard} \\
+ & & Block & Not block \\
+ \hline
+ \multirow{2}{*}{Outcome} & Block & True Positive (TP) & False Positive (FP)  \\
+						   & Not block & False Positive (FP) & True Negative (TN) \\
+  \end{tabular}
+  \label{tab:contingency}
+\end{table}
 
-Compare results to that of \cite{stark2007effectiveness}
+In using the above formulation we can count how many False Positives as the number of URLs that were incorrectly blocked; and False Negatives as the number of URLs that were incorrectly not blocked.
+Hence, the former measures the extent to which \textit{overblocking} occurs while the latter gauges the magnitude of \textit{underblocking}.
+In order to gauge the relative performance of the filters, we use the following accuracy measures: (i) Precision, gauges the proportion of URLs labelled as \textit{blocks} that were correct; (ii) Recall, to measure the proportion of blocked URLs that should have been detected; and (iii) F-measure (F1) as the harmonic mean between precision and recall.
+These accuracy measures are defined explicitly, using the contingency table defined in Table \ref{tab:contingency}, as follows:
+	
+\begin{equation}
+precision = \frac{\vert TP \vert}{\vert TP \vert  + \vert FP \vert}, \quad recall = \frac{\vert TP \vert }{ \vert TP \vert  + \vert FN \vert}, \quad F1 = \frac{ 2 \times precision \times recall }{precision + recall} 
+\end{equation}
+	
+We also define two additional accuracy measures as follows: the first of the False Positive Rate (FPR) which measures the proportion of false positives that are produced by the filter, defined as:
+
+\begin{equation}
+FPR = \frac{\vert FP \vert}{ \vert FP \vert + \vert TN \vert}
+\end{equation}
+
+Hence, if the magnitude of $TN$ increases and $FP$ decreases then the classifier produces fewer overblocks.
+For precision, recall, F1 and FPR all values are within the closed interval $[0,1]$ with a value of 1 indicating perfect performance for precision, recall, and F1 - and the opposite for FPR (as we wish to minimise this value).
+
+We also included the \textit{Matthews Correlation Coefficient} as our fifth and final accuracy measure.
+This measure produces a value in the closed interval $[-1, 1]$ with: $0$ indicating that the filter matches a random guesser's accuracy, $1$ indicating perfect performance far superior to a random guesser, and a value of $-1$ indicating that all outcomes of the filter were incorrect.
+
+\subsubsection*{Parallelised Computation}
+As we were dealing with 8 different filters, and their pseudo-classifiers, and had to process 6 million records - which are growing in size daily as the probes collect more data - we constructed a parallel-processing framework to compute the accuracy measures for each filter.
+This framework was written using the Apache Spark stack and utilised HDFS from the Apache Hadoop stack - the Python code can be found online in the Github repository of the project.\footnote{\url{https://github.com/openrightsgroup/cmp-analysis}}
+Computation follows a pipeline approach as follows:
+\begin{enumerate}
+	\item Clean and load data into HDFS. The blocked.org.uk export file containing all requests is cleaned to reduce duplicate records and then loaded into HDFS.
+	The DMOZ category files are also loaded into HDFS.
+	\item Load DMOZ category map into cluster memory. The DMOZ category file is processed using a map-reduce job thereby producing \texttt{(key, value)} pairs where the keys are URLs and the values are the DMOZ category - one URL has one category. 
+	We actually load the non-adult category map and the adult category map separately - as DMOZ provides different files for each - and then perform \texttt{union} operation to join the maps.
+	This joined map is then broadcast to the cluster so that all nodes can access the map from memory.
+	\item Compute contingency tables per ISP and MSP. A second map-reduce job is run to produce (key, value) pairs from the cleaned request export file in HDFS.
+	Keys here are the ISP and MSP names (e.g. BT, O2, etc.) and values are contingency table objects.
+	The \textit{map}-stage functions by reading in one line from the export file and then checking if the request is a block or not and for which ISP it pertains to, a new contingency table is then produced for the (key, value) pair.
+	The \textit{reduce}-stage then combines all of the contingency tables together for the given filter.
+	\item Accuracy computation. After the final map-reduce job is complete, the above accuracy measures are then computed for each ISP and MSP based on the combined contingency tables.
+\end{enumerate}
+
+The above approach is an effective way of quickly processing the requests file and gauging filter accuracy.
+As we will explain below, this framework also allows for time-series computation of filter accuracy to be performed.
+
 
 \subsubsection*{General Accuracy}
 
-% Original results without assessing for polysemic categories
-\begin{table}[h!]
-\caption{Accuracy levels of ISP and Mobile Providers' Web Filters derived using the DMOZ categories that should have been blocked by each filter and the categories of URLs that were actually blocked.}
-  \begin{tabular}{ l c c c c c c}
-    \hline
-     & Precision & Recall & FPR & MCC & F1 \\
-    \hline
-	BT & 0.032 & 0.613 & 0.012 & 0.138 & 0.061 \\
-    Sky & 0.088 & 0.370 & 0.003 & 0.179 & 0.142 \\
-    TalkTalk & 0.078  & 0.073 & 0.009 & 0.066 & 0.075 \\
-	VirginMedia & 0.050 & 0.508 & 0.003 & 0.159 & 0.091 \\
-	\hline    
-	EE & 0.189 & 0.635 & 0.002 & 0.346 & 0.291 \\
-	O2 & 0.136 & 0.697 & 0.002 & 0.307 & 0.227 \\
-	Three & 0.108 & 0.631 & 0.004 & 0.260 & 0.185 \\
-	Vodafone & 0.044 & 0.564 & 0.004 & 0.156 & 0.081 \\
-    \hline
-  \end{tabular}
-\end{table}
-
-% Updated results (21st May 2015). Shows large degradation in accuracy. After altering category checking procedure
-%BT: tp = 634.0 | tn = 1543183.0 | fp = 19168.0 | fn = 400.0 | prec = 0.032 | rec = 0.613 | FPR = 0.012 | mcc = 0.138 | F1 = 0.061
-%Sky: tp = 526.0 | tn = 1566677.0 | fp = 5442.0 | fn = 895.0 | prec = 0.088 | rec = 0.370 | FPR = 0.003 | mcc = 0.179 | F1 = 0.142
-%TalkTalk: tp = 1218.0 | tn = 1542758.0 | fp = 14409.0 | fn = 15514.0 | prec = 0.078  | rec = 0.073 | FPR = 0.009 | mcc = 0.066 | F1 = 0.075
-%VirginMedia: tp = 266.0 | tn = 1568395.0 | fp = 5036.0 | fn = 258.0 | prec = 0.0502  | rec = 0.508 | FPR = 0.003 | mcc = 0.159 | F1 = 0.091
-%EE: tp = 219.0 | tn = 472432.0 | fp = 939.0 | fn = 126.0 | prec = 0.189 | rec = 0.635 | FPR = 0.002 | mcc = 0.346 | F1 = 0.291
-%O2: tp = 230.0 | tn = 876122.0 | fp = 1462.0 | fn = 100.0 | prec = 0.136 | rec = 0.697 | FPR = 0.002 | mcc = 0.307 | F1 = 0.227
-%Three: tp = 236.0 | tn = 491864.0 | fp = 1941.0 | fn = 138.0 | prec = 0.108 | rec = 0.631 | FPR = 0.004 | mcc = 0.260 | F1 = 0.185
-%Vodafone: tp = 254.0 | tn = 1482343.0 | fp = 5560.0 | fn = 196.0 | prec = 0.044 | rec = 0.564 | FPR = 0.004 | mcc = 0.156 | F1 = 0.081
-
-\begin{table}[h!]
-\caption{Accuracy levels after filtering out sites from the World category subtree.}
-  \begin{tabular}{ l c c c c c c}
-    \hline
-     & Precision & Recall & FPR & MCC & F1 \\
-    \hline
-	BT & 0.066 & 0.612 & 0.010 & 0.198 & 0.119 \\
-    Sky & 0.163 & 0.372 & 0.003 & 0.245 & 0.227 \\
-    TalkTalk & 0.145 & 0.072 & 0.008 & 0.091 & 0.097 \\
-	VirginMedia & 0.112 & 0.512 & 0.002 & 0.239 & 0.184 \\
-	\hline    
-	EE & 0.281 & 0.637 & 0.002 & 0.422 & 0.390 \\
-	O2 & 0.218 & 0.699 & 0.002 & 0.390 & 0.333 \\
-	Three & 0.184 & 0.633 & 0.004 & 0.340 & 0.285 \\
-	Vodafone & 0.083 & 0.568 & 0.003 & 0.216 & 0.144 \\
-    \hline
-  \end{tabular}
-\end{table}
-
-
-% Updated results (29th May 2015). After altering the world category filter
-%BT: tp = 627.0 | tn = 867824.0 | fp = 8919.0 | fn = 398.0 | prec = 0.066 | rec = 0.612 | FPR = 0.010 | mcc = 0.198 | F1 = 0.119
-%Sky: tp = 520.0 | tn = 879512.0 | fp = 2663.0 | fn = 876.0 | prec = 0.163 | rec = 0.372 | FPR = 0.003 | mcc = 0.245 | F1 = 0.227
-%TalkTalk: tp = 1201.0 | tn = 860146.0 | fp = 7065.0 | fn = 15375.0 | prec = 0.145 | rec = 0.072 | FPR = 0.008 | mcc = 0.091 | F1 = 0.097
-%VirginMedia: tp = 266.0 | tn = 881118.0 | fp = 2105.0 | fn = 254.0 | prec = 0.112 | rec = 0.512 | FPR = 0.002 | mcc = 0.239 | F1 = 0.184
-%EE: tp = 219.0 | tn = 269566.0 | fp = 561.0 | fn = 125.0 | prec = 0.281 | rec = 0.637 | FPR = 0.002 | mcc = 0.422 | F1 = 0.390
-%O2: tp = 230.0 | tn = 494277.0 | fp = 823.0 | fn = 99.0 | prec = 0.218 | rec = 0.699 | FPR = 0.002 | mcc = 0.390 | F1 = 0.333
-%Three: tp = 236.0 | tn = 280598.0 | fp = 1046.0 | fn = 137.0 | prec = 0.184 | rec = 0.633 | FPR = 0.004 | mcc = 0.340 | F1 = 0.285
-%Vodafone: tp = 254.0 | tn = 832797.0 | fp = 2819.0 | fn = 193.0 | prec = 0.083 | rec = 0.568 | FPR = 0.003 | mcc = 0.216 | F1 = 0.144
-
-\begin{table}[h!]
-\caption{Accuracy levels after filtering out sites from the World category subtree and controlling for breweries and other alcohol related sites.}
-  \begin{tabular}{ l c c c c c c}
-    \hline
-     & Precision & Recall & FPR & MCC & F1 \\
-    \hline
-	BT & 0.335 & 0.726 & 0.007 & 0.490 & 0.459 \\
-    Sky & 0.163 & 0.372 & 0.003 & 0.245 & 0.227 \\
-    TalkTalk & 0.422 & 0.176 & 0.006 & 0.262 & 0.248 \\
-	VirginMedia & 0.112 & 0.512 & 0.002 & 0.239 & 0.184 \\
-	\hline    
-	EE & 0.281 & 0.637 & 0.002 & 0.422 & 0.390 \\
-	O2 & 0.218 & 0.699 & 0.002 & 0.390 & 0.333 \\
-	Three & 0.184 & 0.633 & 0.004 & 0.340 & 0.285 \\
-	Vodafone & 0.083 & 0.568 & 0.003 & 0.216 & 0.144 \\
-    \hline
-  \end{tabular}
-\end{table}
+%% Original results without assessing for polysemic categories
+%\begin{table}[h!]
+%\caption{Accuracy levels of ISP and Mobile Providers' Web Filters derived using the DMOZ categories that should have been blocked by each filter and the categories of URLs that were actually blocked.}
+%  \begin{tabular}{ l c c c c c c}
+%    \hline
+%     & Precision & Recall & FPR & MCC & F1 \\
+%    \hline
+%	BT & 0.032 & 0.613 & 0.012 & 0.138 & 0.061 \\
+%    Sky & 0.088 & 0.370 & 0.003 & 0.179 & 0.142 \\
+%    TalkTalk & 0.078  & 0.073 & 0.009 & 0.066 & 0.075 \\
+%	VirginMedia & 0.050 & 0.508 & 0.003 & 0.159 & 0.091 \\
+%	\hline    
+%	EE & 0.189 & 0.635 & 0.002 & 0.346 & 0.291 \\
+%	O2 & 0.136 & 0.697 & 0.002 & 0.307 & 0.227 \\
+%	Three & 0.108 & 0.631 & 0.004 & 0.260 & 0.185 \\
+%	Vodafone & 0.044 & 0.564 & 0.004 & 0.156 & 0.081 \\
+%    \hline
+%  \end{tabular}
+%\end{table}
+%
+%% Updated results (21st May 2015). Shows large degradation in accuracy. After altering category checking procedure
+%%BT: tp = 634.0 | tn = 1543183.0 | fp = 19168.0 | fn = 400.0 | prec = 0.032 | rec = 0.613 | FPR = 0.012 | mcc = 0.138 | F1 = 0.061
+%%Sky: tp = 526.0 | tn = 1566677.0 | fp = 5442.0 | fn = 895.0 | prec = 0.088 | rec = 0.370 | FPR = 0.003 | mcc = 0.179 | F1 = 0.142
+%%TalkTalk: tp = 1218.0 | tn = 1542758.0 | fp = 14409.0 | fn = 15514.0 | prec = 0.078  | rec = 0.073 | FPR = 0.009 | mcc = 0.066 | F1 = 0.075
+%%VirginMedia: tp = 266.0 | tn = 1568395.0 | fp = 5036.0 | fn = 258.0 | prec = 0.0502  | rec = 0.508 | FPR = 0.003 | mcc = 0.159 | F1 = 0.091
+%%EE: tp = 219.0 | tn = 472432.0 | fp = 939.0 | fn = 126.0 | prec = 0.189 | rec = 0.635 | FPR = 0.002 | mcc = 0.346 | F1 = 0.291
+%%O2: tp = 230.0 | tn = 876122.0 | fp = 1462.0 | fn = 100.0 | prec = 0.136 | rec = 0.697 | FPR = 0.002 | mcc = 0.307 | F1 = 0.227
+%%Three: tp = 236.0 | tn = 491864.0 | fp = 1941.0 | fn = 138.0 | prec = 0.108 | rec = 0.631 | FPR = 0.004 | mcc = 0.260 | F1 = 0.185
+%%Vodafone: tp = 254.0 | tn = 1482343.0 | fp = 5560.0 | fn = 196.0 | prec = 0.044 | rec = 0.564 | FPR = 0.004 | mcc = 0.156 | F1 = 0.081
+%
+%\begin{table}[h!]
+%\caption{Accuracy levels after filtering out sites from the World category subtree.}
+%  \begin{tabular}{ l c c c c c c}
+%    \hline
+%     & Precision & Recall & FPR & MCC & F1 \\
+%    \hline
+%	BT & 0.066 & 0.612 & 0.010 & 0.198 & 0.119 \\
+%    Sky & 0.163 & 0.372 & 0.003 & 0.245 & 0.227 \\
+%    TalkTalk & 0.145 & 0.072 & 0.008 & 0.091 & 0.097 \\
+%	VirginMedia & 0.112 & 0.512 & 0.002 & 0.239 & 0.184 \\
+%	\hline    
+%	EE & 0.281 & 0.637 & 0.002 & 0.422 & 0.390 \\
+%	O2 & 0.218 & 0.699 & 0.002 & 0.390 & 0.333 \\
+%	Three & 0.184 & 0.633 & 0.004 & 0.340 & 0.285 \\
+%	Vodafone & 0.083 & 0.568 & 0.003 & 0.216 & 0.144 \\
+%    \hline
+%  \end{tabular}
+%\end{table}
+%
+%
+%% Updated results (29th May 2015). After altering the world category filter
+%%BT: tp = 627.0 | tn = 867824.0 | fp = 8919.0 | fn = 398.0 | prec = 0.066 | rec = 0.612 | FPR = 0.010 | mcc = 0.198 | F1 = 0.119
+%%Sky: tp = 520.0 | tn = 879512.0 | fp = 2663.0 | fn = 876.0 | prec = 0.163 | rec = 0.372 | FPR = 0.003 | mcc = 0.245 | F1 = 0.227
+%%TalkTalk: tp = 1201.0 | tn = 860146.0 | fp = 7065.0 | fn = 15375.0 | prec = 0.145 | rec = 0.072 | FPR = 0.008 | mcc = 0.091 | F1 = 0.097
+%%VirginMedia: tp = 266.0 | tn = 881118.0 | fp = 2105.0 | fn = 254.0 | prec = 0.112 | rec = 0.512 | FPR = 0.002 | mcc = 0.239 | F1 = 0.184
+%%EE: tp = 219.0 | tn = 269566.0 | fp = 561.0 | fn = 125.0 | prec = 0.281 | rec = 0.637 | FPR = 0.002 | mcc = 0.422 | F1 = 0.390
+%%O2: tp = 230.0 | tn = 494277.0 | fp = 823.0 | fn = 99.0 | prec = 0.218 | rec = 0.699 | FPR = 0.002 | mcc = 0.390 | F1 = 0.333
+%%Three: tp = 236.0 | tn = 280598.0 | fp = 1046.0 | fn = 137.0 | prec = 0.184 | rec = 0.633 | FPR = 0.004 | mcc = 0.340 | F1 = 0.285
+%%Vodafone: tp = 254.0 | tn = 832797.0 | fp = 2819.0 | fn = 193.0 | prec = 0.083 | rec = 0.568 | FPR = 0.003 | mcc = 0.216 | F1 = 0.144
+%
+%\begin{table}[h!]
+%\caption{Accuracy levels after filtering out sites from the World category subtree and controlling for breweries and other alcohol related sites.}
+%  \begin{tabular}{ l c c c c c c}
+%    \hline
+%     & Precision & Recall & FPR & MCC & F1 \\
+%    \hline
+%	BT & 0.335 & 0.726 & 0.007 & 0.490 & 0.459 \\
+%    Sky & 0.163 & 0.372 & 0.003 & 0.245 & 0.227 \\
+%    TalkTalk & 0.422 & 0.176 & 0.006 & 0.262 & 0.248 \\
+%	VirginMedia & 0.112 & 0.512 & 0.002 & 0.239 & 0.184 \\
+%	\hline    
+%	EE & 0.281 & 0.637 & 0.002 & 0.422 & 0.390 \\
+%	O2 & 0.218 & 0.699 & 0.002 & 0.390 & 0.333 \\
+%	Three & 0.184 & 0.633 & 0.004 & 0.340 & 0.285 \\
+%	Vodafone & 0.083 & 0.568 & 0.003 & 0.216 & 0.144 \\
+%    \hline
+%  \end{tabular}
+%\end{table}
 
 % Updated results (29th May 2015). After fixing the alcohol sites
 %BT: tp = 3202.0 | tn = 867015.0 | fp = 6344.0 | fn = 1207.0 | prec = 0.335 | rec = 0.726 | FPR = 0.007 | mcc = 0.490 | F1 = 0.459
@@ -649,8 +739,10 @@ Compare results to that of \cite{stark2007effectiveness}
 %Three: tp = 236.0 | tn = 280598.0 | fp = 1046.0 | fn = 137.0 | prec = 0.184 | rec = 0.633 | FPR = 0.004 | mcc = 0.340 | F1 = 0.285
 %Vodafone: tp = 254.0 | tn = 832797.0 | fp = 2819.0 | fn = 193.0 | prec = 0.083 | rec = 0.568 | FPR = 0.003 | mcc = 0.216 | F1 = 0.144
 
+From the computational framework, we were able to compute the accuracy of each filter as shown in Table \ref{tab:accuracy}.
+
 \begin{table}[h!]
-\caption{Accuracy levels after applying keyword filtering for additional alcohol-related categories (e.g. brewery, wineries).}
+\caption{Accuracy levels of the various ISPs' and MSPs' filters across the five measures.}
   \begin{tabular}{ l c c c c c c}
     \hline
      & Precision & Recall & FPR & MCC & F1 \\
@@ -666,9 +758,13 @@ Compare results to that of \cite{stark2007effectiveness}
 	Vodafone & 0.083 & 0.568 & 0.003 & 0.216 & 0.144 \\
     \hline
   \end{tabular}
+  \label{tab:accuracy}
 \end{table}
 
 
+
+
+Compare results to that of \cite{stark2007effectiveness}
 
 %BT: tp = 3995.0 | tn = 865766.0 | fp = 5551.0 | fn = 2456.0 | prec = 0.418 | rec = 0.619 | FPR = 0.006 | mcc = 0.505 | F1 = 0.499
 %Sky: tp = 607.0 | tn = 878427.0 | fp = 2576.0 | fn = 1961.0 | prec = 0.191 | rec = 0.236 | FPR = 0.003 | mcc = 0.210 | F1 = 0.211
@@ -679,6 +775,20 @@ Compare results to that of \cite{stark2007effectiveness}
 %O2: tp = 230.0 | tn = 494277.0 | fp = 823.0 | fn = 99.0 | prec = 0.218 | rec = 0.699 | FPR = 0.002 | mcc = 0.390 | F1 = 0.333
 %Three: tp = 236.0 | tn = 280598.0 | fp = 1046.0 | fn = 137.0 | prec = 0.184 | rec = 0.633 | FPR = 0.004 | mcc = 0.340 | F1 = 0.285
 %Vodafone: tp = 254.0 | tn = 832797.0 | fp = 2819.0 | fn = 193.0 | prec = 0.083 | rec = 0.568 | FPR = 0.003 | mcc = 0.216 | F1 = 0.144
+
+
+%%%% Results using keyword checks for EE, Vodafone and Three
+%%%% Boost in precision, yet large reduction in recall due to large increase in false negatives
+%BT: tp = 3995.0 | tn = 865766.0 | fp = 5551.0 | fn = 2456.0 | prec = 0.418 | rec = 0.619 | FPR = 0.006 | mcc = 0.505 | F1 = 0.499
+%Sky: tp = 607.0 | tn = 878427.0 | fp = 2576.0 | fn = 1961.0 | prec = 0.191 | rec = 0.236 | FPR = 0.003 | mcc = 0.210 | F1 = 0.211
+%TalkTalk: tp = 3994.0 | tn = 857742.0 | fp = 4272.0 | fn = 17779.0 | prec = 0.483 | rec = 0.183 | FPR = 0.005 | mcc = 0.287 | F1 = 0.266
+%VirginMedia: tp = 266.0 | tn = 881118.0 | fp = 2105.0 | fn = 254.0 | prec = 0.112 | rec = 0.512 | FPR = 0.002 | mcc = 0.239 | F1 = 0.184
+
+%EE: tp = 257.0 | tn = 268361.0 | fp = 523.0 | fn = 1330.0 | prec = 0.329 | rec = 0.162 | FPR = 0.002 | mcc = 0.228 | F1 = 0.217
+%O2: tp = 230.0 | tn = 494229.0 | fp = 823.0 | fn = 147.0 | prec = 0.218 | rec = 0.610 | FPR = 0.002 | mcc = 0.364 | F1 = 0.322
+%Three: tp = 236.0 | tn = 280573.0 | fp = 1046.0 | fn = 162.0 | prec = 0.184 | rec = 0.593 | FPR = 0.004 | mcc = 0.329 | F1 = 0.281
+%Vodafone: tp = 285.0 | tn = 831654.0 | fp = 2788.0 | fn = 1336.0 | prec = 0.093 | rec = 0.176 | FPR = 0.003 | mcc = 0.125 | F1 = 0.121
+
 
 
 Qualitative Examples of Blocks:
@@ -777,12 +887,30 @@ Limitations of this approach:
 \section*{Acknowledgements}
 Open Rights Group for providing the data and engineering the solution
 
-
 % if your bibliography is in bibtex format, use those commands:
 \bibliographystyle{bmc-mathphys} % Style BST file
 \bibliography{ORG-Filters-Paper}      % Bibliography file (usually '*.bib' )
 
+\section*{Appendix 1: DMOZ Block Categories}
+\label{app:cats}
+In order to operationalise the blocked categories we identified equivalent DMOZ categories.
+This allowed each filter to have a pseudo-classifier constructed which contained the categories of sites that should be blocked upon request.
+These DMOZ categories were as follows:
 
+\begin{itemize}
+	\item Adult and Obscene and Tasteless: \url{Adult}
+	\item Hate and Self-harm: No category
+	\item Drugs: \url{Recreation/Drugs}
+	\item Alcohol: \texttt{Recreation/Food/Drink/Drinking, Recreation/Food/Drink/Mead, Recreation/Food/Drink/Wine, Recreation/Food/Drink/Beer, Recreation/Food/Drink/Alcopops, Recreation/Food/Drink/Cider, Recreation/Food/Drink/Cocktails, Recreation/Food/Drink/Liquor, Recreation/Food/Drink/Sake, Health/Specific Substances/Alcoholic Beverages}
+	\item Tobacco: \texttt{Shopping/Tobacco, Recreation/Tobacco}
+	\item Dating: \url{Society/Relationships/Dating, Society/Relationships/Cyber_Relationships, Regional/Europe/United Kingdom/Society_and_Culture/Gay,_Lesbian,_and_Bisexual/Relationships}
+	\item Social Networking: \url{Computers/Internet/On_the_Web/Online_Communities/Social_Networking,, Kids_and_Teens/People_and_Society/Online Communities}
+	\item Gambling: \texttt{Gambling}
+	\item File-sharing: \texttt{Computers/Software/Internet/File Sharing}
+	\item Violence: No category - assume that this is covered by \texttt{Adult}
+	\item Gaming: \texttt{Games}
+	\item Malware and Hacking: \texttt{Computers/Hacking}
+\end{itemize}
 
 \end{backmatter}
 \end{document}
