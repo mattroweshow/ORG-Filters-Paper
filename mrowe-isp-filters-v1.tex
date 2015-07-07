@@ -331,10 +331,15 @@ For this we used data provided by the Open Rights Group as part of their Blocked
 
 % Richard - need your input in to this section
 \subsection*{Blocked.org.uk Probe System}
--Explain the framework that was used for this
--Explain the submission interface and the use of the blocked portal to check what has been blocked and unblocked
--Gathering evidence of overblocking and underblocking
--Explain the settings of each filter - i.e. default settings for each
+Blocked is a unique project that allows people to find out whether their websites are being blocked by filters in the UK. The system comprises three sub-systems: probes, middleware and a website.
+We subscribe to an internet connection from each of the providers listed above. We activated the ISP's web filters on each connection, and where a choice of filter configuration was available to us, we selected the default settings.
+On each connection we run a probe comprising a virtual machine and our probe software. The middleware manages a queue of URLs for each ISP of which it is aware. When probes register with the middleware they declare the ISP to which they are connected and are attached to the correct queue. Probes then poll these queues for new URLs to test.
+When a new URL is received by the middleware it is copied into each ISP queue, and when that queue is next polled by an available probe, the next new URL is sent out to that probe. The probe then requests the URL via the ISP to which it is connected, parses and classifies the response, and returns the result to the middleware. The middlware records the result in its database.
+Anyone can submit a URL for checking by the system on our website at www.blocked.org.uk. These URLs are prioritised by the queue system so that results can be returned quickly and displayed on the site. For each ISP the website displays the last available result, the date of the last available result, and the date on which the URL was last reported as being blocked on that ISP (if any).
+The middleware queues checked URLs for periodic re-checking to prevent the results data from going stale. Historical data is maintained but not necessarily displayed on the website.
+We pre-seeded the system with URLs from the top 100,000 websites as ranked by Alexa before we launched our website. We can also submit URLs for testing in bulk.
+Alongside the blocking results for a URL, we present on the website a form where visitors can tell us about the content of the site, and whether they think it has been blocked in error. It is not possible to determine automatically that a site has been overblocked or underblocked - a system to do so would be no more accurate than the filtering systems themselves. Instead we review manually those URLs reported to us as having been blocked wrongly.
+We licence our software under Free software licences and publish our data under a creative commons licence. Our software is available on Github and our data on blocked.org.uk.
 
 \subsection*{Data Captured}
 For this paper we used data collected from the probe system up to the end of March 2015, thereby providing around 9 months' worth of data for analysis.
