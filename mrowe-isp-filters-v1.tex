@@ -1,48 +1,3 @@
-%% BioMed_Central_Tex_Template_v1.06
-%%                                      %
-%  bmc_article.tex            ver: 1.06 %
-%                                       %
-
-%%IMPORTANT: do not delete the first line of this template
-%%It must be present to enable the BMC Submission system to
-%%recognise this template!!
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                                     %%
-%%  LaTeX template for BioMed Central  %%
-%%     journal article submissions     %%
-%%                                     %%
-%%          <8 June 2012>              %%
-%%                                     %%
-%%                                     %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                                                                 %%
-%% For instructions on how to fill out this Tex template           %%
-%% document please refer to Readme.html and the instructions for   %%
-%% authors page on the biomed central website                      %%
-%% http://www.biomedcentral.com/info/authors/                      %%
-%%                                                                 %%
-%% Please do not use \input{...} to include other tex files.       %%
-%% Submit your LaTeX manuscript as one .tex document.              %%
-%%                                                                 %%
-%% All additional figures and files should be attached             %%
-%% separately and not embedded in the \TeX\ document itself.       %%
-%%                                                                 %%
-%% BioMed Central currently use the MikTex distribution of         %%
-%% TeX for Windows) of TeX and LaTeX.  This is available from      %%
-%% http://www.miktex.org                                           %%
-%%                                                                 %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%% additional documentclass options:
-%  [doublespacing]
-%  [linenumbers]   - put the line numbers on margins
-
-%%% loading packages, author definitions
-
 %\documentclass[twocolumn]{bmcart}% uncomment this for twocolumn layout and comment line below
 \documentclass{bmcart}
 
@@ -51,10 +6,12 @@
 %\RequirePackage{natbib}
 %\RequirePackage{hyperref}
 \usepackage[utf8]{inputenc} %unicode support
-\usepackage{url}
+
 \usepackage{graphics}
 \usepackage{graphicx}
 \usepackage{multirow}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
 %\usepackage[applemac]{inputenc} %applemac support if unicode package fails
 %\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
 
@@ -127,8 +84,8 @@
 \begin{abstractbox}
 
 \begin{abstract} % abstract
-Since 2013 UK-based broadband and mobile internet users have been faced with a \textit{yes} or \textit{no} decision in : \textit{would they like to turn web filtering on, or not?}
-A minority of users (between 6 and 36\%) chose to say to turn on filtering, often to protect users of their connection from potentially harmful and damaging content.
+Since 2013 UK-based broadband and mobile internet users have been faced with a \textit{yes} or \textit{no} decision: \textit{would they like to turn web filtering on?}
+A minority of users (between 6 and 36\%) chose to say \emph{yes} to turning on filtering, often to protect users of their connection from potentially harmful and damaging content.
 Since their inception, filters provided by UK Internet Service Providers (ISPs) and Mobile Service Providers (MSPs) have been reported \textit{anecdotally} as having both \textit{overblocked} web sites (i.e. erroneously blocked a page when it should not have been) and \textit{underblocked} web sites (i.e. not blocked a web page when it should have been); however until now no work has investigated the performance of UK ISPs' and MSPs' web filters and how this can be empirically characterised.
 In this paper we fill this gap by presenting the first systematic study of UK web filters used by consumers.
 By using data provided by the Open Rights Group, and performing a data science study, we were able to compute the performance of the UK ISPs' and MSPs' filters across a range of web sites, providing evidence of systematic underblocking and overblocking.
@@ -191,10 +148,16 @@ Our findings are particularly stark: we observed that between 30\% (for O2) and 
 %--how they can be held to account
 %--who is responsible for their oversight (this is left vague)
 
-In 2013, the United Kingdom government instructed all UK-based Internet Service Providers (ISPs) to provide new customers with an `\textit{unavoidable}' choice: \textit{to turn on web filtering, or not}. 
-This was presented to such customers as a web-based form to which the customers provided their answer; and should the customer select \textit{yes} then for certain ISPs additional questions would be asked about the level of filtering required.
+In 2013, the United Kingdom government persuaded UK-based Internet Service Providers (ISPs) to do more to filter out potentially \emph{nefarious} content that is not suitable for children.
+Since then new customers to ISPs from 2013 and existing customers from 2014 have been provided with an `\textit{unavoidable}' choice: \textit{to turn on web filtering, or not}. 
+This has been presented to customers as a web-based form to which customers must provide their answer; and should the customer decide to turn on filtering then for certain ISPs additional questions would then be asked about the level of filtering required.
 Such web filtering was mandated in order to protect children from adult content (e.g. pornography, alcohol, and drugs), and to ensure that they can browse and use the Web in a safe manner.
 However after one year of the provision of such filters, an Ofcom report\footnote{\url{http://stakeholders.ofcom.org.uk/internet/internet-safety-2}} found that for new ISP customers, who were offered the choice of filtering uptake ranged across ISPs from only 5\% to 36\%.
+
+Some form of web filtering takes place at the majority of ISPs that UK consumers use, regardless of whether they turned on filtering or not.
+This is because certain sites must be blocked \emph{by law}.
+There are actually four classes of information, and thus the sites that host that information, that are blocked by filters: (i) child abuse images, the URLs of which are provided by the Internet Watch Foundation (IWF); (ii) sites that host material that infringes copyright, as specified by court orders, e.g. the Pirate Bay; (iii) extremist material, the URLs of which are provided by the Metropolitan police's counter terrorism internet referral unit (CITRU), and; (iv) generally legal content, as blocked by the web filters that are turned on by UK consumers.
+In this paper we focus on examining the latter of these classes of sites.
 
 During the period since the filters' inception, various news outlets have reported on examples of `\textit{overblocking}' by ISPs - where sites are blocked that should not have been - such as sexual health advice blogs, charity web sites, addiction-support sites, and politics-related web sites and opinion blogs.
 This has led to questions being raised as to the accuracy of the filters, what they are blocking that they should not be (\textit{overblocking}), and what sites they are not filtering out that they should be (\textit{underblocking}).
@@ -210,9 +173,8 @@ Motivated by this current lack of understanding, in this paper we investigate th
 
 In order to investigate the above questions, we present a study of both UK ISPs and Mobile Service Providers' (MSPs) filters using data collected by the Open Rights Group\footnote{A non-profit UK-based organisation who campaign for and work to promote digital rights} as part of their Blocked.org.uk\footnote{\url{https://www.blocked.org.uk/}} project.
 The aim of the project was to \textit{probe} a range of Internet (ISPs) and Mobile Service Providers (MSPs) with a collection of URLs and collect examples of blocked and unblocked web sites.
-In performing this study, we follow a \textit{data science} approach by first performing exploratory analysis at the \textit{macro} level of what domains are commonly blocked and what categories of sites are blocked by the filters, before then investigating the accuracy of the filters and to identify any categories of sites that are routinely \textit{overblocked} and \textit{underblocked}, thus performing a relational study between filters and their accuracy, and site categories.
-
-This paper makes the following contributions:
+In performing this study, we follow a \textit{data science} approach by first performing exploratory analysis at the \textit{macro} level of what domains are commonly blocked and what categories of sites are blocked by the filters, before then investigating the accuracy of the filters and to identify any categories of sites that are routinely \textit{overblocked} and \textit{underblocked}, thus performing a relational study between filters and their accuracy.
+In carrying out this study, this paper makes the following contributions:
 \begin{enumerate}
 	\item An empirical characterisation of UK ISPs' and MSPs' filtering accuracy over time.
 	\item Evidence of overblocked and underblocked sites by UK ISPs and MSPs.
@@ -221,7 +183,7 @@ This paper makes the following contributions:
 
 This work is the first to investigate the performance of UK ISP web filters and to provide evidence of both overblocking and underblocking.
 For that reason, the work has huge potential for implications on the domains of digital rights and censorship, and also data science in the methodology that we follow in investigating web filters' performance through data - so-called `\textit{data-driven digital accountability}'. 
-We begin this paper by first explaining related works study web filtering technology and web censorship, and the inherent impact of both; before then moving on to outlining which Internet and Mobile Service Providers.
+We begin this paper by first explaining related works studying web filtering technology and web censorship, and the inherent impact of both; before then moving on to outlining which Internet and Mobile Service Providers are investigated.
 We follow this up by describing how the \textit{probe} system works for monitoring web filters, before then presenting evidence of what domains and categories of sites are being blocked and by whom.
 In the proceeding sections we then explain how we gauge filter accuracy, present qualitative examples of incorrectly blocked sites, and investigate how quickly an ISP responds to fix an incorrect block.
 In order to provide full transparency of how this paper's results and findings were derived, both the software used to analyse the web filters and the results from our analyses are available on the Open Rights Group's Github repository.\footnote{\url{https://github.com/openrightsgroup/cmp-analysis}}
@@ -263,20 +225,22 @@ The author demonstrated that sites that had been publicly declared as blocked ac
 
 Despite the wide body of work covering the detection of filtering approaches and their usage across various countries, we could only find one piece of work that empirically characterised web filters' accuracy.
 The work in question, by Stark \cite{stark2007effectiveness}, used a sample of URLs categorised as either adult or clean, passed these URLs through various home PC web filters (e.g. McAfee, CyberPatrol) and then computed: (i) the underblocking percentage (i.e. the percentage of URLs that should have been blocked that weren't), and; (ii) the overblocking percentage (i.e. the percentage of URLs that were blocked that should not have been).
-Stark's results derived underblocking percentages ranging from 6.2\% to 43.4\%  for various filters, and from 0.4\% to 20.7\% for overblocking; thereby indicating that filters perform better at minimising incorrect blocks than detecting what it should be blocked.
+Stark's results derived underblocking percentages ranging from 6.2\% to 43.4\%  for various filters, and from 0.4\% to 20.7\% for overblocking; thereby indicating that filters perform better at minimising incorrect blocks than detecting what should be blocked.
 As of writing this paper, we were unable to find any literature that examined the performance of UK ISP and MSP web filters, nor their uptake - aside from the Ofcom Internet Safety report in 2014.\footnote{\url{http://stakeholders.ofcom.org.uk/internet/internet-safety-2}}
 
 The above works demonstrate that researchers have largely concentrated on understanding how state and organisation-level censorship takes place, and the myriad ways in which filtering operates at a technical level.
 As such, existing work has yet to quantify web filters' accuracy and the degree to which `\textit{collateral filtering}' is evident (i.e. overblocking and underblocking); we believe that this is largely due to the lack of prescribed lists of gold standard blocks.
 In this paper we present for the first time evidence of such collateral filtering and provide empirical evidence of how accurate ISP and MSP web filters are.
-This is enabled, as we will detail below, by examining ISPs' and MSPs' descriptions of their filters and their intended categories of blocked sites, which we operationalise through modelling filters as \textit{pseudo-classifiers} and computing their accuracy against a gold-standard.
+This is enabled, as we will detail below, by examining ISPs' and MSPs' descriptions of their filters and their intended categories of blocked sites, which we operationalise through modelling filters as \textit{pseudo-classifiers} and computing their accuracy from these classifiers.
 
 
 \section*{Studied Internet and Mobile Service Providers}
 The United Kingdom's telecommunications market is one of the biggest in the world, and consumers are provided with a range of Internet Service Providers and Mobile Service Providers to choose from.
 In order to provide data for our analysis, we used both ISPs and MSPs that had the largest consumer bases in the country.
 For the ISPs we examined the web filtering of: BT, PlusNet, Sky, TalkTalk, and VirginMedia; while for the MSPs we examined the web filtering of: EE, O2, T-Mobile, VirginMobile, and Vodafone.
-We now describe the filtering technologies and available filter settings of each.
+The selected ISPs for study accounted for 93.9\% of the UK home broadband market as at December 2013;\footnote{\url{http://www.thinkbroadband.com/factsheet/broadband-factsheet-q1-2014.pdf}} while all the chosen UK MSPs are also Mobile Network Operators (MNOs) - i.e. they own their own network infrastructure.
+The assumption for selecting the above MSPs is that all Mobile Virtual Network Operators (MVNOs such as Virgin Mobile, GiffGaff, etc.) would implement either no filters or the same filters as the MNO to whose network they resell access. In this way we hoped to cover the entire UK mobile-internet market. 
+We now describe the filtering technologies and available filter settings of each of the ISPs and MSPs.
 
 \subsubsection*{Internet Service Providers' Filters}
 \paragraph{BT.}
@@ -285,7 +249,7 @@ The system utilises site categorisation information from Nominum\footnote{\url{h
 BT provide three levels of filtering once turned on: (i) \textit{light}, which blocks pornography, obscene and tasteless, hate and self-harm, drugs, alcohol and tobacco, and dating; (ii) \textit{moderate}, which blocks all of the light filter settings plus nudity, weapons and violence, gambling, and social networking, and finally; (iii) \textit{strict}, which blocks all of the above plus fashion and beauty, file-sharing, games, and media streaming.
 
 \paragraph{PlusNet.}
-Use network-level filtering of piracy sites, and at present do not filter any adult web content.
+This ISP uses network-level filtering of piracy sites, as per court orders, and at present do not filter any adult web content.
 
 \paragraph{Sky.}
 Sky provide a filtering system known as `\textit{Sky Broadband Shield}' that also uses DNS-based blocking of URLs, however unlike BT, Sky's system uses site categorisation information provided Symantec and their Rulespace Web Content categorisation system.\footnote{\url{http://www.symantec.com/page.jsp?id=rulespace}} 
@@ -316,35 +280,48 @@ Use a filtering system known as `\textit{O2 18+}' with default-on setting, so fi
 Symantec RuleSpace\footnote{\url{http://www.symantec.com/page.jsp?id=rulespace}} is used for site categorisation, and anything that is classed as `\textit{Adult}' by the BBFC (British Board of Film Classification)\footnote{\url{http://www.bbfc.co.uk/}} is blocked.
 
 \paragraph{Three.}
-As with O2, blocks any sites categorised as Adult, and therefore suitable for those over the age of 18, by the BBFC.
+As with O2, this MSP's filter blocks any sites categorised as Adult, and therefore suitable for those over the age of 18, by the BBFC.
 
 \paragraph{Vodafone.}
-Vodafone provider filtering through their `\textit{Content Control}'\footnote{\url{http://support.vodafone.co.uk/Internet/Content-control-and-Vodafone-Guardian/38914008/How-can-I-switch-off-content-control-so-I-can-access-age-restricted-content-on-the-internet.htm}} system, with categorisation of web sites provided by Symantec.
-Filtering is default-on, meaning that customers must remove filtering manually by proving that they are over 18.
+Vodafone provides filtering through their `\textit{Content Control}'\footnote{\url{http://support.vodafone.co.uk/Internet/Content-control-and-Vodafone-Guardian/38914008/How-can-I-switch-off-content-control-so-I-can-access-age-restricted-content-on-the-internet.htm}} system, with categorisation of web sites provided by Symantec.
 There is only one level of filtering used here and this blocks: chat and dating services, erotica, gambling, and violent games.
 
 
 \section*{Monitoring Web Filters}
 We now move onto the crux of our work.
 In order to understand how \textit{well} ISPs' and MSPs' web filters perform we first need to gather information about which URLs each filter has blocked and when this took place.
-For this we used data provided by the Open Rights Group as part of their Blocked.org.uk project: below, we describe hos the project's probe system functions before then moving on to describing the data that we collected.
+For this we used data provided by the Open Rights Group as part of their \url{blocked.org.uk} project: below, we describe how the project's probe system functions before then moving on to describing the data that we collected.
 
 % Richard - need your input in to this section
 \subsection*{Blocked.org.uk Probe System}
-Blocked is a unique project that allows people to find out whether their websites are being blocked by filters in the UK. The system comprises three sub-systems: probes, middleware and a website.
-We subscribe to an internet connection from each of the providers listed above. We activated the ISP's web filters on each connection, and where a choice of filter configuration was available to us, we selected the default settings.
-On each connection we run a probe comprising a virtual machine and our probe software. The middleware manages a queue of URLs for each ISP of which it is aware. When probes register with the middleware they declare the ISP to which they are connected and are attached to the correct queue. Probes then poll these queues for new URLs to test.
-When a new URL is received by the middleware it is copied into each ISP queue, and when that queue is next polled by an available probe, the next new URL is sent out to that probe. The probe then requests the URL via the ISP to which it is connected, parses and classifies the response, and returns the result to the middleware. The middlware records the result in its database.
-Anyone can submit a URL for checking by the system on our website at www.blocked.org.uk. These URLs are prioritised by the queue system so that results can be returned quickly and displayed on the site. For each ISP the website displays the last available result, the date of the last available result, and the date on which the URL was last reported as being blocked on that ISP (if any).
-The middleware queues checked URLs for periodic re-checking to prevent the results data from going stale. Historical data is maintained but not necessarily displayed on the website.
-We pre-seeded the system with URLs from the top 100,000 websites as ranked by Alexa before we launched our website. We can also submit URLs for testing in bulk.
-Alongside the blocking results for a URL, we present on the website a form where visitors can tell us about the content of the site, and whether they think it has been blocked in error. It is not possible to determine automatically that a site has been overblocked or underblocked - a system to do so would be no more accurate than the filtering systems themselves. Instead we review manually those URLs reported to us as having been blocked wrongly.
-We licence our software under Free software licences and publish our data under a creative commons licence. Our software is available on Github and our data on blocked.org.uk.
+\emph{Blocked} is a unique project that allows people to find out whether their websites are being blocked by filters in the UK. 
+The system comprises three sub-systems: probes, middleware and a website.
+We subscribe to an internet connection from each of the providers listed above, where we activated the ISP's web filters on each connection, and where a choice of filter configuration was available to us - we selected the default settings each time.
+
+On each connection we run a probe comprising a virtual machine and our probe software. 
+The middleware manages a queue of URLs for each ISP of which it is aware. 
+When probes register with the middleware they declare the ISP to which they are connected and are attached to the correct queue. 
+Probes then poll these queues for new URLs to test.
+When a new URL is received by the middleware it is copied into each ISP queue, and when that queue is next polled by an available probe, the next new URL is sent out to that probe. 
+The probe then requests the URL via the ISP to which it is connected, parses and classifies the response, and returns the result to the middleware. The middlware records the result in its database.
+
+Anyone can submit a URL for checking by the system on our website at \url{www.blocked.org.uk}. 
+These URLs are prioritised by the queue system so that results can be returned quickly and displayed on the site. 
+For each ISP the website displays the last available result, the date of the last available result, and the date on which the URL was last reported as being blocked on that ISP (if any).
+The middleware queues checked URLs for periodic re-checking to prevent the results data from going stale. 
+Historical data is maintained but not necessarily displayed on the website.
+We pre-seeded the system with URLs from the top 100,000 websites as ranked by Alexa\footnote{\url{http://www.alexa.com/topsites}} before we launched the website - URLs can also be submitted for testing in bulk.
+
+Alongside the blocking results for a URL, the website presents a form where visitors can explain the content of the site, and whether they think it has been blocked in error. 
+It is not possible to determine \emph{automatically} that a site has been overblocked or underblocked.
+Some manual reviewing of URLs reported to the site as having been blocked wrongly is performed, however this is at an early stage - see future work for how this is planned to be extended for future work.
+All software is licensed under Free software licences and data is published under a creative commons licence - all software is available on Github \footnote{\url{https://github.com/openrightsgroup/cmp-analysis}} and all data is available on the \url{blocked.org.uk} web site.
+
 
 \subsection*{Data Captured}
 For this paper we used data collected from the probe system up to the end of March 2015, thereby providing around 9 months' worth of data for analysis.
 Figure \ref{fig:total-requests} shows the distribution of requests per day that were collected in our dataset - a single request consists of a URL being tested by a given filter at a given time, hence representing a unique record.
-In total we collected 6,289,550 requests for URLs across the studied ISPs and MSPs; Table \ref{tab:dataset_summary} shows the requests per-ISP and per-MSP that were collected.
+In total we collected 6,289,550 requests for URLs across the studied ISPs and MSPs: Table \ref{tab:dataset_summary} shows the requests per-ISP and per-MSP that were collected.
 
 
 \begin{table}[h!]
@@ -409,7 +386,7 @@ We began by investigating which domains had been blocked by Internet Service Pro
 To do this, we extracted the blocked requests for each ISP and then recorded the frequency distributions of the blocked URLs domains (e.g. \url{www.lancs.ac.uk/staff/rowem} would have domain \url{lancs.ac.uk}).
 
 Figure \ref{fig:broadband-blocked-domains} shows the top-40 domains that are blocked by ISPs' filters. 
-As PlusNet does not use filtering, we can see that the only URLs that are blocked are those related to file-sharing sites such as The Pirate Bay and similar platforms - these were served with a UK court order to be blocked in 2013.
+As PlusNet does not use filtering turned on by consumers and instead filters out any URLs hosting material that infringes copyright, we can see that the only URLs that are blocked are those related to file-sharing sites such as The Pirate Bay and similar platforms - these were served with a UK court order to be blocked in 2013.
 For the remaining ISPs, the top-most domains that are blocked are pornography (e.g. \url{pornhub}, \url{xhamster}, etc.), and other adult-content sites (e.g. \url{4chan}).
 Interestingly, we found that certain domains are picked up that we would not associate with adult content, such as \url{reddit}, \url{tumblr}, and (worryingly) \url{torproject}.
 
@@ -431,7 +408,7 @@ Inspection of the top-40 blocked domains of blocked sites by MSPs (in Figure \re
 \end{figure}
 
 \subsubsection*{Overblocked Sites}
-Our macro-level analysis of blocked domains revealed that certain filters were blocked site domains that are not normally associated with adult-content.
+Our macro-level analysis of blocked domains revealed that certain filters were blocking site domains that are not normally associated with adult-content.
 To examine further what these sites were, and to find out if they indeed contained adult content, we extracted blocked sites with domains from \url{wordpress}, \url{tumblr}, \url{reddit}, and \url{livejournal}; we now describe \textit{overblocked} sites from each (i.e. sites that should not have been blocked by the filters):
 
 \begin{itemize}
@@ -448,7 +425,7 @@ To examine further what these sites were, and to find out if they indeed contain
 
 \subsection*{Blocked Site Categories}
 Examining the domains of blocked sites allows for an insight into whether sites are being \textit{overblocked}, while our inspection of specific domains' URLs revealed that certain sites and pages were indeed being blocked when they should not have been - based on the ISPs' and MSPs' filter descriptions.
-However, manual inspection of the sites from the blocked records, in to understand what content they contain, is not feasible given their large scale (33,297).
+However, manual inspection of the sites from the blocked records, in order to understand what content they contain, is not feasible given their large scale (33,297).
 Therefore to overcome this issue, we harnessed DMOZ (Directory MOZilla)\footnote{\url{http://www.dmoz.org/}} which is based on the original Open Directory Project.
 DMOZ provides a community-created and maintained categorisation system of web sites: users submit URLs of sites and tag the category (from a previously defined hierarchy) that the sites belong to (one category per site).
 The submissions are then verified by the community, thereby ensuring that sites are labelled appropriately.
@@ -486,7 +463,7 @@ We begin this section by explaining how we construct the pseudo classifiers for 
 
 \subsection*{Pseudo-Classifiers for ISP and MSP Filters}
 Construction of the pseudo-classifier for each ISP and MSP used the DMOZ categorisation system in conjunction with each filter's documentation to understand what should be blocked and by whom.
-In order to aid comprehension of what should be blocked Table \ref{tab:pseudo_classifiers} collates each filter's settings together with the categories of blocked sites.
+In order to aid comprehension of what should be blocked Table \ref{tab:pseudo_classifiers} collates each filter's settings together with the categories of blocked sites.\footnote{Note that we use the \emph{default} settings of each filter, hence Table \ref{tab:pseudo_classifiers}  contains those categories that are blocked by default.}
 By default, pornography and obscene and tasteless content (e.g. gore, death, etc.) is blocked across all filters, ISPs all block hate and self-harm sites while MSPs do not, and ISPs vary in which categories of content they block - with TalkTalk being the most strict of all the filters.
 
 \begin{table}[h!]
@@ -637,14 +614,14 @@ As we were dealing with 8 different filters, and their pseudo-classifiers, and h
 This framework was written using the Apache Spark stack and utilised HDFS from the Apache Hadoop stack - the Python code can be found online in the Github repository of the project.\footnote{\url{https://github.com/openrightsgroup/cmp-analysis}}
 Computation follows a pipeline approach as follows:
 \begin{enumerate}
-	\item Clean and load data into HDFS. The blocked.org.uk export file containing all requests is cleaned to reduce duplicate records and then loaded into HDFS.
+	\item Clean and load data into HDFS. The \url{blocked.org.uk} export file containing all requests is cleaned to reduce duplicate records and then loaded into HDFS.
 	The DMOZ category files are also loaded into HDFS.
 	\item Load DMOZ category map into cluster memory. The DMOZ category file is processed using a map-reduce job thereby producing \texttt{(key, value)} pairs where the keys are URLs and the values are the DMOZ category - one URL has one category. 
-	We actually load the non-adult category map and the adult category map separately - as DMOZ provides different files for each - and then perform \texttt{union} operation to join the maps.
+	We actually load the non-adult category map and the adult category map separately - as DMOZ provides different files for each - and then perform a \texttt{union} operation to join the maps.
 	This joined map is then broadcast to the cluster so that all nodes can access the map from memory.
-	\item Compute contingency tables per ISP and MSP. A second map-reduce job is run to produce (key, value) pairs from the cleaned request export file in HDFS.
+	\item Compute contingency tables per ISP and MSP. A second map-reduce job is run to produce \texttt{(key, value)} pairs from the cleaned request export file in HDFS.
 	Keys here are the ISP and MSP names (e.g. BT, O2, etc.) and values are contingency table objects.
-	The \textit{map}-stage functions by reading in one line from the export file and then checking if the request is a block or not and for which ISP it pertains to, a new contingency table is then produced for the (key, value) pair.
+	The \textit{map}-stage functions by reading in one line from the export file and then checking if the request is a block or not and for which ISP it pertains to, a new contingency table is then produced for the \texttt{(key, value)} pair.
 	The \textit{reduce}-stage then combines all of the contingency tables together for the given filter.
 	\item Accuracy computation. After the final map-reduce job is complete, the above accuracy measures are then computed for each ISP and MSP based on the combined contingency tables.
 \end{enumerate}
@@ -806,11 +783,11 @@ Our \textit{general} inspection of how well the web filters perform was carried 
 One question that came to mind when conducting this analysis was whether the filters \textit{improved} in accuracy over time.
 To investigate this we repeated the above per-ISP and per-MSP computation of accuracy measures, however this was instead computed on a \textit{weekly} basis.
 This was performed by computing \textit{time-specific} contingency tables and then computing the above measures from the tables.
-We again used Apache Spark for this and wrote a map-reduce job that produced (key, value) pairs where the keys were the ISPs and MSPs' names and the values were also (key, value) pairs - where the keys were this time week numbers and the values the week-specific contingency table.
+We again used Apache Spark for this and wrote a map-reduce job that produced \texttt{(key, value)} pairs where the keys were the ISPs and MSPs' names and the values were also \texttt{(key, value)} pairs - where the keys were this time week numbers and the values were the week-specific contingency tables.
 
 Figure \ref{fig:broadband-accuracy-ts} and figure \ref{fig:mobile-accuracy-ts} show the accuracy of the ISPs' filters and MSPs' filters over time, respectively - these values have been smoothed using a moving-average model of order 5.
-We find that, in general, model accuracy degrades over time, in particular the ISPs.
-The reason for this degradation is likely due to web site owners in the UK submitting URLs to be tested to the probe-system's queue, as the blocked.org.uk site gained more attention around 6 months after its launch.
+We find that, in general, model accuracy degrades over time, in particular for the ISPs.
+The reason for this degradation is likely due to web site owners in the UK submitting URLs to be tested to the probe-system's queue, as the \texttt{blocked.org.uk} site gained more attention around 6 months after its launch.
 Initially, sites from the Alexa-ranking system were used for testing however as more bespoke, less mainstream, sites were added the filters were unable to categorise them effectively.
 
 \begin{figure}[h!]
@@ -835,9 +812,9 @@ Initially, sites from the Alexa-ranking system were used for testing however as 
 
 %%%%%% Section
 \section*{Time to Correction}
-Once a site has been blocked, and providing that the site owners is aware of such a block, several ISPs provide functionality to report such an error, with the view that the site would then be \textit{unblocked}.
-To investigate our third research question \textit{How long does it take an ISP to fix an error?} we examined the $\Delta$-distribution of URLs transitioning from a \textit{block} to an \textit{ok} state.
-The distribution was computed by recording the frequency distribution of the number of days each ISP's block-to-ok transitions.
+Once a site has been blocked, and providing that the site's owner is aware of such a block, several ISPs provide functionality to report such an error, with the view that the site would then be \textit{unblocked}.
+To investigate our third research question \textit{How long does it take an ISP to fix an error?} we examined the $\Delta$-distribution of URLs transitioning from a \textit{blocked} to an \textit{ok} state.
+The distribution was computed by recording the frequency distribution of the number of days each ISP's blocked-to-ok transitions.
 Of course, one of the limitations of the probe system is that it cannot check each URL for a block every day, instead each URL is tested across the probes every 45 days (or once every 1080 hours).
 
 Figure \ref{fig:isps-unblock-dist} presents the $\Delta$-distributions for the 8 filters.
@@ -862,8 +839,8 @@ In this section we reflect on potential limitations of our study and what effect
 
 \subsection*{Measurement of Blocks}
 The requests export from the probe system contains equivalent URLs listed under different states at different times: i.e. a URL can be defined as \textit{blocked} at one point in time and then \textit{ok} later, once it has been unblocked.
-This issue is hard to counteract one must either decide to not count the URL at all, or count it in both sets when computing the contingency table.
-We opted for the latter, therefore place one URL in a respective set of the contingency table (e.g. false positives, false negatives, true positives, true negatives), and as we use sets a URL is only counted once within the respective set.
+This issue is hard to counteract as one must either decide to not count the URL at all, or count it in both sets when computing the contingency table.
+We opted for the latter, therefore we placed one URL in a respective set of the contingency table (e.g. false positives, false negatives, true positives, true negatives), and as we used sets a URL is only counted once within the respective set.
 
 Another potential limitation of our study and data used is the probe system itself. 
 As the accuracy over time and time-to-unblock plots have shown, the restriction on the queueing system to only request a URL every 45 days means that analysing the changes in filters over time is somewhat limited.
@@ -873,8 +850,8 @@ Despite this, we can still observe large-time spans between a URL first being bl
 %TODO fill in coverage percentage below
 % No DMOZ = 278,513, DMOZ = 1,573,571. So 
 The use of pseudo-classifiers relies on URLs having been mapped to DMOZ categories, however this is not true for all URLs.
-In fact, we have coverage of 85\% indicating that we do not consider 85\% of URLs in our analysis.
-This could potentially impact our accuracy measures towards favouring known sites for which DMOZ categories exist, one could argue that the measures are likely to be an \textit{upper bound} on accuracy and that the true accuracy is potentially lower than what we have observed.
+In fact, we have coverage of 85\% indicating that we do not consider 15\% of requested URLs in our analysis.
+This could potentially influence our accuracy measures towards favouring known sites for which DMOZ categories exist, one could argue that the measures are likely to be an \textit{upper bound} on accuracy and that the true accuracy is potentially lower than what we have observed.
 
 Another issue that we encountered when using the DMOZ categorisation scheme was the prevalence of \textit{ambiguous} categories. 
 For instance, we repeatedly found that non-UK sites for wineries  and breweries were categorised under the \texttt{World} category, despite them being about alcohol.
@@ -883,52 +860,53 @@ We counteracted this by removing the \texttt{World} category completely from our
 
 \section*{Conclusions}
 This paper has been concerned with studying the accuracy of UK ISP and MSP filters.
-To focus our investigated we studied three research, which we now reflect upon.
+To focus our investigated we studied three research, which we now reflect upon.\\
 
 \textbf{RQ1}: How can we understand how UK ISP Web Filters function, and how accurate they are?
 
 We have presented a computational framework that constructs pseudo-classifiers for each ISPs' and MSPs' filters with the DMOZ categories of web sites that \textit{should} be blocked.
 By using data provided by the Open Rights Group as part of their \url{blocked.org.uk} project we were able to compare the outcomes of web filters with what should have been blocked through these pseudo-classifiiers.
-Through constructing \textit{contingency tables} we were able to show the large extent to which both overblocking and underblocking occurs across the filters.
+Through constructing \textit{contingency tables} we were able to show the large extent to which both overblocking and underblocking occurs across the filters.\\
 
 \textbf{RQ2}: Are there certain categories and domains of web sites that are prone to overblocking?
 
 Through inspecting the provided data we found qualitative examples of domains that are prone to overblocking (e.g. LiveJournal).
-Upon engineering the pseudo-classifiers, we found wide variations between the categories of sites that the different ISPs and MSPs block, therefore our future work will be focussing on the former part of the above question in order to further investigate category-specific accuracy levels.
+Upon engineering the pseudo-classifiers, we found wide variations between the categories of sites that the different ISPs and MSPs block, therefore our future work will be focussing on the former part of the above question in order to further investigate category-specific accuracy levels.\\
 
 \textbf{RQ3}: How long does it take an ISP to fix an error?
 
-We presented an inspection of the $\Delta$-distributions of each ISPs' and MSPs' filters in which we computed the probability density function of the number of hours it takes for a site to transition from a \textit{block} state to an \textit{ok} state.
-The probe system re-tests each URL every 45 days (1080 hours), however we found the distributions' densities to be largely concentrated above this value, thereby indicating that URLs take several re-tests before they are found to have been fixed.
+We presented an inspection of the $\Delta$-distributions of each ISPs' and MSPs' filters in which we computed the probability density function of the number of hours it takes for a site to transition from a \textit{blocked} state to an \textit{ok} state.
+The probe system re-tests each URL every 45 days (1080 hours), however we found the distributions' densities to be largely concentrated above this value, thereby indicating that blocked URLs take several re-tests before they are found to have been fixed.
 
 \subsection*{Implications}
 In this paper we have presented the first work to examine how well UK ISPs' and MSPs' web filters perform when blocking content.
 The results show \textit{empirically} that the filters are error prone and that there is systematic evidence of both \textit{overblocking} and \textit{underblocking}: between 30\% (for O2) and 82\% (for TalkTalk) of tested URLs are underblocked, while between 2\% (for EE) to 6\% (for BT) of URLs are overblocked.
 These findings have implications not only on other researchers seeking to investigate how well filters perform, but also on the UK public in general.
-The UK media has repeatedly reported on erroneous blocking, however this growing body of evidence was largely anecdotal in nature; our work is the first to systematically critique the filters, and by following a data science methodology we are able to harness data provided by the Open Rights Group to perform this study.
-In order to ensure full transparency of our work, we have provided the Python and R source code used to run all of the above experiments and produce the above plots on Github;\footnote{https://github.com/openrightsgroup/cmp-analysis} we have also uploaded the evidence of overblocking and underblocking from our experiments to demonstrate what we have found.\footnote{https://github.com/openrightsgroup/cmp-analysis/tree/master/data/output}
+The UK media has repeatedly reported on erroneous blocking, however this growing body of evidence was largely anecdotal in nature; our work is the first to systematically critique the filters, and by following a data science methodology we were able to harness data provided by the Open Rights Group to perform this study.
+In order to ensure full transparency of our work, we have provided the Python and R source code used to run all of the above experiments and produce the above plots on Github;\footnote{\url{https://github.com/openrightsgroup/cmp-analysis}} we have also uploaded the evidence of overblocking and underblocking from our experiments to demonstrate what we have found.\footnote{\url{https://github.com/openrightsgroup/cmp-analysis/tree/master/data/output}}
 
 \subsection*{Future Work}
 Future work is planned in the following three areas:
 Firstly, we are currently working on a manual annotation system for members of the public to label URLs with the appropriate category labels.
-Our goal here to have at least three raters per URL and then use their decisions to decide on what the categories the URL should be under.
-The goal here is to have an alternative gold standard from which to derive the accuracy of the filters from - thereby providing an alternative to the existing DMOZ category system.
+Our goal here is to have at least three raters per URL and then use their decisions to decide on what categories the URL should be under.
+In doing so, we will have an alternative gold standard from which to derive the accuracy of the filters from - thereby providing an alternative to the existing DMOZ category system.
 
 The second area of future work will investigate text mining as a means to identify the topics of web pages.
-By using the manually annotated URLs from above, these will be used to examine how well we can identify the categories of pages automatically; thereby producing an automated categorisation system that can be used to scale up the labelling, if sufficiently accurate.
+By using the manually annotated URLs from above, these will be used to examine how well we can identify the categories of pages automatically; thereby producing an automated categorisation system that can be used to scale up the labelling, if sufficiently accurate.\footnote{This system is designed to \textit{mine} latent topics of web pages and to ascertain common patterns of poor performing filters, it is \emph{not} intended as a \emph{categorisation} approach for web filters.}
 
 The third and final area of future work is a planned follow-up study in one year's time.
 This study will repeat the approach presented within this paper and compare the findings, thereby informing how well the filters have performed since then.
 As all our code is open source and engineered to perform parallel computation, repetition of the study is not expected to be challenging.
+Within this area of future work, we also plan to compare the lists of blocked URLs between ISPs and MSPs (e.g. BT vs. Sky) in an attempt to \emph{reverse-engineer} the filters and understand how they differ.
 
 
 \begin{backmatter}
 
 \section*{Competing interests}
-  The authors declare that they have no competing interests.
+The authors declare that they have no competing interests.
 
 \section*{Acknowledgements}
-Open Rights Group for providing the data and engineering the solution
+Open Rights Group for providing the data and engineering the probe system from which the data was gathered.
 
 % if your bibliography is in bibtex format, use those commands:
 \bibliographystyle{bmc-mathphys} % Style BST file
@@ -944,15 +922,15 @@ These DMOZ categories were as follows:
 	\item Adult and Obscene and Tasteless: \url{Adult}
 	\item Hate and Self-harm: No category
 	\item Drugs: \url{Recreation/Drugs}
-	\item Alcohol: \texttt{Recreation/Food/Drink/Drinking, Recreation/Food/Drink/Mead, Recreation/Food/Drink/Wine, Recreation/Food/Drink/Beer, Recreation/Food/Drink/Alcopops, Recreation/Food/Drink/Cider, Recreation/Food/Drink/Cocktails, Recreation/Food/Drink/Liquor, Recreation/Food/Drink/Sake, Health/Specific Substances/Alcoholic Beverages}
-	\item Tobacco: \texttt{Shopping/Tobacco, Recreation/Tobacco}
+	\item Alcohol: \url{Recreation/Food/Drink/Drinking, Recreation/Food/Drink/Mead, Recreation/Food/Drink/Wine, Recreation/Food/Drink/Beer, Recreation/Food/Drink/Alcopops, Recreation/Food/Drink/Cider, Recreation/Food/Drink/Cocktails, Recreation/Food/Drink/Liquor, Recreation/Food/Drink/Sake, Health/Specific Substances/Alcoholic Beverages}
+	\item Tobacco: \url{Shopping/Tobacco, Recreation/Tobacco}
 	\item Dating: \url{Society/Relationships/Dating, Society/Relationships/Cyber_Relationships, Regional/Europe/United Kingdom/Society_and_Culture/Gay,_Lesbian,_and_Bisexual/Relationships}
 	\item Social Networking: \url{Computers/Internet/On_the_Web/Online_Communities/Social_Networking,, Kids_and_Teens/People_and_Society/Online Communities}
-	\item Gambling: \texttt{Gambling}
-	\item File-sharing: \texttt{Computers/Software/Internet/File Sharing}
-	\item Violence: No category - assume that this is covered by \texttt{Adult}
-	\item Gaming: \texttt{Games}
-	\item Malware and Hacking: \texttt{Computers/Hacking}
+	\item Gambling: \url{Gambling}
+	\item File-sharing: \url{Computers/Software/Internet/File Sharing}
+	\item Violence: No category - assume that this is covered by \url{Adult}
+	\item Gaming: \url{Games}
+	\item Malware and Hacking: \url{Computers/Hacking}
 \end{itemize}
 
 \end{backmatter}
