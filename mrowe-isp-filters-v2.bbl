@@ -1,0 +1,153 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{00}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{{\tt DOI:}\penalty0{#1}\ }
+  \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       #1{#1}          \fi
+
+\bibitem[\protect\citeauthoryear{Aceto, Botta, Pescap{\`e}, Feamster, Awan,
+  Ahmad, and Qaisar}{Aceto et~al\mbox{.}}{2015}]%
+        {aceto2015monitoring}
+{Giuseppe Aceto}, {Alessio Botta}, {Antonio Pescap{\`e}}, {Nick Feamster},
+  {M~Faheem Awan}, {Tahir Ahmad}, {and} {Saad Qaisar}. 2015.
+\newblock \showarticletitle{Monitoring Internet Censorship with UBICA}.
+\newblock In {\em Traffic Monitoring and Analysis}. Springer, 143--157.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Aceto and Pescap{\'e}}{Aceto and
+  Pescap{\'e}}{2015}]%
+        {aceto2015internet}
+{Giuseppe Aceto} {and} {Antonio Pescap{\'e}}. 2015.
+\newblock \showarticletitle{Internet Censorship detection: A survey}.
+\newblock {\em Computer Networks\/} (2015).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Akdeniz}{Akdeniz}{2001}]%
+        {akdeniz2001internet}
+{Yaman Akdeniz}. 2001.
+\newblock \showarticletitle{Internet content regulation: UK government and the
+  control of internet content}.
+\newblock {\em Computer Law \& Security Review\/} {17}, 5 (2001), 303--317.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Anonymous}{Anonymous}{2012}]%
+        {Anonymous:2012:CDI:2317307.2317311}
+{Anonymous}. 2012.
+\newblock \showarticletitle{The Collateral Damage of Internet Censorship by DNS
+  Injection}.
+\newblock {\em SIGCOMM Comput. Commun. Rev.\/} {42}, 3 (June 2012), 21--27.
+\newblock
+\showISSN{0146-4833}
+\showDOI{%
+\url{http://dx.doi.org/10.1145/2317307.2317311}}
+
+
+\bibitem[\protect\citeauthoryear{Crete-Nishihata, Deibert, and
+  Senft}{Crete-Nishihata et~al\mbox{.}}{2013}]%
+        {crete2013not}
+{Masashi Crete-Nishihata}, {Ronald Deibert}, {and} {Adam Senft}. 2013.
+\newblock \showarticletitle{Not by technical means alone: the multidisciplinary
+  challenge of studying information controls}.
+\newblock {\em Internet Computing, IEEE\/} {17}, 3 (2013), 34--41.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Dalek, Haselton, Noman, Senft,
+  Crete-Nishihata, Gill, and Deibert}{Dalek et~al\mbox{.}}{2013}]%
+        {dalek2013method}
+{Jakub Dalek}, {Bennett Haselton}, {Helmi Noman}, {Adam Senft}, {Masashi
+  Crete-Nishihata}, {Phillipa Gill}, {and} {Ronald~J Deibert}. 2013.
+\newblock \showarticletitle{A method for identifying and confirming the use of
+  URL filtering products for censorship}. In {\em Proceedings of the 2013
+  conference on Internet measurement conference}. ACM, 23--30.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Esnaashari, Welch, and Chawner}{Esnaashari
+  et~al\mbox{.}}{2014}]%
+        {esnaashari2014restrictions}
+{Shadi Esnaashari}, {Ian Welch}, {and} {Brenda Chawner}. 2014.
+\newblock \showarticletitle{Restrictions Affecting New Zealanders' Access to
+  the Internet: A Local Study}. In {\em Advanced Information Networking and
+  Applications (AINA), 2014 IEEE 28th International Conference on}. IEEE,
+  771--774.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{McIntyre and Scott}{McIntyre and
+  Scott}{2008}]%
+        {mcintyre2008internet}
+{Thomas~J McIntyre} {and} {Colin Scott}. 2008.
+\newblock \showarticletitle{Internet filtering: rhetoric, legitimacy,
+  accountability and responsibility}.
+\newblock  (2008).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Murdoch and Roberts}{Murdoch and
+  Roberts}{2013}]%
+        {murdoch2013internet}
+{Steven~J Murdoch} {and} {Hal Roberts}. 2013.
+\newblock \showarticletitle{Internet Censorship and Control [Guest editors'
+  introduction]}.
+\newblock {\em Internet Computing, IEEE\/} {17}, 3 (2013), 6--9.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Nabi}{Nabi}{2014}]%
+        {nabi2014censorship}
+{Zubair Nabi}. 2014.
+\newblock \showarticletitle{Censorship is futile}.
+\newblock {\em arXiv preprint arXiv:1411.0225\/} (2014).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Stark}{Stark}{2007}]%
+        {stark2007effectiveness}
+{Philip~B Stark}. 2007.
+\newblock \showarticletitle{The Effectiveness of Internet Content Filters}.
+\newblock {\em University of California, Berkeley\/} (2007).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Verkamp and Gupta}{Verkamp and Gupta}{2012}]%
+        {verkamp2012inferring}
+{John-Paul Verkamp} {and} {Minaxi Gupta}. 2012.
+\newblock \showarticletitle{Inferring mechanics of web censorship around the
+  world}.
+\newblock {\em Free and Open Communications on the Internet, Bellevue, WA,
+  USA\/} (2012).
+\newblock
+
+
+\end{thebibliography}

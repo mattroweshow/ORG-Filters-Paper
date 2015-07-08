@@ -1,0 +1,67 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: mrowe-isp-filters-v2.aux
+The style file: ACM-Reference-Format-Journals.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: ORG-Filters-Paper.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--empty address in aceto2015monitoring
+Warning--no number and no volume in aceto2015internet
+Warning--page numbers missing in both pages and numpages fields in aceto2015internet
+Warning--require articleno with numpages field in Anonymous:2012:CDI:2317307.2317311
+Warning--empty publisher in dalek2013method
+Warning--empty address in dalek2013method
+Warning--empty publisher in esnaashari2014restrictions
+Warning--empty address in esnaashari2014restrictions
+Warning--no journal in mcintyre2008internet
+Warning--no number and no volume in mcintyre2008internet
+Warning--page numbers missing in both pages and numpages fields in mcintyre2008internet
+Warning--no number and no volume in nabi2014censorship
+Warning--page numbers missing in both pages and numpages fields in nabi2014censorship
+Warning--no number and no volume in stark2007effectiveness
+Warning--page numbers missing in both pages and numpages fields in stark2007effectiveness
+Warning--no number and no volume in verkamp2012inferring
+Warning--page numbers missing in both pages and numpages fields in verkamp2012inferring
+You've used 12 entries,
+            5290 wiz_defined-function locations,
+            1292 strings with 16401 characters,
+and the built_in function-call counts, 12240 in all, are:
+= -- 1754
+> -- 484
+< -- 0
++ -- 150
+- -- 176
+* -- 749
+:= -- 1332
+add.period$ -- 61
+call.type$ -- 12
+change.case$ -- 80
+chr.to.int$ -- 12
+cite$ -- 29
+duplicate$ -- 945
+empty$ -- 683
+format.name$ -- 208
+if$ -- 3083
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 47
+newline$ -- 131
+num.names$ -- 96
+pop$ -- 369
+preamble$ -- 1
+purify$ -- 140
+quote$ -- 0
+skip$ -- 274
+stack$ -- 0
+substring$ -- 816
+swap$ -- 85
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 168
+warning$ -- 17
+while$ -- 101
+width$ -- 0
+write$ -- 236
+(There were 17 warnings)

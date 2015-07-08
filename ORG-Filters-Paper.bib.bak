@@ -14,6 +14,17 @@
   Timestamp                = {2015.06.25}
 }
 
+@Article{aceto2015internet,
+  Title                    = {Internet Censorship detection: A survey},
+  Author                   = {Aceto, Giuseppe and Pescap{\'e}, Antonio},
+  Journal                  = {Computer Networks},
+  Year                     = {2015},
+
+  Date-added               = {2015-06-25 16:11:38 +0100},
+  Date-modified            = {2015-06-25 16:11:38 +0100},
+  Publisher                = {Elsevier}
+}
+
 @Article{akdeniz2001internet,
   Title                    = {Internet content regulation: UK government and the control of internet content},
   Author                   = {Akdeniz, Yaman},
@@ -26,6 +37,32 @@
   Owner                    = {rowem},
   Publisher                = {Elsevier},
   Timestamp                = {2015.06.25}
+}
+
+@Article{Anonymous:2012:CDI:2317307.2317311,
+  Title                    = {The Collateral Damage of Internet Censorship by DNS Injection},
+  Author                   = {Anonymous},
+  Journal                  = {SIGCOMM Comput. Commun. Rev.},
+  Year                     = {2012},
+
+  Month                    = jun,
+  Number                   = {3},
+  Pages                    = {21--27},
+  Volume                   = {42},
+
+  Acmid                    = {2317311},
+  Address                  = {New York, NY, USA},
+  Bdsk-url-1               = {http://doi.acm.org/10.1145/2317307.2317311},
+  Bdsk-url-2               = {http://dx.doi.org/10.1145/2317307.2317311},
+  Doi                      = {10.1145/2317307.2317311},
+  ISSN                     = {0146-4833},
+  Issue_date               = {July 2012},
+  Keywords                 = {collateral damage, dns, great firewall of china, internet censorship, internet measurement, packet injection},
+  Numpages                 = {7},
+  Owner                    = {rowem},
+  Publisher                = {ACM},
+  Timestamp                = {2015.06.25},
+  Url                      = {http://doi.acm.org/10.1145/2317307.2317311}
 }
 
 @Article{crete2013not,
@@ -90,6 +127,26 @@
   Timestamp                = {2015.06.25}
 }
 
+@Article{nabi2014censorship,
+  Title                    = {Censorship is futile},
+  Author                   = {Nabi, Zubair},
+  Journal                  = {arXiv preprint arXiv:1411.0225},
+  Year                     = {2014},
+
+  Date-added               = {2015-06-25 16:23:31 +0100},
+  Date-modified            = {2015-06-25 16:23:31 +0100}
+}
+
+@Article{stark2007effectiveness,
+  Title                    = {The Effectiveness of Internet Content Filters},
+  Author                   = {Stark, Philip B},
+  Journal                  = {University of California, Berkeley},
+  Year                     = {2007},
+
+  Date-added               = {2015-06-25 16:41:33 +0100},
+  Date-modified            = {2015-06-25 16:41:33 +0100}
+}
+
 @Article{verkamp2012inferring,
   Title                    = {Inferring mechanics of web censorship around the world},
   Author                   = {Verkamp, John-Paul and Gupta, Minaxi},
@@ -98,5 +155,14 @@
 
   Owner                    = {rowem},
   Timestamp                = {2015.06.25}
+}
+
+@Other{ooni2015,
+  Title                    = {The Tor Project. Ooni: Open observatory of network interference},
+  Bdsk-url-1               = {https://ooni.torproject.org/},
+  Date-added               = {2015-06-25 16:31:59 +0100},
+  Date-modified            = {2015-06-25 16:35:25 +0100},
+  Url                      = {https://ooni.torproject.org/},
+  Urldate                  = {25/6/2015}
 }
 

@@ -1,0 +1,37 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Related Work}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Computing filter accuracy}{section.2}% 3
+\BOOKMARK [1][-]{section.3}{Studied Internet and Mobile Service Providers}{}% 4
+\BOOKMARK [2][-]{subsection.3.1}{Internet Service Providers' Filters}{section.3}% 5
+\BOOKMARK [3][-]{subsubsection.3.1.1}{BT}{subsection.3.1}% 6
+\BOOKMARK [3][-]{subsubsection.3.1.2}{PlusNet}{subsection.3.1}% 7
+\BOOKMARK [3][-]{subsubsection.3.1.3}{Sky}{subsection.3.1}% 8
+\BOOKMARK [3][-]{subsubsection.3.1.4}{Talk Talk}{subsection.3.1}% 9
+\BOOKMARK [3][-]{subsubsection.3.1.5}{VirginMedia}{subsection.3.1}% 10
+\BOOKMARK [2][-]{subsection.3.2}{Mobile Service Providers' Filters}{section.3}% 11
+\BOOKMARK [3][-]{subsubsection.3.2.1}{EE and T-Mobile}{subsection.3.2}% 12
+\BOOKMARK [3][-]{subsubsection.3.2.2}{O2}{subsection.3.2}% 13
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Three}{subsection.3.2}% 14
+\BOOKMARK [3][-]{subsubsection.3.2.4}{Vodafone}{subsection.3.2}% 15
+\BOOKMARK [1][-]{section.4}{Monitoring Web Filters}{}% 16
+\BOOKMARK [2][-]{subsection.4.1}{Blocked.org.uk Probe System}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.2}{Data Captured}{section.4}% 18
+\BOOKMARK [1][-]{section.5}{Blocked Content}{}% 19
+\BOOKMARK [2][-]{subsection.5.1}{Blocked Domains}{section.5}% 20
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Overblocked Sites}{subsection.5.1}% 21
+\BOOKMARK [2][-]{subsection.5.2}{Blocked Site Categories}{section.5}% 22
+\BOOKMARK [1][-]{section.6}{Gauging Filter Accuracy}{}% 23
+\BOOKMARK [2][-]{subsection.6.1}{Pseudo-Classifiers for ISP and MSP Filters}{section.6}% 24
+\BOOKMARK [2][-]{subsection.6.2}{Judging Filter Accuracy}{section.6}% 25
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Parallelised Computation}{subsection.6.2}% 26
+\BOOKMARK [3][-]{subsubsection.6.2.2}{General Accuracy}{subsection.6.2}% 27
+\BOOKMARK [3][-]{subsubsection.6.2.3}{Accuracy over Time}{subsection.6.2}% 28
+\BOOKMARK [1][-]{section.7}{Time to Correction}{}% 29
+\BOOKMARK [1][-]{section.8}{Study Limitations}{}% 30
+\BOOKMARK [2][-]{subsection.8.1}{Measurement of Blocks}{section.8}% 31
+\BOOKMARK [2][-]{subsection.8.2}{Limitations of Pseudo-Classifiers}{section.8}% 32
+\BOOKMARK [1][-]{section.9}{Conclusions}{}% 33
+\BOOKMARK [2][-]{subsection.9.1}{Implications}{section.9}% 34
+\BOOKMARK [2][-]{subsection.9.2}{Future Work}{section.9}% 35
+\BOOKMARK [1][-]{section.10}{Acknowledgements}{}% 36
+\BOOKMARK [1][-]{appendix.A}{Appendix: DMOZ Block Categories}{}% 37
